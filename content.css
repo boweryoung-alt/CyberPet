@@ -60,8 +60,10 @@
 .pet-cat.state-sleeping #pet-body, .pet-cat.state-sleeping #pet-head { animation: deepSleep 3.5s infinite alternate ease-in-out; }
 
 .pet-cat.state-working #pet-glasses { opacity:1!important; }
-.pet-cat.state-working #pet-head { animation:keyboardMania .2s infinite alternate linear; }
+.pet-cat.state-working #pet-head { animation: keyboardMania .2s infinite alternate linear; }
 @keyframes keyboardMania { 0%{transform:translate(-1px,1px) rotate(-1deg)} 100%{transform:translate(1px,-1px) rotate(1deg)} }
+.pet-cat.state-working #pet-body rect[fill="#7A7A7A"] { animation: catClawScratch 0.08s infinite alternate linear; }
+@keyframes catClawScratch { 0%{transform:translateY(-4px) scaleY(1.3);transform-origin:top center} 100%{transform:translateY(3px) scaleY(0.7);transform-origin:top center} }
 
 .pet-cat.state-surprised { animation: scareJump .5s ease-out; }
 .pet-cat.state-surprised #eye-left, .pet-cat.state-surprised #eye-right { transform:scale(1.4); transform-origin:center; }
@@ -90,7 +92,10 @@
 .pet-shiba.state-sleeping { transform: translateY(10px) rotate(5deg); }
 
 .pet-shiba.state-working #dog-glasses { opacity:1!important; }
-.pet-shiba.state-working #dog-head { animation: keyboardMania .2s infinite alternate linear; }
+.pet-shiba.state-working #dog-head { animation: dogHeadHeavyBob .14s infinite alternate ease-in-out; }
+.pet-shiba.state-working #dog-body rect[fill="#D35400"] { animation: dogPawSlam 0.1s infinite alternate linear; }
+@keyframes dogPawSlam { 0%{transform:translateY(-5px)} 100%{transform:translateY(2px)} }
+@keyframes dogHeadHeavyBob { 0%{transform:translate(-1px,-2px) rotate(-1deg)} 100%{transform:translate(1px,2px) rotate(1deg)} }
 
 .pet-shiba.state-surprised { animation: scareJump .5s ease-out; }
 
@@ -136,9 +141,11 @@
 .pet-rabbit.state-working #rabbit-ear-l { animation: rabbitWorkEarL .15s infinite alternate linear; transform-origin:bottom right; }
 .pet-rabbit.state-working #rabbit-ear-r { animation: rabbitWorkEarR .15s infinite alternate linear; transform-origin:bottom left; }
 .pet-rabbit.state-working #rabbit-head { animation: rabbitTyping .1s infinite alternate ease-in-out; }
+.pet-rabbit.state-working #rabbit-body rect[fill="#F4F5F7"] { animation: rabbitFastPaws 0.06s infinite alternate-reverse linear; }
 @keyframes rabbitWorkEarL { 0%{transform:rotate(-5deg)} 100%{transform:rotate(5deg)} }
 @keyframes rabbitWorkEarR { 0%{transform:rotate(5deg)} 100%{transform:rotate(-5deg)} }
 @keyframes rabbitTyping { 0%{transform:translateY(0)} 100%{transform:translateY(1.5px) scaleX(1.02)} }
+@keyframes rabbitFastPaws { 0%{transform:translateY(-6px) scaleX(0.9)} 100%{transform:translateY(4px) scaleX(1.1)} }
 
 .pet-rabbit.state-surprised { animation: scareJump .5s ease-out; }
 .pet-rabbit.state-hungry #rabbit-head { animation: wobble .5s ease-in-out infinite; }
@@ -160,8 +167,10 @@
 .pet-marmot.state-working #pet-glasses { opacity:1!important; transform:translate(12px,-6px) scale(0.85); transform-origin:center; }
 .pet-marmot.state-working #marmot-hands { animation: marmotSmashKeyboard .08s infinite alternate linear; }
 .pet-marmot.state-working { animation: marmotRage .15s infinite alternate ease-in-out; }
+.pet-marmot.state-working #marmot-mouth-zone { animation: marmotTeethChatter 0.08s infinite alternate linear; }
 @keyframes marmotSmashKeyboard { 0%{transform:translateY(-6px) scaleY(1.2);transform-origin:top center} 100%{transform:translateY(6px) scaleY(0.8);transform-origin:top center} }
 @keyframes marmotRage { 0%{transform:translate(-1px,0) scaleX(1.03)} 100%{transform:translate(1px,1px) scaleX(0.97)} }
+@keyframes marmotTeethChatter { 0%{transform:translateY(-2px)} 100%{transform:translateY(3px) scaleY(1.2)} }
 
 .pet-marmot.state-surprised,
 .pet-marmot.state-hungry {
@@ -179,8 +188,18 @@
 @keyframes marmotShaking { 0%{transform:translate(1px,1px) scaleX(1.02)} 100%{transform:translate(-1px,-1px) scaleX(0.98)} }
 @keyframes handPanic     { 0%{transform:translateY(-3px)} 100%{transform:translateY(3px)} }
 
-.pet-marmot.state-working { animation: keyboardMania .2s infinite alternate linear; }
 .pet-marmot.state-curious #marmot-head { animation: curiousTilt .6s ease-in-out; }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   CYBER KEYBOARD — global: show keyboard + key sparks when ANY pet is working
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.state-working #pet-cyber-keyboard { opacity:1!important; transition:opacity .3s ease; }
+.state-working #key-light-1 { animation: keySparkLE .12s infinite alternate linear; }
+.state-working #key-light-2 { animation: keySparkLE .08s infinite alternate-reverse linear; }
+.state-working #key-light-3 { animation: keySparkLE .15s infinite alternate linear; }
+.state-working #key-light-4 { animation: keySparkLE .1s infinite alternate-reverse linear; }
+@keyframes keySparkLE { 0%{opacity:0} 100%{opacity:1;filter:drop-shadow(0 0 2px currentColor)} }
 
 /* ═══════════════════════════════════════════════════════════════════════════
    SPEECH BUBBLE
