@@ -207,6 +207,22 @@
 .pet-marmot.state-curious #marmot-head { animation: curiousTilt .6s ease-in-out; }
 
 /* ═══════════════════════════════════════════════════════════════════════════
+   GLOBAL: sick state (health ≤ 0) — all pets become dizzy + collapsed
+   ═══════════════════════════════════════════════════════════════════════════ */
+.state-sick { transform: translateY(6px) rotate(-4deg); transform-origin: bottom center; }
+.state-sick #pet-body, .state-sick #pet-head,
+.pet-cat.state-sick #pet-body, .pet-cat.state-sick #pet-head,
+.pet-shiba.state-sick #pet-body, .pet-shiba.state-sick #dog-head,
+.pet-rabbit.state-sick #rabbit-body, .pet-rabbit.state-sick #rabbit-head,
+.pet-marmot.state-sick #marmot-body, .pet-marmot.state-sick #marmot-head {
+  animation: sickDizzy 0.6s infinite alternate ease-in-out;
+}
+@keyframes sickDizzy {
+  0%   { transform: translate(-2px, 0) rotate(-1.5deg); }
+  100% { transform: translate(2px, -1px) rotate(1.5deg); }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
    CYBER KEYBOARD — global: show keyboard + key sparks when ANY pet is working
    ═══════════════════════════════════════════════════════════════════════════ */
 

@@ -26,6 +26,7 @@ chrome.runtime.onInstalled.addListener(() => {
     if (data.fullness === undefined) defaults.fullness = 100;
     if (data.cleanliness === undefined) defaults.cleanliness = 100;
     if (data.mood === undefined) defaults.mood = 100;
+    if (data.health === undefined) defaults.health = 100;
     if (data.isFocusing === undefined) defaults.isFocusing = false;
     if (data.focusEndTime === undefined) defaults.focusEndTime = null;
     if (data.cooldownUntil === undefined) defaults.cooldownUntil = null;
@@ -46,22 +47,27 @@ chrome.alarms.onAlarm.addListener((alarm) => {
 });
 
 function decayPetStats() {
-  chrome.storage.local.get(['fullness', 'cleanliness', 'mood'], (data) => {
+  chrome.storage.local.get(['fullness', 'cleanliness', 'mood', 'health'], (data) => {
     const f = Math.max(0, (data.fullness    ?? 100) - 2);
     const c = Math.max(0, (data.cleanliness ?? 100) - 1);
     let   m = (data.mood        ?? 100);
 
-    // Mood accelerates when fullness or cleanliness dip below 50
     if (f < 50 || c < 50) {
       m = Math.max(0, m - 2);
     } else {
       m = Math.max(0, m - 1);
     }
 
+    // Health decay: each low stat takes its toll, neglect compounds
+    let h = data.health ?? 100;
+    const lowCount = (f < 30 ? 1 : 0) + (c < 30 ? 1 : 0) + (m < 30 ? 1 : 0);
+    if (lowCount > 0) h = Math.max(0, h - lowCount);        // -1 per low stat
+    if (lowCount === 3) h = Math.max(0, h - 2);            // extra -2 if all critical
+    // Slow passive regeneration when everything's healthy
+    else if (lowCount === 0 && f > 70 && c > 70 && m > 70) h = Math.min(100, h + 1);
+
     chrome.storage.local.set({
-      fullness: f,
-      cleanliness: c,
-      mood: m
+      fullness: f, cleanliness: c, mood: m, health: h
     });
   });
 }
@@ -149,7 +155,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 
     case 'getStatus': {
       chrome.storage.local.get(
-        ['fullness', 'cleanliness', 'mood', 'isFocusing', 'focusEndTime', 'cooldownUntil', 'selectedPet'],
+        ['fullness', 'cleanliness', 'mood', 'health', 'isFocusing', 'focusEndTime', 'cooldownUntil', 'selectedPet'],
         (data) => sendResponse(data)
       );
       return true; // keep channel open for async response
@@ -171,12 +177,15 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
           switch (request.type) {
             case 'feed':
               updates.fullness = Math.min(100, (data.fullness ?? 100) + 30);
+              updates.health   = Math.min(100, (data.health   ?? 100) + 5);
               break;
             case 'bath':
               updates.cleanliness = Math.min(100, (data.cleanliness ?? 100) + 40);
+              updates.health      = Math.min(100, (data.health       ?? 100) + 8);
               break;
             case 'pet':
-              updates.mood = Math.min(100, (data.mood ?? 100) + 15);
+              updates.mood   = Math.min(100, (data.mood   ?? 100) + 15);
+              updates.health = Math.min(100, (data.health ?? 100) + 3);
               break;
           }
 

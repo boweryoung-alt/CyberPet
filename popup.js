@@ -11,6 +11,7 @@
     fullness   : { val: document.getElementById('val-fullness'),   bar: document.getElementById('bar-fullness') },
     cleanliness: { val: document.getElementById('val-clean'),      bar: document.getElementById('bar-clean') },
     mood       : { val: document.getElementById('val-mood'),       bar: document.getElementById('bar-mood') },
+    health     : { val: document.getElementById('val-health'),     bar: document.getElementById('bar-health') },
     moodFaces  : document.getElementById('moodFaces'),
     statusDot  : document.getElementById('statusDot'),
     timerDisplay: document.getElementById('timerDisplay'),
@@ -52,6 +53,7 @@
       const f = data.fullness    ?? 100;
       const c = data.cleanliness ?? 100;
       const m = data.mood        ?? 100;
+      const h = data.health      ?? 100;
       const focusing = data.isFocusing ?? false;
 
       // Bars
@@ -66,6 +68,10 @@
       els.mood.val.textContent        = m;
       els.mood.bar.style.width        = m + '%';
       els.mood.bar.className          = 'progress-fill ' + barClass(m);
+
+      els.health.val.textContent      = h;
+      els.health.bar.style.width      = h + '%';
+      els.health.bar.className        = 'progress-fill ' + barClass(h);
 
       // Mood face
       els.moodFaces.textContent = getEmojiForMood(m);

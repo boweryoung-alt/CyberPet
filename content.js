@@ -29,6 +29,7 @@
     <g id="pet-glasses" opacity="0"><rect x="38" y="52" width="16" height="14" rx="2" stroke="#FF9800" stroke-width="2" fill="none"/><rect x="66" y="52" width="16" height="14" rx="2" stroke="#FF9800" stroke-width="2" fill="none"/><line x1="54" y1="59" x2="66" y2="59" stroke="#FF9800" stroke-width="2"/></g>
     <g id="zzz-group" opacity="0"><text x="88" y="22" font-size="10" fill="#999" font-weight="bold">z</text><text x="96" y="12" font-size="14" fill="#999" font-weight="bold" opacity="0.6">z</text><text x="104" y="2" font-size="18" fill="#999" font-weight="bold" opacity="0.3">z</text></g>
     <defs><linearGradient id="screen-glow" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#00D2FF" stop-opacity="1"/><stop offset="100%" stop-color="#00D2FF" stop-opacity="0"/></linearGradient></defs>
+    <g id="health-sweat" opacity="0" style="transition:opacity .3s"><ellipse cx="32" cy="32" rx="2" ry="3" fill="#5BA8E8"/><ellipse cx="88" cy="32" rx="2" ry="3" fill="#5BA8E8"/><animate attributeName="opacity" values="0.4;1;0.4" dur="1.2s" repeatCount="indefinite"/></g>
     <g id="pet-cyber-keyboard" opacity="0"><rect x="30" y="102" width="60" height="8" rx="2" fill="#344054" stroke="#475467" stroke-width="1.5"/><rect id="key-light-1" x="36" y="104" width="8" height="4" rx="1" fill="#FFD700" opacity="0"/><rect id="key-light-2" x="48" y="104" width="12" height="4" rx="1" fill="#00D2FF" opacity="0"/><rect id="key-light-3" x="66" y="104" width="10" height="4" rx="1" fill="#FF3366" opacity="0"/><rect id="key-light-4" x="80" y="104" width="6" height="4" rx="1" fill="#00FF66" opacity="0"/><path d="M 35 102 L 20 80 L 100 80 L 85 102 Z" fill="url(#screen-glow)" opacity="0.15"/></g>
   </svg>`;
 
@@ -48,6 +49,7 @@
     <g id="dog-glasses" opacity="0"><rect x="36" y="52" width="20" height="14" rx="2" stroke="#FF9800" stroke-width="2" fill="none"/><rect x="64" y="52" width="20" height="14" rx="2" stroke="#FF9800" stroke-width="2" fill="none"/><line x1="56" y1="59" x2="64" y2="59" stroke="#FF9800" stroke-width="2"/></g>
     <g id="zzz-group" opacity="0"><text x="88" y="22" font-size="10" fill="#999" font-weight="bold">z</text><text x="96" y="12" font-size="14" fill="#999" font-weight="bold" opacity="0.6">z</text><text x="104" y="2" font-size="18" fill="#999" font-weight="bold" opacity="0.3">z</text></g>
     <defs><linearGradient id="screen-glow" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#00D2FF" stop-opacity="1"/><stop offset="100%" stop-color="#00D2FF" stop-opacity="0"/></linearGradient></defs>
+    <g id="health-sweat" opacity="0" style="transition:opacity .3s"><ellipse cx="32" cy="32" rx="2" ry="3" fill="#5BA8E8"/><ellipse cx="88" cy="32" rx="2" ry="3" fill="#5BA8E8"/><animate attributeName="opacity" values="0.4;1;0.4" dur="1.2s" repeatCount="indefinite"/></g>
     <g id="pet-cyber-keyboard" opacity="0"><rect x="30" y="102" width="60" height="8" rx="2" fill="#344054" stroke="#475467" stroke-width="1.5"/><rect id="key-light-1" x="36" y="104" width="8" height="4" rx="1" fill="#FFD700" opacity="0"/><rect id="key-light-2" x="48" y="104" width="12" height="4" rx="1" fill="#00D2FF" opacity="0"/><rect id="key-light-3" x="66" y="104" width="10" height="4" rx="1" fill="#FF3366" opacity="0"/><rect id="key-light-4" x="80" y="104" width="6" height="4" rx="1" fill="#00FF66" opacity="0"/><path d="M 35 102 L 20 80 L 100 80 L 85 102 Z" fill="url(#screen-glow)" opacity="0.15"/></g>
   </svg>`;
 
@@ -65,6 +67,7 @@
     <g id="pet-glasses" opacity="0"><rect x="38" y="52" width="16" height="14" rx="2" stroke="#FF9800" stroke-width="2" fill="none"/><rect x="66" y="52" width="16" height="14" rx="2" stroke="#FF9800" stroke-width="2" fill="none"/><line x1="54" y1="59" x2="66" y2="59" stroke="#FF9800" stroke-width="2"/></g>
     <g id="zzz-group" opacity="0"><text x="88" y="22" font-size="10" fill="#999" font-weight="bold">z</text><text x="96" y="12" font-size="14" fill="#999" font-weight="bold" opacity="0.6">z</text><text x="104" y="2" font-size="18" fill="#999" font-weight="bold" opacity="0.3">z</text></g>
     <defs><linearGradient id="screen-glow" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#00D2FF" stop-opacity="1"/><stop offset="100%" stop-color="#00D2FF" stop-opacity="0"/></linearGradient></defs>
+    <g id="health-sweat" opacity="0" style="transition:opacity .3s"><ellipse cx="32" cy="32" rx="2" ry="3" fill="#5BA8E8"/><ellipse cx="88" cy="32" rx="2" ry="3" fill="#5BA8E8"/><animate attributeName="opacity" values="0.4;1;0.4" dur="1.2s" repeatCount="indefinite"/></g>
     <g id="pet-cyber-keyboard" opacity="0"><rect x="30" y="102" width="60" height="8" rx="2" fill="#344054" stroke="#475467" stroke-width="1.5"/><rect id="key-light-1" x="36" y="104" width="8" height="4" rx="1" fill="#FFD700" opacity="0"/><rect id="key-light-2" x="48" y="104" width="12" height="4" rx="1" fill="#00D2FF" opacity="0"/><rect id="key-light-3" x="66" y="104" width="10" height="4" rx="1" fill="#FF3366" opacity="0"/><rect id="key-light-4" x="80" y="104" width="6" height="4" rx="1" fill="#00FF66" opacity="0"/><path d="M 35 102 L 20 80 L 100 80 L 85 102 Z" fill="url(#screen-glow)" opacity="0.15"/></g>
   </svg>`;
 
@@ -81,6 +84,7 @@
     <g id="pet-glasses" opacity="0"><rect x="38" y="52" width="16" height="14" rx="2" stroke="#FF9800" stroke-width="2" fill="none"/><rect x="66" y="52" width="16" height="14" rx="2" stroke="#FF9800" stroke-width="2" fill="none"/><line x1="54" y1="59" x2="66" y2="59" stroke="#FF9800" stroke-width="2"/></g>
     <g id="zzz-group" opacity="0"><text x="88" y="22" font-size="10" fill="#999" font-weight="bold">z</text><text x="96" y="12" font-size="14" fill="#999" font-weight="bold" opacity="0.6">z</text><text x="104" y="2" font-size="18" fill="#999" font-weight="bold" opacity="0.3">z</text></g>
     <defs><linearGradient id="screen-glow" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#00D2FF" stop-opacity="1"/><stop offset="100%" stop-color="#00D2FF" stop-opacity="0"/></linearGradient></defs>
+    <g id="health-sweat" opacity="0" style="transition:opacity .3s"><ellipse cx="32" cy="32" rx="2" ry="3" fill="#5BA8E8"/><ellipse cx="88" cy="32" rx="2" ry="3" fill="#5BA8E8"/><animate attributeName="opacity" values="0.4;1;0.4" dur="1.2s" repeatCount="indefinite"/></g>
     <g id="pet-cyber-keyboard" opacity="0"><rect x="30" y="102" width="60" height="8" rx="2" fill="#344054" stroke="#475467" stroke-width="1.5"/><rect id="key-light-1" x="36" y="104" width="8" height="4" rx="1" fill="#FFD700" opacity="0"/><rect id="key-light-2" x="48" y="104" width="12" height="4" rx="1" fill="#00D2FF" opacity="0"/><rect id="key-light-3" x="66" y="104" width="10" height="4" rx="1" fill="#FF3366" opacity="0"/><rect id="key-light-4" x="80" y="104" width="6" height="4" rx="1" fill="#00FF66" opacity="0"/><path d="M 35 102 L 20 80 L 100 80 L 85 102 Z" fill="url(#screen-glow)" opacity="0.15"/></g>
   </svg>`;
 
@@ -137,7 +141,7 @@
   // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
   const S = {
-    pet: 'idle', fullness: 100, cleanliness: 100, mood: 100,
+    pet: 'idle', fullness: 100, cleanliness: 100, mood: 100, health: 100,
     focusing: false, isDragging: false, currentPet: 'cat',
     mouseX: -9999, mouseY: -9999, mouseActive: false, lastMove: Date.now(),
   };
@@ -260,26 +264,48 @@
 
   function pollState() {
     if (!extOK()) { cleanup(); return; }
-    chrome.storage.local.get(['fullness','cleanliness','mood','isFocusing','selectedPet'], d => {
+    chrome.storage.local.get(['fullness','cleanliness','mood','health','isFocusing','selectedPet'], d => {
       if (chrome.runtime.lastError) return;
       S.fullness = d.fullness ?? 100; S.cleanliness = d.cleanliness ?? 100;
-      S.mood = d.mood ?? 100; S.focusing = d.isFocusing ?? false;
+      S.mood = d.mood ?? 100; S.health = d.health ?? 100;
+      S.focusing = d.isFocusing ?? false;
 
       // Apply saved pet
       if (d.selectedPet && d.selectedPet !== S.currentPet && PETS[d.selectedPet]) applyPet(d.selectedPet);
 
+      // Update visual health indicator
+      applyHealthVisuals();
+
       if (S.pet === 'sleeping' && !S.focusing) return;
       if (S.focusing) setState('working');
+      else if (S.health <= 0) setState('sick');
       else if (S.fullness < 20) setState('hungry');
-      else if (['working','hungry','surprised'].includes(S.pet)) setState('idle');
+      else if (['working','hungry','sick','surprised'].includes(S.pet)) setState('idle');
       if (bubble.className === 'cp-bubble-hidden') {
         if (S.focusing) return;
-        if (S.fullness < 20) showBubble(pick(Q.hungry), 5000);
+        if (S.health <= 0) showBubble('I feel terrible... 😵', 5000);
+        else if (S.fullness < 20) showBubble(pick(Q.hungry), 5000);
         else if (S.cleanliness < 20) showBubble(pick(Q.dirty), 5000);
         else if (S.mood > 80 && Math.random() < 0.3) showBubble(pick(Q.happy), 3500);
         else if (Math.random() < 0.3) showBubble(pick(Q.idle), 4000);
       }
     });
+  }
+
+  // Health-driven visual effects
+  function applyHealthVisuals() {
+    const h = S.health;
+    // Grayscale filter when health is critical
+    if (h < 30) {
+      svgEl.style.filter = 'grayscale(0.7) brightness(0.95)';
+    } else if (h < 60) {
+      svgEl.style.filter = 'grayscale(0.3)';
+    } else {
+      svgEl.style.filter = '';
+    }
+    // Sweat drops when health < 50
+    const sweat = svgEl.querySelector('#health-sweat');
+    if (sweat) sweat.style.opacity = (h < 50) ? 1 : 0;
   }
 
   // Cross-tab + real-time sync
