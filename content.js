@@ -327,9 +327,10 @@
   document.addEventListener('touchend', () => { if (!S.isDragging) return; S.isDragging = false; tid = null; root.style.transition = ''; });
 
   // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  // 12. CLICK
+  // 12. CLICK / DOUBLE-CLICK / RIGHT-CLICK
   // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
+  // Single click = random reaction; double click = pet
   const REACTIONS = ['meow', 'purr', 'tilt', 'surprised'];
   let cc = 0, cTimer = null;
   root.addEventListener('click', e => {
@@ -347,11 +348,69 @@
       }, 250);
     } else {
       clearTimeout(cTimer); cc = 0;
-      showBubble('Double pets! 🥰❤️', 3000);
-      doAction('surprised', 800);
-      spawn('heart', 10);
+      // Double-click = pet ❤️
+      doInteract('pet');
     }
   });
+
+  // Right-click = custom context menu (Feed / Bath)
+  const ctxMenu = document.createElement('div');
+  ctxMenu.id = 'cp-ctxmenu';
+  ctxMenu.innerHTML = `
+    <button data-act="feed">🍖 Feed (+30)</button>
+    <button data-act="bath">🧼 Bath (+40)</button>
+  `;
+  ctxMenu.style.cssText = 'position:fixed;z-index:2147483647;background:#FFF;border:2px solid #333;border-radius:8px;padding:4px;box-shadow:3px 3px 0 #333;display:none;font-family:inherit;';
+  document.body.appendChild(ctxMenu);
+  // Style child buttons
+  ctxMenu.querySelectorAll('button').forEach(b => {
+    b.style.cssText = 'display:block;width:100%;padding:8px 12px;border:none;background:transparent;font-size:12px;font-weight:600;cursor:pointer;text-align:left;border-radius:4px;font-family:inherit;color:#222';
+    b.onmouseenter = () => b.style.background = '#F0F0F0';
+    b.onmouseleave = () => b.style.background = 'transparent';
+  });
+  ctxMenu.addEventListener('click', e => {
+    const btn = e.target.closest('button');
+    if (!btn) return;
+    hideCtxMenu();
+    doInteract(btn.dataset.act);
+  });
+
+  function showCtxMenu(x, y) {
+    ctxMenu.style.left = x + 'px';
+    ctxMenu.style.top  = y + 'px';
+    ctxMenu.style.display = 'block';
+    // Auto-flip if too close to right/bottom edge
+    setTimeout(() => {
+      const r = ctxMenu.getBoundingClientRect();
+      if (r.right  > window.innerWidth)  ctxMenu.style.left = (x - r.width) + 'px';
+      if (r.bottom > window.innerHeight) ctxMenu.style.top  = (y - r.height) + 'px';
+    }, 0);
+  }
+  function hideCtxMenu() { ctxMenu.style.display = 'none'; }
+
+  root.addEventListener('contextmenu', e => {
+    e.preventDefault();
+    if (S.isDragging) return;
+    showCtxMenu(e.clientX, e.clientY);
+  });
+  // Close menu on click anywhere else / ESC
+  document.addEventListener('click', e => {
+    if (!ctxMenu.contains(e.target)) hideCtxMenu();
+  });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') hideCtxMenu(); });
+
+  // Local interact: send to background, react locally
+  function doInteract(type) {
+    if (!extOK()) return;
+    chrome.runtime.sendMessage({ action: 'interact', type }, (response) => {
+      if (chrome.runtime.lastError || !response || !response.success) return;
+      switch (type) {
+        case 'feed': showBubble('*munch munch* 🍖 Yum!', 3500); spawn('food', 6); doAction('surprised', 500); break;
+        case 'bath': showBubble('*splash splash* 🛁 So clean!', 3500); spawn('sparkle', 8); break;
+        case 'pet':  showBubble('Purrr~ ❤️', 3000); spawn('heart', 8); doAction('surprised', 400); break;
+      }
+    });
+  }
 
   // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   // 13. MESSAGES
