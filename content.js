@@ -311,6 +311,7 @@
 
   let dy0 = 0, top0 = 0;
   root.addEventListener('mousedown', e => {
+    if (e.button === 2) return; // 右键不触发拖动
     S.isDragging = true; dy0 = e.clientY; const r = root.getBoundingClientRect(); top0 = r.top;
     root.style.bottom = 'auto'; root.style.top = top0 + 'px'; root.style.transition = 'none'; root.style.cursor = 'grabbing';
     e.preventDefault();
