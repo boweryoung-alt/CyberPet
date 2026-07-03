@@ -166,6 +166,7 @@
    🐹 GROUNDHOG (MARMOT) — surprised/hungry → 尖叫 shaking + 手 panic
    ═══════════════════════════════════════════════════════════════════════════ */
 
+.pet-marmot#cp-canvas { width: 140px; height: 145px; }
 .pet-marmot.state-idle #marmot-head { animation: marmotHeadBob 2s infinite alternate ease-in-out; }
 .pet-marmot.state-idle #marmot-body { animation: marmotBreathe 2s infinite alternate ease-in-out; }
 .pet-marmot.state-idle #marmot-hands { animation: marmotHandIdle 1s infinite alternate ease-in-out; }
@@ -173,8 +174,8 @@
 @keyframes marmotBreathe { 0%{transform:scaleY(1);transform-origin:bottom center} 100%{transform:scaleY(0.97);transform-origin:bottom center} }
 @keyframes marmotHandIdle { 0%{transform:translateY(0) rotate(0deg)} 100%{transform:translateY(2px) rotate(-3deg)} }
 
-.pet-marmot.state-sleeping circle[fill="#1D2939"] { transform:scaleY(0.2) translateY(180px); transform-origin:center; }
-.pet-marmot.state-sleeping #marmot-mouth-zone { transform:scale(0.9) translateY(-1px); transform-origin:center; }
+.pet-marmot.state-sleeping .marmot-dark { transform:scaleY(0.2) translateY(180px); transform-origin:center; }
+.pet-marmot.state-sleeping #marmot-mouth-group { transform:scale(0.9) translateY(-1px); transform-origin:center; }
 .pet-marmot.state-sleeping #marmot-hands { transform:translateY(4px) rotate(5deg); transform-origin:center; }
 .pet-marmot.state-sleeping #marmot-body,
 .pet-marmot.state-sleeping #marmot-head { animation: marmotSnoring 4s infinite alternate ease-in-out; }
@@ -188,7 +189,7 @@
 .pet-marmot.state-working #pet-glasses { opacity:1!important; transform:translate(12px,-3px) scale(0.85); transform-origin:center; }
 .pet-marmot.state-working #pet-cyber-keyboard { transform: translateY(-8px); }
 .pet-marmot.state-working #marmot-hands { animation: marmotSmashKeyboard 0.06s infinite alternate linear; }
-.pet-marmot.state-working #marmot-mouth-zone { animation: marmotTeethChatter 0.06s infinite alternate linear; }
+.pet-marmot.state-working #marmot-mouth-group { animation: marmotTeethChatter 0.06s infinite alternate linear; }
 @keyframes marmotRageCrushing { 0%{transform:translateY(8px) rotate(2deg) scaleX(1.01)} 100%{transform:translateY(9px) rotate(4deg) scaleX(0.99)} }
 @keyframes marmotSmashKeyboard { 0%{transform:translateY(-6px) scaleY(1.2);transform-origin:top center} 100%{transform:translateY(6px) scaleY(0.8);transform-origin:top center} }
 @keyframes marmotTeethChatter { 0%{transform:translateY(-2px)} 100%{transform:translateY(3px) scaleY(1.2)} }
@@ -196,7 +197,7 @@
 .pet-marmot.state-surprised {
   animation: marmotShaking 0.1s infinite alternate;
 }
-.pet-marmot.state-surprised #marmot-mouth-zone {
+.pet-marmot.state-surprised #marmot-mouth-group {
   transform: scaleY(1.6) translateY(2px);
   transform-origin: top center;
 }
@@ -209,7 +210,7 @@
 .pet-marmot.state-hungry {
   animation: marmotHungryShiver 0.08s infinite linear;
 }
-.pet-marmot.state-hungry rect[fill="#E67E22"] {
+.pet-marmot.state-hungry .marmot-oat {
   fill: #FECDCA !important;
   transition: fill 0.5s ease;
 }
