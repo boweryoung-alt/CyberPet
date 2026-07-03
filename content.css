@@ -72,10 +72,10 @@
 
 .pet-cat.state-curious #pet-head { animation: curiousTilt .6s ease-in-out; }
 /* ─── Cat state-specific tail animations ─── */
-.cat-idle #pet-tail { animation: tailWag 1.2s infinite alternate ease-in-out; transform-origin:bottom left; }
-.cat-eating #pet-tail { animation: tailWag 0.4s infinite alternate ease-in-out; transform-origin:bottom left; }
-.cat-bathing #pet-tail { animation: none; transform: rotate(-5deg); transform-origin:bottom left; }
-.cat-sick #pet-tail { animation: none; transform: rotate(-10deg); transform-origin:bottom left; }
+.cat-idle #pet-tail { animation: tailWag 1.2s infinite alternate ease-in-out; transform-box: fill-box; transform-origin:78px 105px; }
+.cat-eating #pet-tail { animation: tailWag 0.4s infinite alternate ease-in-out; transform-box: fill-box; transform-origin:78px 105px; }
+.cat-bathing #pet-tail { animation: none; transform: rotate(-5deg); transform-box: fill-box; transform-origin:78px 105px; }
+.cat-sick #pet-tail { animation: none; transform: rotate(-10deg); transform-box: fill-box; transform-origin:78px 105px; }
 
 
 /* ═══════════════════════════════════════════════════════════════════════════
