@@ -211,7 +211,7 @@ SVG.cat = CAT_SVG.idle;
   root.id = 'cyber-pet-root';
   root.innerHTML = `
     <div id="cp-bubble" class="cp-bubble-hidden"></div>
-    <div id="cp-canvas" class="pet-cat state-idle">
+    <div id="cp-canvas" class="pet-cat state-idle cat-idle">
       <svg width="120" height="130" viewBox="0 0 120 130" fill="none" xmlns="http://www.w3.org/2000/svg">${SVG.cat}</svg>
     </div>
     <div id="cp-glow" class="cp-glow-idle"></div>
@@ -380,10 +380,10 @@ SVG.cat = CAT_SVG.idle;
       if (d.selectedPet && d.selectedPet !== S.currentPet && PETS[d.selectedPet]) applyPet(d.selectedPet);
 
       if (S.pet === 'sleeping' && !S.focusing) return;
-      if (S.health > 20 && SVG.cat === CAT_SVG.sick) { SVG.cat = CAT_SVG.idle; svgEl.innerHTML = SVG.cat; }
+      if (S.health > 20 && SVG.cat === CAT_SVG.sick) { setCatState('idle'); }
       if (S.focusing) setState('working');
       else if (S.health <= 0) setState('sick');
-      else if (S.health <= 20) { SVG.cat = CAT_SVG.sick; svgEl.innerHTML = SVG.cat; } else if (S.fullness < 20) setState('hungry');
+      else if (S.health <= 20) { setCatState('sick'); } else if (S.fullness < 20) setState('hungry');
       else if (['working','hungry','sick','surprised'].includes(S.pet)) setState('idle');
       if (bubble.className === 'cp-bubble-hidden') {
         if (S.focusing) return;
@@ -520,8 +520,8 @@ SVG.cat = CAT_SVG.idle;
     chrome.runtime.sendMessage({ action: 'interact', type }, (response) => {
       if (chrome.runtime.lastError || !response || !response.success) return;
       switch (type) {
-        case 'feed': SVG.cat = CAT_SVG.eating; svgEl.innerHTML = SVG.cat; setTimeout(() => { SVG.cat = CAT_SVG.idle; svgEl.innerHTML = SVG.cat; }, 10000); showBubble('*munch munch* 🍖 Yum!', 3500); spawn('food', 6); doAction('surprised', 500); break;
-        case 'bath': SVG.cat = CAT_SVG.bathing; svgEl.innerHTML = SVG.cat; setTimeout(() => { SVG.cat = CAT_SVG.idle; svgEl.innerHTML = SVG.cat; }, 10000); showBubble('*splash splash* 🛁 So clean!', 3500); spawn('sparkle', 8); break;
+        case 'feed': setCatState('eating'); setTimeout(() => { setCatState('idle'); }, 10000); showBubble('*munch munch* 🍖 Yum!', 3500); spawn('food', 6); doAction('surprised', 500); break;
+        case 'bath': setCatState('bathing'); setTimeout(() => { setCatState('idle'); }, 10000); showBubble('*splash splash* 🛁 So clean!', 3500); spawn('sparkle', 8); break;
         case 'pet':  showBubble('Purrr~ ❤️', 3000); spawn('heart', 8); doAction('surprised', 400); break;
       }
     });
@@ -549,8 +549,8 @@ SVG.cat = CAT_SVG.idle;
           break;
         case 'petReaction':
           switch (msg.type) {
-            case 'feed': SVG.cat = CAT_SVG.eating; svgEl.innerHTML = SVG.cat; setTimeout(() => { SVG.cat = CAT_SVG.idle; svgEl.innerHTML = SVG.cat; }, 10000); showBubble('*munch munch* 🍖 Yum!', 3500); spawn('food', 6); doAction('surprised', 500); break;
-            case 'bath': SVG.cat = CAT_SVG.bathing; svgEl.innerHTML = SVG.cat; setTimeout(() => { SVG.cat = CAT_SVG.idle; svgEl.innerHTML = SVG.cat; }, 10000); showBubble('*splash splash* 🛁 So clean!', 3500); spawn('sparkle', 8); break;
+            case 'feed': setCatState('eating'); setTimeout(() => { setCatState('idle'); }, 10000); showBubble('*munch munch* 🍖 Yum!', 3500); spawn('food', 6); doAction('surprised', 500); break;
+            case 'bath': setCatState('bathing'); setTimeout(() => { setCatState('idle'); }, 10000); showBubble('*splash splash* 🛁 So clean!', 3500); spawn('sparkle', 8); break;
             case 'pet': showBubble('Purrr~ ❤️', 3000); spawn('heart', 8); doAction('surprised', 400); break;
           } break;
       }

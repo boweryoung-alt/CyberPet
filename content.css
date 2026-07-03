@@ -52,7 +52,6 @@
 
 .pet-cat.state-idle #pet-head   { animation: headBob 2.4s infinite alternate ease-in-out; }
 .pet-cat.state-idle #pet-body   { animation: bodyBreathe 2.4s infinite alternate ease-in-out; }
-.pet-cat.state-idle #pet-tail   { transform-origin:bottom left; animation: tailWag 1.2s infinite alternate ease-in-out; }
 
 .pet-cat.state-sleeping { transform: translateY(10px) rotate(5deg); }
 .pet-cat.state-sleeping #eye-left, .pet-cat.state-sleeping #eye-right { height:2px!important; transform:translateY(4px); }
@@ -72,6 +71,12 @@
 .pet-cat.state-hungry #pet-body { animation: bodyBreathe .5s ease-in-out infinite; }
 
 .pet-cat.state-curious #pet-head { animation: curiousTilt .6s ease-in-out; }
+/* ─── Cat state-specific tail animations ─── */
+.cat-idle #pet-tail { animation: tailWag 1.2s infinite alternate ease-in-out; transform-origin:bottom left; }
+.cat-eating #pet-tail { animation: tailWag 0.4s infinite alternate ease-in-out; transform-origin:bottom left; }
+.cat-bathing #pet-tail { animation: none; transform: rotate(-5deg); transform-origin:bottom left; }
+.cat-sick #pet-tail { animation: none; transform: rotate(-10deg); transform-origin:bottom left; }
+
 
 /* ═══════════════════════════════════════════════════════════════════════════
    🐕 CORGI — 柯基（扁几何色块风格）
