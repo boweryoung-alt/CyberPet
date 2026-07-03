@@ -83,33 +83,33 @@ function setCatState(name) {
   </style>
   <ellipse cx="75" cy="132" rx="38" ry="5" class="bg-shadow" />
   <g id="dog-tail">
-    <rect x="110" y="88" width="14" height="22" rx="7" transform="rotate(45 110 88)" class="corgi-latte" />
+    <rect x="110" y="88" width="14" height="22" rx="7" class="corgi-latte" />
   </g>
   <g id="dog-body">
-    <rect x="45" y="76" width="60" height="46" rx="22" class="corgi-latte" />
-    <rect x="51" y="84" width="48" height="38" rx="14" class="corgi-white" />
-    <rect x="53" y="116" width="14" height="12" rx="6" class="corgi-paws" />
-    <rect x="83" y="116" width="14" height="12" rx="6" class="corgi-paws" />
+    <rect x="35" y="65" width="50" height="45" rx="12" class="corgi-latte" />
+    <rect x="43" y="75" width="34" height="30" rx="8" class="corgi-white" />
+    <rect x="42" y="105" width="10" height="10" rx="4" class="corgi-paws" />
+    <rect x="68" y="105" width="10" height="10" rx="4" class="corgi-paws" />
   </g>
   <g id="dog-head">
-    <path d="M 42 44 L 22 26 C 20 20, 30 14, 38 22 Z" class="corgi-latte" />
-    <path d="M 43 40 L 24 24 C 23 20, 30 14, 37 18 Z" class="corgi-pink" />
-    <path d="M 104 44 L 132 22 C 134 16, 124 8, 112 14 Z" class="corgi-latte" />
-    <path d="M 107 40 L 126 24 C 127 20, 120 14, 113 18 Z" class="corgi-pink" />
-    <rect x="35" y="44" width="60" height="40" rx="16" class="corgi-latte" />
-    <path d="M 35 66 C 35 78, 47 88, 65 88 C 83 88, 95 78, 95 66 Z" class="corgi-white" />
-    <polygon points="65,44 60,58 70,58" class="corgi-white" />
-    <circle cx="44" cy="50" r="3.5" class="corgi-white" />
-    <circle cx="106" cy="50" r="3.5" class="corgi-white" />
-    <circle cx="36" cy="72" r="6" class="corgi-pink" />
-    <circle cx="114" cy="72" r="6" class="corgi-pink" />
-    <circle cx="52" cy="62" r="5" class="corgi-dark" />
-    <circle cx="50" cy="59.5" r="1.5" class="corgi-white" />
-    <circle cx="98" cy="62" r="5" class="corgi-dark" />
-    <circle cx="96" cy="59.5" r="1.5" class="corgi-white" />
+    <path d="M 32 45 L 22 22 C 24 18, 34 18, 42 28 Z" class="corgi-latte" />
+    <path d="M 33 42 L 27 26 C 28 22, 34 22, 39 30 Z" class="corgi-pink" />
+    <path d="M 88 45 L 98 22 C 96 18, 86 18, 78 28 Z" class="corgi-latte" />
+    <path d="M 87 42 L 93 26 C 92 22, 86 22, 81 30 Z" class="corgi-pink" />
+    <rect x="25" y="40" width="70" height="40" rx="16" class="corgi-latte" />
+    <path d="M 25 64 C 25 78, 40 88, 60 88 C 80 88, 95 78, 95 64 Z" class="corgi-white" />
+    <polygon points="60,40 54,56 66,56" class="corgi-white" />
+    <circle cx="46" cy="58" r="3" class="corgi-white" />
+    <circle cx="74" cy="58" r="3" class="corgi-white" />
+    <circle cx="33" cy="72" r="4" class="corgi-pink" />
+    <circle cx="87" cy="72" r="4" class="corgi-pink" />
+    <circle cx="48" cy="64" r="3.5" class="corgi-dark" />
+    <circle cx="49" cy="63" r="1" class="corgi-white" />
+    <circle cx="72" cy="64" r="3.5" class="corgi-dark" />
+    <circle cx="73" cy="63" r="1" class="corgi-white" />
     <g id="corgi-mouth">
-      <polygon points="75,64 72,61 78,61" class="corgi-pink" />
-      <path d="M 69 69 Q 72 72 75 69 Q 78 72 81 69" fill="none" class="geometry-line" />
+      <polygon points="60,66 57,63 63,63" class="corgi-pink" />
+      <path d="M 56 70 Q 60 73 60 70 Q 60 73 64 70" fill="none" class="geometry-line" />
     </g>
   </g>
   <g id="dog-glasses" opacity="0"><rect x="46" y="52" width="14" height="10" rx="2" stroke="#FF9800" stroke-width="1.5" fill="none" opacity="0.8"/><rect x="90" y="52" width="14" height="10" rx="2" stroke="#FF9800" stroke-width="1.5" fill="none" opacity="0.8"/><line x1="60" y1="57" x2="90" y2="57" stroke="#FF9800" stroke-width="1.5" opacity="0.8"/></g>
@@ -129,25 +129,25 @@ function setCatState(name) {
   </style>
   <ellipse cx="75" cy="128" rx="36" ry="6" class="bg-shadow" />
   <g id="rabbit-body">
-    <rect x="43" y="74" width="64" height="46" rx="20" class="rabbit-cream" />
-    <rect x="51" y="82" width="48" height="38" rx="14" class="rabbit-white" />
-    <rect x="52" y="114" width="12" height="12" rx="6" class="rabbit-cream" />
-    <rect x="86" y="114" width="12" height="12" rx="6" class="rabbit-cream" />
+    <rect x="35" y="65" width="50" height="45" rx="12" class="rabbit-cream" />
+    <rect x="43" y="75" width="34" height="30" rx="8" class="rabbit-white" />
+    <rect x="42" y="105" width="10" height="10" rx="4" class="rabbit-cream" />
+    <rect x="68" y="105" width="10" height="10" rx="4" class="rabbit-cream" />
   </g>
   <g id="rabbit-head">
-    <g id="rabbit-ear-l"><rect x="40" y="8" width="16" height="40" rx="8" class="rabbit-cream" /><rect x="44" y="14" width="8" height="28" rx="4" class="rabbit-pink" /></g>
-    <g id="rabbit-ear-r"><rect x="94" y="8" width="16" height="40" rx="8" class="rabbit-cream" /><rect x="98" y="14" width="8" height="28" rx="4" class="rabbit-pink" /></g>
-    <rect x="43" y="44" width="64" height="44" rx="18" class="rabbit-cream" />
-    <path d="M 37 66 C 37 78, 50 84, 75 84 C 100 84, 113 78, 113 66 Z" class="rabbit-white" />
-    <circle cx="36" cy="72" r="6" class="rabbit-pink" />
-    <circle cx="114" cy="72" r="6" class="rabbit-pink" />
-    <circle cx="52" cy="62" r="5" class="rabbit-dark" />
-    <circle cx="50" cy="59.5" r="1.5" class="rabbit-white" />
-    <circle cx="98" cy="62" r="5" class="rabbit-dark" />
-    <circle cx="96" cy="59.5" r="1.5" class="rabbit-white" />
+    <g id="rabbit-ear-l"><rect x="28" y="6" width="14" height="38" rx="7" class="rabbit-cream" /><rect x="32" y="12" width="6" height="26" rx="3" class="rabbit-pink" /></g>
+    <g id="rabbit-ear-r"><rect x="78" y="6" width="14" height="38" rx="7" class="rabbit-cream" /><rect x="82" y="12" width="6" height="26" rx="3" class="rabbit-pink" /></g>
+    <rect x="25" y="40" width="70" height="40" rx="16" class="rabbit-cream" />
+    <path d="M 25 64 C 25 78, 40 88, 60 88 C 80 88, 95 78, 95 64 Z" class="rabbit-white" />
+    <circle cx="33" cy="72" r="4" class="rabbit-pink" />
+    <circle cx="87" cy="72" r="4" class="rabbit-pink" />
+    <circle cx="48" cy="64" r="3.5" class="rabbit-dark" />
+    <circle cx="49" cy="63" r="1" class="rabbit-white" />
+    <circle cx="72" cy="64" r="3.5" class="rabbit-dark" />
+    <circle cx="73" cy="63" r="1" class="rabbit-white" />
     <g id="rabbit-mouth">
-      <polygon points="75,64 72,61 78,61" class="rabbit-pink" />
-      <path d="M 71 69 Q 75 72 75 69 Q 75 72 79 69" fill="none" class="geometry-line" />
+      <polygon points="60,66 57,63 63,63" class="rabbit-pink" />
+      <path d="M 56 70 Q 60 73 60 70 Q 60 73 64 70" fill="none" class="geometry-line" />
     </g>
   </g>
   <g id="pet-glasses" opacity="0"><rect x="47" y="52" width="12" height="10" rx="2" stroke="#FF9800" stroke-width="1.5" fill="none" opacity="0.8"/><rect x="91" y="52" width="12" height="10" rx="2" stroke="#FF9800" stroke-width="1.5" fill="none" opacity="0.8"/><line x1="59" y1="57" x2="91" y2="57" stroke="#FF9800" stroke-width="1.5" opacity="0.8"/></g>
@@ -169,31 +169,28 @@ function setCatState(name) {
   </style>
   <ellipse cx="75" cy="132" rx="42" ry="6" class="bg-shadow" />
   <g id="marmot-body">
-    <rect x="41" y="76" width="68" height="46" rx="22" class="marmot-chestnut" />
-    <rect x="49" y="82" width="52" height="38" rx="16" class="marmot-oat" />
-    <rect x="52" y="116" width="14" height="12" rx="6" class="marmot-paws" />
-    <rect x="84" y="116" width="14" height="12" rx="6" class="marmot-paws" />
+    <rect x="35" y="65" width="50" height="45" rx="12" class="marmot-chestnut" />
+    <rect x="43" y="75" width="34" height="30" rx="8" class="marmot-oat" />
+    <rect x="42" y="105" width="10" height="10" rx="4" class="marmot-paws" />
+    <rect x="68" y="105" width="10" height="10" rx="4" class="marmot-paws" />
   </g>
   <g id="marmot-head">
-    <circle cx="30" cy="46" r="8" class="marmot-chestnut" />
-    <circle cx="31" cy="46" r="5" class="marmot-pink" />
-    <circle cx="120" cy="46" r="8" class="marmot-chestnut" />
-    <circle cx="119" cy="46" r="5" class="marmot-pink" />
-    <polygon points="71,38 75,30 76,38" class="marmot-chestnut" />
-    <polygon points="75,38 78,32 81,38" class="marmot-chestnut" />
-    <rect x="41" y="42" width="68" height="40" rx="18" class="marmot-chestnut" />
-    <path d="M 41 64 C 41 76, 53 86, 75 86 C 97 86, 109 76, 109 64 Z" class="marmot-oat" />
-    <circle cx="36" cy="72" r="6" class="marmot-pink" />
-    <circle cx="114" cy="72" r="6" class="marmot-pink" />
-    <circle cx="52" cy="62" r="5" class="marmot-dark" />
-    <circle cx="50" cy="59.5" r="1.5" fill="#FFFFFF" />
-    <circle cx="98" cy="62" r="5" class="marmot-dark" />
-    <circle cx="96" cy="59.5" r="1.5" fill="#FFFFFF" />
+    <circle id="ear-l" cx="32" cy="48" r="7" class="marmot-chestnut" />
+    <circle cx="33" cy="48" r="4" class="marmot-pink" />
+    <circle id="ear-r" cx="88" cy="48" r="7" class="marmot-chestnut" />
+    <circle cx="87" cy="48" r="4" class="marmot-pink" />
+    <polygon points="58,40 60,33 62,40" class="marmot-chestnut" />
+    <rect x="25" y="40" width="70" height="40" rx="16" class="marmot-chestnut" />
+    <path d="M 25 64 C 25 78, 40 88, 60 88 C 80 88, 95 78, 95 64 Z" class="marmot-oat" />
+    <circle cx="33" cy="72" r="4" class="marmot-pink" />
+    <circle cx="87" cy="72" r="4" class="marmot-pink" />
+    <circle cx="48" cy="64" r="3.5" class="marmot-dark" />
+    <circle cx="49" cy="63" r="1" class="marmot-white" />
+    <circle cx="72" cy="64" r="3.5" class="marmot-dark" />
+    <circle cx="73" cy="63" r="1" class="marmot-white" />
     <g id="marmot-mouth-group">
-      <rect x="71" y="69" width="8" height="6" rx="1.5" class="marmot-teeth" />
-      <line x1="75" y1="69" x2="75" y2="75" class="geometry-line" stroke-width="1.5" />
-      <polygon points="75,64 72,61 78,61" class="marmot-pink" />
-      <path d="M 69 69 Q 72 72 75 69 Q 78 72 81 69" fill="none" class="geometry-line" />
+      <polygon points="60,66 57,63 63,63" class="marmot-pink" />
+      <path d="M 56 70 Q 60 73 60 70 Q 60 73 64 70" fill="none" class="geometry-line" />
     </g>
   </g>
   <g id="marmot-hands"><rect x="40" y="100" width="14" height="12" rx="6" class="marmot-paws" /><rect x="96" y="100" width="14" height="12" rx="6" class="marmot-paws" /></g>
