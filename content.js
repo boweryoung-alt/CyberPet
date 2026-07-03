@@ -96,9 +96,9 @@ function setCatState(name) {
     <path d="M 43 40 L 24 24 C 23 20, 30 14, 37 18 Z" class="corgi-pink" />
     <path d="M 104 44 L 132 22 C 134 16, 124 8, 112 14 Z" class="corgi-latte" />
     <path d="M 107 40 L 126 24 C 127 20, 120 14, 113 18 Z" class="corgi-pink" />
-    <rect x="32" y="42" width="76" height="44" rx="20" class="corgi-latte" />
-    <path d="M 25 64 C 25 78, 40 90, 75 90 C 110 90, 125 78, 125 64 Z" class="corgi-white" />
-    <polygon points="75,38 68,56 82,56" class="corgi-white" />
+    <rect x="35" y="44" width="60" height="40" rx="16" class="corgi-latte" />
+    <path d="M 35 66 C 35 78, 47 88, 65 88 C 83 88, 95 78, 95 66 Z" class="corgi-white" />
+    <polygon points="65,44 60,58 70,58" class="corgi-white" />
     <circle cx="44" cy="50" r="3.5" class="corgi-white" />
     <circle cx="106" cy="50" r="3.5" class="corgi-white" />
     <circle cx="36" cy="72" r="6" class="corgi-pink" />
@@ -137,7 +137,7 @@ function setCatState(name) {
   <g id="rabbit-head">
     <g id="rabbit-ear-l"><rect x="40" y="8" width="16" height="40" rx="8" class="rabbit-cream" /><rect x="44" y="14" width="8" height="28" rx="4" class="rabbit-pink" /></g>
     <g id="rabbit-ear-r"><rect x="94" y="8" width="16" height="40" rx="8" class="rabbit-cream" /><rect x="98" y="14" width="8" height="28" rx="4" class="rabbit-pink" /></g>
-    <rect x="31" y="42" width="78" height="46" rx="22" class="rabbit-cream" />
+    <rect x="43" y="44" width="64" height="44" rx="18" class="rabbit-cream" />
     <path d="M 37 66 C 37 78, 50 84, 75 84 C 100 84, 113 78, 113 66 Z" class="rabbit-white" />
     <circle cx="36" cy="72" r="6" class="rabbit-pink" />
     <circle cx="114" cy="72" r="6" class="rabbit-pink" />
@@ -181,8 +181,8 @@ function setCatState(name) {
     <circle cx="119" cy="46" r="5" class="marmot-pink" />
     <polygon points="71,38 75,30 76,38" class="marmot-chestnut" />
     <polygon points="75,38 78,32 81,38" class="marmot-chestnut" />
-    <rect x="32" y="40" width="76" height="48" rx="22" class="marmot-chestnut" />
-    <path d="M 25 64 C 25 78, 40 90, 75 90 C 110 90, 125 78, 125 64 Z" class="marmot-oat" />
+    <rect x="41" y="42" width="68" height="40" rx="18" class="marmot-chestnut" />
+    <path d="M 41 64 C 41 76, 53 86, 75 86 C 97 86, 109 76, 109 64 Z" class="marmot-oat" />
     <circle cx="36" cy="72" r="6" class="marmot-pink" />
     <circle cx="114" cy="72" r="6" class="marmot-pink" />
     <circle cx="52" cy="62" r="5" class="marmot-dark" />
