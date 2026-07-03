@@ -77,7 +77,7 @@
    🐕 CORGI — 柯基（扁几何色块风格）
    ═══════════════════════════════════════════════════════════════════════════ */
 
-.pet-shiba#cp-canvas { width: 150px; height: 150px; }
+.pet-shiba#cp-canvas { width: 130px; height: 140px; }
 
 .pet-shiba.state-idle #dog-head {
   animation: dogHead 2.4s infinite alternate ease-in-out;
