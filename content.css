@@ -74,42 +74,32 @@
 .pet-cat.state-curious #pet-head { animation: curiousTilt .6s ease-in-out; }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   🐕 SHIBA — pixel dog (从参考图重绘)
+   🐕 SHIBA — puppy趴在桌上（趴姿风格）
    ═══════════════════════════════════════════════════════════════════════════ */
 
-.pet-shiba.state-idle #pet-head {
-  animation: dogHeadBob 2s infinite alternate ease-in-out;
+.pet-shiba.state-idle #dog-head {
+  animation: dogHead 2.4s infinite alternate ease-in-out;
   transform-origin: bottom center;
 }
-.pet-shiba.state-idle #ear-l {
-  animation: earWiggleL 1.5s infinite alternate ease-in-out;
-  transform-origin: bottom right;
+.pet-shiba.state-idle #dog-tail {
+  animation: tailWag 0.8s infinite alternate ease-in-out;
+  transform-origin: center;
 }
-.pet-shiba.state-idle #ear-r {
-  animation: earWiggleR 1.5s infinite 0.2s alternate ease-in-out;
-  transform-origin: bottom left;
-}
-@keyframes dogHeadBob { 0%{transform:rotate(-2deg) translateY(0)} 100%{transform:rotate(2deg) translateY(-1px)} }
-@keyframes earWiggleL { 0%{transform:rotate(0)} 100%{transform:rotate(-5deg)} }
-@keyframes earWiggleR { 0%{transform:rotate(0)} 100%{transform:rotate(5deg)} }
+@keyframes dogHead { 0%{transform:rotate(-2deg) translateY(0)} 100%{transform:rotate(2deg) translateY(-1px)} }
 
-.pet-shiba.state-sleeping #pet-head,
-.pet-shiba.state-sleeping #pet-body { animation: deepSleep 3.5s infinite alternate ease-in-out; }
+.pet-shiba.state-sleeping #dog-head,
+.pet-shiba.state-sleeping #dog-body { animation: deepSleep 3.5s infinite alternate ease-in-out; }
 .pet-shiba.state-sleeping { transform: translateY(10px) rotate(5deg); }
-.pet-shiba.state-sleeping #ear-l,
-.pet-shiba.state-sleeping #ear-r { animation:none; transform:rotate(0); }
 
 .pet-shiba.state-working #dog-glasses { opacity:1!important; }
-.pet-shiba.state-working #pet-head { animation: dogHeadHeavyBob .14s infinite alternate ease-in-out; }
-.pet-shiba.state-working #paw { animation: dogPawSlam 0.08s infinite alternate linear; }
-@keyframes dogPawSlam { 0%{transform:translateY(-4px)} 100%{transform:translateY(2px)} }
-@keyframes dogHeadHeavyBob { 0%{transform:translate(-1px,-2px) rotate(-1deg)} 100%{transform:translate(1px,2px) rotate(1deg)} }
+.pet-shiba.state-working #dog-body { animation: dogBodyTyping .1s infinite alternate ease-in-out; }
+@keyframes dogBodyTyping { 0%{transform:translateY(0)} 100%{transform:translateY(1px)} }
 
 .pet-shiba.state-surprised { animation: scareJump .5s ease-out; }
 
-.pet-shiba.state-hungry #pet-head { animation: wobble .5s ease-in-out infinite; }
+.pet-shiba.state-hungry #dog-head { animation: wobble .5s ease-in-out infinite; }
 
-.pet-shiba.state-curious #pet-head { animation: curiousTilt .6s ease-in-out; }
+.pet-shiba.state-curious #dog-head { animation: curiousTilt .6s ease-in-out; }
 
 /* ═══════════════════════════════════════════════════════════════════════════
    🐰 RABBIT — idle : 耳朵抖动（Jiggle）
