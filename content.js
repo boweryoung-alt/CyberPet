@@ -71,7 +71,7 @@ function setCatState(name) {
 }
 
 
-  SVG.shiba = `<svg width="140" height="145" viewBox="-2 -2 154 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+  SVG.shiba = `<svg width="120" height="130" viewBox="0 0 120 130" fill="none" xmlns="http://www.w3.org/2000/svg">
   <style>
     .bg-shadow { fill: #EBF1F2; opacity: 0.7; }
     .corgi-latte { fill: #D29062; }
@@ -81,9 +81,9 @@ function setCatState(name) {
     .corgi-dark { fill: #232F3E; }
     .geometry-line { stroke: #232F3E; stroke-width: 2.5; stroke-linecap: round; }
   </style>
-  <ellipse cx="75" cy="132" rx="38" ry="5" class="bg-shadow" />
+  <ellipse cx="62" cy="132" rx="30" ry="5" class="bg-shadow" />
   <g id="dog-tail">
-    <rect x="110" y="88" width="14" height="22" rx="7" class="corgi-latte" />
+    <rect x="100" y="88" width="14" height="22" rx="7" class="corgi-latte" />
   </g>
   <g id="dog-body">
     <rect x="35" y="65" width="50" height="45" rx="12" class="corgi-latte" />
@@ -113,12 +113,12 @@ function setCatState(name) {
     </g>
   </g>
   <g id="dog-glasses" opacity="0"><rect x="46" y="52" width="14" height="10" rx="2" stroke="#FF9800" stroke-width="1.5" fill="none" opacity="0.8"/><rect x="90" y="52" width="14" height="10" rx="2" stroke="#FF9800" stroke-width="1.5" fill="none" opacity="0.8"/><line x1="60" y1="57" x2="90" y2="57" stroke="#FF9800" stroke-width="1.5" opacity="0.8"/></g>
-  <g id="zzz-group" opacity="0"><text x="112" y="22" font-size="10" fill="#999" font-weight="bold">z</text><text x="120" y="12" font-size="13" fill="#999" font-weight="bold" opacity="0.6">z</text><text x="128" y="2" font-size="16" fill="#999" font-weight="bold" opacity="0.3">z</text></g>
+  <g id="zzz-group" opacity="0"><text x="100" y="22" font-size="10" fill="#999" font-weight="bold">z</text><text x="108" y="12" font-size="13" fill="#999" font-weight="bold" opacity="0.6">z</text><text x="116" y="2" font-size="16" fill="#999" font-weight="bold" opacity="0.3">z</text></g>
   <defs><linearGradient id="screen-glow" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#00D2FF" stop-opacity="1"/><stop offset="100%" stop-color="#00D2FF" stop-opacity="0"/></linearGradient></defs>
-  <g id="pet-cyber-keyboard" opacity="0"><rect x="30" y="102" width="90" height="10" rx="3" fill="#344054" stroke="#475467" stroke-width="1.5"/><rect id="key-light-1" x="38" y="104" width="10" height="5" rx="1.5" fill="#FFD700" opacity="0"/><rect id="key-light-2" x="54" y="104" width="14" height="5" rx="1.5" fill="#00D2FF" opacity="0"/><rect id="key-light-3" x="78" y="104" width="12" height="5" rx="1.5" fill="#FF3366" opacity="0"/><rect id="key-light-4" x="96" y="104" width="10" height="5" rx="1.5" fill="#00FF66" opacity="0"/><path d="M 42 100 L 28 78 L 122 78 L 108 100 Z" fill="url(#screen-glow)" opacity="0.12"/></g>
+  <g id="pet-cyber-keyboard" opacity="0"><rect x="30" y="102" width="72" height="10" rx="3" fill="#344054" stroke="#475467" stroke-width="1.5"/><rect id="key-light-1" x="34" y="104" width="8" height="5" rx="1.5" fill="#FFD700" opacity="0"/><rect id="key-light-2" x="48" y="104" width="12" height="5" rx="1.5" fill="#00D2FF" opacity="0"/><rect id="key-light-3" x="66" y="104" width="10" height="5" rx="1.5" fill="#FF3366" opacity="0"/><rect id="key-light-4" x="80" y="104" width="8" height="5" rx="1.5" fill="#00FF66" opacity="0"/><path d="M 36 100 L 22 78 L 100 78 L 88 100 Z" fill="url(#screen-glow)" opacity="0.12"/></g>
 </svg>`;
 
-  SVG.rabbit = `<svg width="140" height="150" viewBox="-2 -2 154 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+  SVG.rabbit = `<svg width="120" height="130" viewBox="0 0 120 130" fill="none" xmlns="http://www.w3.org/2000/svg">
   <style>
     .bg-shadow { fill: #EBF1F2; opacity: 0.7; }
     .rabbit-cream { fill: #F6F3ED; }
@@ -127,7 +127,7 @@ function setCatState(name) {
     .rabbit-dark { fill: #2D3748; }
     .geometry-line { stroke: #2D3748; stroke-width: 2.5; stroke-linecap: round; }
   </style>
-  <ellipse cx="75" cy="128" rx="36" ry="6" class="bg-shadow" />
+  <ellipse cx="62" cy="128" rx="30" ry="6" class="bg-shadow" />
   <g id="rabbit-body">
     <rect x="35" y="65" width="50" height="45" rx="12" class="rabbit-cream" />
     <rect x="43" y="75" width="34" height="30" rx="8" class="rabbit-white" />
@@ -151,12 +151,12 @@ function setCatState(name) {
     </g>
   </g>
   <g id="pet-glasses" opacity="0"><rect x="47" y="52" width="12" height="10" rx="2" stroke="#FF9800" stroke-width="1.5" fill="none" opacity="0.8"/><rect x="91" y="52" width="12" height="10" rx="2" stroke="#FF9800" stroke-width="1.5" fill="none" opacity="0.8"/><line x1="59" y1="57" x2="91" y2="57" stroke="#FF9800" stroke-width="1.5" opacity="0.8"/></g>
-  <g id="zzz-group" opacity="0"><text x="112" y="22" font-size="10" fill="#999" font-weight="bold">z</text><text x="120" y="12" font-size="13" fill="#999" font-weight="bold" opacity="0.6">z</text><text x="128" y="2" font-size="16" fill="#999" font-weight="bold" opacity="0.3">z</text></g>
+  <g id="zzz-group" opacity="0"><text x="100" y="22" font-size="10" fill="#999" font-weight="bold">z</text><text x="108" y="12" font-size="13" fill="#999" font-weight="bold" opacity="0.6">z</text><text x="116" y="2" font-size="16" fill="#999" font-weight="bold" opacity="0.3">z</text></g>
   <defs><linearGradient id="screen-glow" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#00D2FF" stop-opacity="1"/><stop offset="100%" stop-color="#00D2FF" stop-opacity="0"/></linearGradient></defs>
-  <g id="pet-cyber-keyboard" opacity="0"><rect x="30" y="102" width="90" height="10" rx="3" fill="#344054" stroke="#475467" stroke-width="1.5"/><rect id="key-light-1" x="38" y="104" width="10" height="5" rx="1.5" fill="#FFD700" opacity="0"/><rect id="key-light-2" x="54" y="104" width="14" height="5" rx="1.5" fill="#00D2FF" opacity="0"/><rect id="key-light-3" x="78" y="104" width="12" height="5" rx="1.5" fill="#FF3366" opacity="0"/><rect id="key-light-4" x="96" y="104" width="10" height="5" rx="1.5" fill="#00FF66" opacity="0"/><path d="M 42 100 L 28 78 L 122 78 L 108 100 Z" fill="url(#screen-glow)" opacity="0.12"/></g>
+  <g id="pet-cyber-keyboard" opacity="0"><rect x="30" y="102" width="72" height="10" rx="3" fill="#344054" stroke="#475467" stroke-width="1.5"/><rect id="key-light-1" x="34" y="104" width="8" height="5" rx="1.5" fill="#FFD700" opacity="0"/><rect id="key-light-2" x="48" y="104" width="12" height="5" rx="1.5" fill="#00D2FF" opacity="0"/><rect id="key-light-3" x="66" y="104" width="10" height="5" rx="1.5" fill="#FF3366" opacity="0"/><rect id="key-light-4" x="80" y="104" width="8" height="5" rx="1.5" fill="#00FF66" opacity="0"/><path d="M 36 100 L 22 78 L 100 78 L 88 100 Z" fill="url(#screen-glow)" opacity="0.12"/></g>
 </svg>`;
 
-  SVG.marmot = `<svg width="140" height="145" viewBox="-2 -2 154 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+  SVG.marmot = `<svg width="120" height="130" viewBox="0 0 120 130" fill="none" xmlns="http://www.w3.org/2000/svg">
   <style>
     .bg-shadow { fill: #EBF1F2; opacity: 0.7; }
     .marmot-chestnut { fill: #A67C52; }
@@ -195,9 +195,9 @@ function setCatState(name) {
   </g>
   <g id="marmot-hands"><rect x="40" y="100" width="14" height="12" rx="6" class="marmot-paws" /><rect x="96" y="100" width="14" height="12" rx="6" class="marmot-paws" /></g>
   <g id="pet-glasses" opacity="0"><rect x="46" y="52" width="14" height="10" rx="2" stroke="#FF9800" stroke-width="1.5" fill="none" opacity="0.8"/><rect x="90" y="52" width="14" height="10" rx="2" stroke="#FF9800" stroke-width="1.5" fill="none" opacity="0.8"/><line x1="60" y1="57" x2="90" y2="57" stroke="#FF9800" stroke-width="1.5" opacity="0.8"/></g>
-  <g id="zzz-group" opacity="0"><text x="112" y="22" font-size="10" fill="#999" font-weight="bold">z</text><text x="120" y="12" font-size="13" fill="#999" font-weight="bold" opacity="0.6">z</text><text x="128" y="2" font-size="16" fill="#999" font-weight="bold" opacity="0.3">z</text></g>
+  <g id="zzz-group" opacity="0"><text x="100" y="22" font-size="10" fill="#999" font-weight="bold">z</text><text x="108" y="12" font-size="13" fill="#999" font-weight="bold" opacity="0.6">z</text><text x="116" y="2" font-size="16" fill="#999" font-weight="bold" opacity="0.3">z</text></g>
   <defs><linearGradient id="screen-glow" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#00D2FF" stop-opacity="1"/><stop offset="100%" stop-color="#00D2FF" stop-opacity="0"/></linearGradient></defs>
-  <g id="pet-cyber-keyboard" opacity="0"><rect x="30" y="102" width="90" height="10" rx="3" fill="#344054" stroke="#475467" stroke-width="1.5"/><rect id="key-light-1" x="38" y="104" width="10" height="5" rx="1.5" fill="#FFD700" opacity="0"/><rect id="key-light-2" x="54" y="104" width="14" height="5" rx="1.5" fill="#00D2FF" opacity="0"/><rect id="key-light-3" x="78" y="104" width="12" height="5" rx="1.5" fill="#FF3366" opacity="0"/><rect id="key-light-4" x="96" y="104" width="10" height="5" rx="1.5" fill="#00FF66" opacity="0"/><path d="M 42 100 L 28 78 L 122 78 L 108 100 Z" fill="url(#screen-glow)" opacity="0.12"/></g>
+  <g id="pet-cyber-keyboard" opacity="0"><rect x="30" y="102" width="72" height="10" rx="3" fill="#344054" stroke="#475467" stroke-width="1.5"/><rect id="key-light-1" x="34" y="104" width="8" height="5" rx="1.5" fill="#FFD700" opacity="0"/><rect id="key-light-2" x="48" y="104" width="12" height="5" rx="1.5" fill="#00D2FF" opacity="0"/><rect id="key-light-3" x="66" y="104" width="10" height="5" rx="1.5" fill="#FF3366" opacity="0"/><rect id="key-light-4" x="80" y="104" width="8" height="5" rx="1.5" fill="#00FF66" opacity="0"/><path d="M 36 100 L 22 78 L 100 78 L 88 100 Z" fill="url(#screen-glow)" opacity="0.12"/></g>
 </svg>`;
 
   const PETS = {
