@@ -74,31 +74,40 @@
 .pet-cat.state-curious #pet-head { animation: curiousTilt .6s ease-in-out; }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   🐕 SHIBA — puppy趴在桌上（趴姿风格）
+   🐕 CORGI — 柯基（扁几何色块风格）
    ═══════════════════════════════════════════════════════════════════════════ */
+
+.pet-shiba#cp-canvas { width: 150px; height: 150px; }
 
 .pet-shiba.state-idle #dog-head {
   animation: dogHead 2.4s infinite alternate ease-in-out;
   transform-origin: bottom center;
 }
 .pet-shiba.state-idle #dog-tail {
-  animation: tailWag 0.8s infinite alternate ease-in-out;
-  transform-origin: center;
+  animation: corgiTailWag 0.6s infinite alternate ease-in-out;
+  transform-origin: 113px 103px;
 }
 @keyframes dogHead { 0%{transform:rotate(-2deg) translateY(0)} 100%{transform:rotate(2deg) translateY(-1px)} }
+@keyframes corgiTailWag { 0%{transform:rotate(-10deg)} 100%{transform:rotate(15deg)} }
 
 .pet-shiba.state-sleeping #dog-head,
 .pet-shiba.state-sleeping #dog-body { animation: deepSleep 3.5s infinite alternate ease-in-out; }
 .pet-shiba.state-sleeping { transform: translateY(10px) rotate(5deg); }
 
 .pet-shiba.state-working #dog-glasses { opacity:1!important; }
-.pet-shiba.state-working #dog-body { animation: dogBodyTyping .1s infinite alternate ease-in-out; }
-@keyframes dogBodyTyping { 0%{transform:translateY(0)} 100%{transform:translateY(1px)} }
+.pet-shiba.state-working #dog-body { animation: corgiBodyBob .08s infinite alternate ease-in-out; }
+@keyframes corgiBodyBob { 0%{transform:translateY(-1px)} 100%{transform:translateY(2px)} }
 
-.pet-shiba.state-surprised { animation: scareJump .5s ease-out; }
+.pet-shiba.state-surprised { animation: corgiScare .5s ease-out; }
+@keyframes corgiScare {
+  0% { transform: translateY(0); }
+  30% { transform: translateY(-25px) scaleY(1.1); }
+  50% { transform: translateY(5px) scaleY(0.85); }
+  70% { transform: translateY(-3px); }
+  100% { transform: translateY(0); }
+}
 
 .pet-shiba.state-hungry #dog-head { animation: wobble .5s ease-in-out infinite; }
-
 .pet-shiba.state-curious #dog-head { animation: curiousTilt .6s ease-in-out; }
 
 /* ═══════════════════════════════════════════════════════════════════════════

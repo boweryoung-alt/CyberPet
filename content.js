@@ -29,46 +29,50 @@
     <g id="pet-glasses" opacity="0"><rect x="38" y="52" width="16" height="14" rx="2" stroke="#FF9800" stroke-width="2" fill="none"/><rect x="66" y="52" width="16" height="14" rx="2" stroke="#FF9800" stroke-width="2" fill="none"/><line x1="54" y1="59" x2="66" y2="59" stroke="#FF9800" stroke-width="2"/></g>
     <g id="zzz-group" opacity="0"><text x="88" y="22" font-size="10" fill="#999" font-weight="bold">z</text><text x="96" y="12" font-size="14" fill="#999" font-weight="bold" opacity="0.6">z</text><text x="104" y="2" font-size="18" fill="#999" font-weight="bold" opacity="0.3">z</text></g>
     <defs><linearGradient id="screen-glow" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#00D2FF" stop-opacity="1"/><stop offset="100%" stop-color="#00D2FF" stop-opacity="0"/></linearGradient></defs>
-    <g id="health-sweat" opacity="0" style="transition:opacity .3s"><ellipse cx="32" cy="32" rx="2" ry="3" fill="#5BA8E8"/><ellipse cx="88" cy="32" rx="2" ry="3" fill="#5BA8E8"/><animate attributeName="opacity" values="0.4;1;0.4" dur="1.2s" repeatCount="indefinite"/></g>
     <g id="pet-cyber-keyboard" opacity="0"><rect x="30" y="102" width="60" height="8" rx="2" fill="#344054" stroke="#475467" stroke-width="1.5"/><rect id="key-light-1" x="36" y="104" width="8" height="4" rx="1" fill="#FFD700" opacity="0"/><rect id="key-light-2" x="48" y="104" width="12" height="4" rx="1" fill="#00D2FF" opacity="0"/><rect id="key-light-3" x="66" y="104" width="10" height="4" rx="1" fill="#FF3366" opacity="0"/><rect id="key-light-4" x="80" y="104" width="6" height="4" rx="1" fill="#00FF66" opacity="0"/><path d="M 35 102 L 20 80 L 100 80 L 85 102 Z" fill="url(#screen-glow)" opacity="0.15"/></g>
   </svg>`;
 
-  SVG.shiba = `<svg width="120" height="130" viewBox="0 0 120 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+  SVG.shiba = `<svg width="150" height="150" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
   <style>
-    .bold-line { stroke: #1A1A1A; stroke-width: 3.5; stroke-linecap: round; stroke-linejoin: round; }
-    .body-white { fill: #FFFFFF; }
-    .blush-pink { fill: #FFC0CB; opacity: 0.8; }
+    .bg-shadow { fill: #EBF1F6; }
+    .corgi-orange { fill: #E28739; }
+    .corgi-white { fill: #FFFFFF; }
+    .corgi-pink { fill: #FF8E9E; }
+    .corgi-dark { fill: #232F3E; }
+    .geometry-line { stroke: #232F3E; stroke-width: 3; stroke-linecap: round; }
   </style>
-  <ellipse cx="60" cy="115" rx="30" ry="4" fill="#E2E8F0" />
+  <ellipse cx="75" cy="128" rx="36" ry="6" class="bg-shadow" />
   <g id="dog-tail">
-    <path d="M 92 88 C 102 84, 105 74, 98 76 C 94 78, 92 84, 92 88 Z" class="body-white bold-line" />
+    <rect x="106" y="92" width="14" height="22" rx="7" transform="rotate(45 106 92)" class="corgi-orange" />
   </g>
   <g id="dog-body">
-    <path d="M 82 85 C 94 85, 100 96, 94 106 C 88 112, 78 112, 74 104" fill="none" class="bold-line" />
-    <path d="M 45 74 C 55 68, 78 68, 88 84 C 94 94, 88 111, 60 111 C 32 111, 26 94, 32 84 C 36 78, 40 75, 45 74 Z" class="body-white" />
-    <path d="M 38 102 C 34 102, 34 112, 44 112 C 48 112, 48 102, 44 102" class="body-white bold-line" />
-    <path d="M 76 102 C 72 102, 72 112, 82 112 C 86 112, 86 102, 82 102" class="body-white bold-line" />
+    <rect x="43" y="74" width="64" height="46" rx="20" class="corgi-orange" />
+    <rect x="43" y="86" width="50" height="34" rx="12" class="corgi-white" />
+    <rect x="50" y="112" width="12" height="14" rx="6" class="corgi-white" />
+    <rect x="78" y="112" width="12" height="14" rx="6" class="corgi-white" />
   </g>
   <g id="dog-head">
-    <path d="M 34 44 C 18 44, 16 70, 28 70 C 34 70, 36 56, 34 44 Z" class="body-white bold-line" />
-    <path d="M 86 44 C 102 44, 104 70, 92 70 C 86 70, 84 56, 86 44 Z" class="body-white bold-line" />
-    <path d="M 32 45 C 42 38, 78 38, 88 45 C 106 56, 104 84, 60 84 C 16 84, 14 56, 32 45 Z" class="body-white bold-line" />
-    <circle cx="32" cy="68" r="4.5" class="blush-pink" />
-    <circle cx="88" cy="68" r="4.5" class="blush-pink" />
-    <circle cx="45" cy="59" r="4" fill="#1A1A1A" />
-    <circle cx="43.5" cy="57.5" r="1.2" fill="#FFFFFF" />
-    <circle cx="75" cy="59" r="4" fill="#1A1A1A" />
-    <circle cx="73.5" cy="57.5" r="1.2" fill="#FFFFFF" />
-    <g id="muzzle-group">
-      <path d="M 56.5 61 C 56.5 59, 63.5 59, 63.5 61 C 63.5 63, 60 65, 60 65 C 60 65, 56.5 63, 56.5 61 Z" fill="#1A1A1A" />
-      <path d="M 54 66 C 54 69, 60 69, 60 66 C 60 69, 66 69, 66 66" fill="none" class="bold-line" stroke-width="2.5" />
-    </g>
+    <path d="M 32 46 L 22 12 C 24 8, 34 8, 44 22 Z" class="corgi-orange" />
+    <path d="M 33 40 L 26 16 C 28 14, 34 14, 39 24 Z" class="corgi-pink" />
+    <path d="M 118 46 L 128 12 C 126 8, 116 8, 106 22 Z" class="corgi-orange" />
+    <path d="M 117 40 L 124 16 C 122 14, 116 14, 111 24 Z" class="corgi-pink" />
+    <rect x="25" y="38" width="100" height="52" rx="24" class="corgi-orange" />
+    <path d="M 25 64 C 25 78, 40 90, 75 90 C 110 90, 125 78, 125 64 Z" class="corgi-white" />
+    <polygon points="75,38 67,58 83,58" class="corgi-white" />
+    <circle cx="44" cy="50" r="4" class="corgi-white" />
+    <circle cx="106" cy="50" r="4" class="corgi-white" />
+    <circle cx="36" cy="72" r="6" class="corgi-pink" />
+    <circle cx="114" cy="72" r="6" class="corgi-pink" />
+    <circle cx="52" cy="62" r="5" class="corgi-dark" />
+    <circle cx="50" cy="59.5" r="1.5" class="corgi-white" />
+    <circle cx="98" cy="62" r="5" class="corgi-dark" />
+    <circle cx="96" cy="59.5" r="1.5" class="corgi-white" />
+    <path d="M 70 69 Q 75 73 80 69" fill="none" class="geometry-line" />
   </g>
-  <g id="dog-glasses" opacity="0"><rect x="38" y="51" width="14" height="10" rx="2" stroke="#FF9800" stroke-width="1.5" fill="none" opacity="0.8"/><rect x="68" y="51" width="14" height="10" rx="2" stroke="#FF9800" stroke-width="1.5" fill="none" opacity="0.8"/><line x1="52" y1="56" x2="68" y2="56" stroke="#FF9800" stroke-width="1.5" opacity="0.8"/></g>
-  <g id="zzz-group" opacity="0"><text x="88" y="22" font-size="10" fill="#999" font-weight="bold">z</text><text x="96" y="12" font-size="14" fill="#999" font-weight="bold" opacity="0.6">z</text><text x="104" y="2" font-size="18" fill="#999" font-weight="bold" opacity="0.3">z</text></g>
+  <g id="dog-glasses" opacity="0"><rect x="50" y="52" width="16" height="10" rx="2" stroke="#FF9800" stroke-width="1.5" fill="none" opacity="0.8"/><rect x="84" y="52" width="16" height="10" rx="2" stroke="#FF9800" stroke-width="1.5" fill="none" opacity="0.8"/><line x1="66" y1="57" x2="84" y2="57" stroke="#FF9800" stroke-width="1.5" opacity="0.8"/></g>
+  <g id="zzz-group" opacity="0"><text x="112" y="22" font-size="10" fill="#999" font-weight="bold">z</text><text x="120" y="12" font-size="13" fill="#999" font-weight="bold" opacity="0.6">z</text><text x="128" y="2" font-size="16" fill="#999" font-weight="bold" opacity="0.3">z</text></g>
   <defs><linearGradient id="screen-glow" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#00D2FF" stop-opacity="1"/><stop offset="100%" stop-color="#00D2FF" stop-opacity="0"/></linearGradient></defs>
-  <g id="health-sweat" opacity="0" style="transition:opacity .3s"><ellipse cx="32" cy="32" rx="2" ry="3" fill="#5BA8E8"/><ellipse cx="88" cy="32" rx="2" ry="3" fill="#5BA8E8"/><animate attributeName="opacity" values="0.4;1;0.4" dur="1.2s" repeatCount="indefinite"/></g>
-  <g id="pet-cyber-keyboard" opacity="0"><rect x="30" y="102" width="60" height="8" rx="2" fill="#344054" stroke="#475467" stroke-width="1.5"/><rect id="key-light-1" x="36" y="104" width="8" height="4" rx="1" fill="#FFD700" opacity="0"/><rect id="key-light-2" x="48" y="104" width="12" height="4" rx="1" fill="#00D2FF" opacity="0"/><rect id="key-light-3" x="66" y="104" width="10" height="4" rx="1" fill="#FF3366" opacity="0"/><rect id="key-light-4" x="80" y="104" width="6" height="4" rx="1" fill="#00FF66" opacity="0"/><path d="M 35 102 L 20 80 L 100 80 L 85 102 Z" fill="url(#screen-glow)" opacity="0.15"/></g>
+  <g id="pet-cyber-keyboard" opacity="0"><rect x="30" y="102" width="90" height="10" rx="3" fill="#344054" stroke="#475467" stroke-width="1.5"/><rect id="key-light-1" x="38" y="104" width="10" height="5" rx="1.5" fill="#FFD700" opacity="0"/><rect id="key-light-2" x="54" y="104" width="14" height="5" rx="1.5" fill="#00D2FF" opacity="0"/><rect id="key-light-3" x="78" y="104" width="12" height="5" rx="1.5" fill="#FF3366" opacity="0"/><rect id="key-light-4" x="96" y="104" width="10" height="5" rx="1.5" fill="#00FF66" opacity="0"/><path d="M 42 100 L 28 78 L 122 78 L 108 100 Z" fill="url(#screen-glow)" opacity="0.12"/></g>
 </svg>`;
 
   SVG.rabbit = `<svg width="120" height="130" viewBox="0 0 120 130" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -85,7 +89,6 @@
     <g id="pet-glasses" opacity="0"><rect x="38" y="52" width="16" height="14" rx="2" stroke="#FF9800" stroke-width="2" fill="none"/><rect x="66" y="52" width="16" height="14" rx="2" stroke="#FF9800" stroke-width="2" fill="none"/><line x1="54" y1="59" x2="66" y2="59" stroke="#FF9800" stroke-width="2"/></g>
     <g id="zzz-group" opacity="0"><text x="88" y="22" font-size="10" fill="#999" font-weight="bold">z</text><text x="96" y="12" font-size="14" fill="#999" font-weight="bold" opacity="0.6">z</text><text x="104" y="2" font-size="18" fill="#999" font-weight="bold" opacity="0.3">z</text></g>
     <defs><linearGradient id="screen-glow" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#00D2FF" stop-opacity="1"/><stop offset="100%" stop-color="#00D2FF" stop-opacity="0"/></linearGradient></defs>
-    <g id="health-sweat" opacity="0" style="transition:opacity .3s"><ellipse cx="32" cy="32" rx="2" ry="3" fill="#5BA8E8"/><ellipse cx="88" cy="32" rx="2" ry="3" fill="#5BA8E8"/><animate attributeName="opacity" values="0.4;1;0.4" dur="1.2s" repeatCount="indefinite"/></g>
     <g id="pet-cyber-keyboard" opacity="0"><rect x="30" y="102" width="60" height="8" rx="2" fill="#344054" stroke="#475467" stroke-width="1.5"/><rect id="key-light-1" x="36" y="104" width="8" height="4" rx="1" fill="#FFD700" opacity="0"/><rect id="key-light-2" x="48" y="104" width="12" height="4" rx="1" fill="#00D2FF" opacity="0"/><rect id="key-light-3" x="66" y="104" width="10" height="4" rx="1" fill="#FF3366" opacity="0"/><rect id="key-light-4" x="80" y="104" width="6" height="4" rx="1" fill="#00FF66" opacity="0"/><path d="M 35 102 L 20 80 L 100 80 L 85 102 Z" fill="url(#screen-glow)" opacity="0.15"/></g>
   </svg>`;
 
@@ -102,7 +105,6 @@
     <g id="pet-glasses" opacity="0"><rect x="38" y="52" width="16" height="14" rx="2" stroke="#FF9800" stroke-width="2" fill="none"/><rect x="66" y="52" width="16" height="14" rx="2" stroke="#FF9800" stroke-width="2" fill="none"/><line x1="54" y1="59" x2="66" y2="59" stroke="#FF9800" stroke-width="2"/></g>
     <g id="zzz-group" opacity="0"><text x="88" y="22" font-size="10" fill="#999" font-weight="bold">z</text><text x="96" y="12" font-size="14" fill="#999" font-weight="bold" opacity="0.6">z</text><text x="104" y="2" font-size="18" fill="#999" font-weight="bold" opacity="0.3">z</text></g>
     <defs><linearGradient id="screen-glow" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#00D2FF" stop-opacity="1"/><stop offset="100%" stop-color="#00D2FF" stop-opacity="0"/></linearGradient></defs>
-    <g id="health-sweat" opacity="0" style="transition:opacity .3s"><ellipse cx="32" cy="32" rx="2" ry="3" fill="#5BA8E8"/><ellipse cx="88" cy="32" rx="2" ry="3" fill="#5BA8E8"/><animate attributeName="opacity" values="0.4;1;0.4" dur="1.2s" repeatCount="indefinite"/></g>
     <g id="pet-cyber-keyboard" opacity="0"><rect x="30" y="102" width="60" height="8" rx="2" fill="#344054" stroke="#475467" stroke-width="1.5"/><rect id="key-light-1" x="36" y="104" width="8" height="4" rx="1" fill="#FFD700" opacity="0"/><rect id="key-light-2" x="48" y="104" width="12" height="4" rx="1" fill="#00D2FF" opacity="0"/><rect id="key-light-3" x="66" y="104" width="10" height="4" rx="1" fill="#FF3366" opacity="0"/><rect id="key-light-4" x="80" y="104" width="6" height="4" rx="1" fill="#00FF66" opacity="0"/><path d="M 35 102 L 20 80 L 100 80 L 85 102 Z" fill="url(#screen-glow)" opacity="0.15"/></g>
   </svg>`;
 
@@ -290,9 +292,6 @@
       // Apply saved pet
       if (d.selectedPet && d.selectedPet !== S.currentPet && PETS[d.selectedPet]) applyPet(d.selectedPet);
 
-      // Update visual health indicator
-      applyHealthVisuals();
-
       if (S.pet === 'sleeping' && !S.focusing) return;
       if (S.focusing) setState('working');
       else if (S.health <= 0) setState('sick');
@@ -307,22 +306,6 @@
         else if (Math.random() < 0.3) showBubble(pick(Q.idle), 4000);
       }
     });
-  }
-
-  // Health-driven visual effects
-  function applyHealthVisuals() {
-    const h = S.health;
-    // Grayscale filter when health is critical
-    if (h < 30) {
-      svgEl.style.filter = 'grayscale(0.7) brightness(0.95)';
-    } else if (h < 60) {
-      svgEl.style.filter = 'grayscale(0.3)';
-    } else {
-      svgEl.style.filter = '';
-    }
-    // Sweat drops when health < 50
-    const sweat = svgEl.querySelector('#health-sweat');
-    if (sweat) sweat.style.opacity = (h < 50) ? 1 : 0;
   }
 
   // Cross-tab + real-time sync
