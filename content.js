@@ -63,6 +63,14 @@ const CAT_SVG = {
 </svg>`};
 SVG.cat = CAT_SVG.idle;
 
+// Cat state helper — swaps SVG + canvas class for state-specific styling
+function setCatState(name) {
+  SVG.cat = CAT_SVG[name];
+  svgEl.innerHTML = SVG.cat;
+  canvas.className = canvas.className.replace(/cat-\w+/g, '').trim() + ' cat-' + name;
+}
+
+
   SVG.shiba = `<svg width="140" height="145" viewBox="-2 -2 154 150" fill="none" xmlns="http://www.w3.org/2000/svg">
   <style>
     .bg-shadow { fill: #EBF1F2; opacity: 0.7; }
