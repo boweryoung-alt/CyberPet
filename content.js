@@ -14,23 +14,46 @@
   const SVG = {};
 
   SVG.cat = `<svg width="120" height="130" viewBox="0 0 120 130" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <ellipse cx="60" cy="115" rx="30" ry="6" fill="#D0D5DD" opacity="0.6"/>
-    <g id="pet-tail"><rect x="78" y="85" width="8" height="20" rx="4" fill="#5C5C5C"/><rect x="82" y="75" width="8" height="12" rx="4" fill="#7A7A7A"/></g>
-    <g id="pet-body"><rect x="35" y="65" width="50" height="45" rx="12" fill="#5C5C5C"/><rect x="43" y="75" width="34" height="30" rx="8" fill="#F2F4F7"/><rect x="42" y="105" width="10" height="10" rx="4" fill="#7A7A7A"/><rect x="68" y="105" width="10" height="10" rx="4" fill="#7A7A7A"/></g>
-    <g id="pet-head">
-      <path id="ear-left" d="M30 45 L45 25 L50 45 Z" fill="#475467"/><path d="M34 43 L44 29 L47 43 Z" fill="#F48E8E"/>
-      <path id="ear-right" d="M90 45 L75 25 L70 45 Z" fill="#475467"/><path d="M86 43 L76 29 L73 43 Z" fill="#F48E8E"/>
-      <rect x="25" y="40" width="70" height="40" rx="16" fill="#475467"/>
-      <circle cx="33" cy="68" r="4" fill="#FFA5A5" opacity="0.8"/><circle cx="87" cy="68" r="4" fill="#FFA5A5" opacity="0.8"/>
-      <g id="pet-eyes"><rect id="eye-left" x="42" y="54" width="8" height="10" rx="4" fill="#1D2939"/><rect id="eye-right" x="70" y="54" width="8" height="10" rx="4" fill="#1D2939"/><circle id="eye-light-l" cx="44" cy="56" r="1.5" fill="white"/><circle id="eye-light-r" cx="72" cy="56" r="1.5" fill="white"/></g>
-      <path d="M56 66 Q60 69 64 66" stroke="#1D2939" stroke-width="2" stroke-linecap="round" fill="none"/>
-      <line x1="20" y1="62" x2="10" y2="60" stroke="#98A2B3" stroke-width="1.5"/><line x1="20" y1="66" x2="8" y2="67" stroke="#98A2B3" stroke-width="1.5"/><line x1="100" y1="62" x2="110" y2="60" stroke="#98A2B3" stroke-width="1.5"/><line x1="100" y1="66" x2="112" y2="67" stroke="#98A2B3" stroke-width="1.5"/>
+  <ellipse cx="60" cy="115" rx="30" ry="6" fill="#D0D5DD" opacity="0.6"/>
+  <g id="pet-tail"><rect x="78" y="85" width="8" height="20" rx="4" fill="#5C5C5C"/><rect x="82" y="75" width="8" height="12" rx="4" fill="#7A7A7A"/></g>
+  <g id="pet-body"><rect x="35" y="65" width="50" height="45" rx="12" fill="#5C5C5C"/><rect x="43" y="75" width="34" height="30" rx="8" fill="#F2F4F7"/><rect x="42" y="105" width="10" height="10" rx="4" fill="#7A7A7A"/><rect x="68" y="105" width="10" height="10" rx="4" fill="#7A7A7A"/></g>
+  
+  <g id="pet-head">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,1.5; 0,0" dur="0.8s" repeatCount="indefinite" />
+    <path id="ear-left" d="M30 45 L45 25 L50 45 Z" fill="#475467"/><path d="M34 43 L44 29 L47 43 Z" fill="#F48E8E"/>
+    <path id="ear-right" d="M90 45 L75 25 L70 45 Z" fill="#475467"/><path d="M86 43 L76 29 L73 43 Z" fill="#F48E8E"/>
+    <rect x="25" y="40" width="70" height="40" rx="16" fill="#475467"/>
+    <circle cx="33" cy="68" r="4" fill="#FFA5A5" opacity="0.8"/><circle cx="87" cy="68" r="4" fill="#FFA5A5" opacity="0.8"/>
+    <g id="pet-eyes"><rect id="eye-left" x="42" y="54" width="8" height="10" rx="4" fill="#1D2939"/><rect id="eye-right" x="70" y="54" width="8" height="10" rx="4" fill="#1D2939"/><circle id="eye-light-l" cx="44" cy="56" r="1.5" fill="white"/><circle id="eye-light-r" cx="72" cy="56" r="1.5" fill="white"/></g>
+    
+    <g id="chewing-mouth">
+      <path d="M56 66 Q60 68 64 66" stroke="#1D2939" stroke-width="2" stroke-linecap="round" fill="none">
+        <animate attributeName="d" values="M56 66 Q60 68 64 66; M56 66 C56 69, 64 69, 64 66; M56 66 Q60 68 64 66" dur="0.6s" repeatCount="indefinite" />
+      </path>
     </g>
-    <g id="pet-glasses" opacity="0"><rect x="38" y="52" width="16" height="14" rx="2" stroke="#FF9800" stroke-width="2" fill="none"/><rect x="66" y="52" width="16" height="14" rx="2" stroke="#FF9800" stroke-width="2" fill="none"/><line x1="54" y1="59" x2="66" y2="59" stroke="#FF9800" stroke-width="2"/></g>
-    <g id="zzz-group" opacity="0"><text x="88" y="22" font-size="10" fill="#999" font-weight="bold">z</text><text x="96" y="12" font-size="14" fill="#999" font-weight="bold" opacity="0.6">z</text><text x="104" y="2" font-size="18" fill="#999" font-weight="bold" opacity="0.3">z</text></g>
-    <defs><linearGradient id="screen-glow" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#00D2FF" stop-opacity="1"/><stop offset="100%" stop-color="#00D2FF" stop-opacity="0"/></linearGradient></defs>
-    <g id="pet-cyber-keyboard" opacity="0"><rect x="30" y="102" width="60" height="8" rx="2" fill="#344054" stroke="#475467" stroke-width="1.5"/><rect id="key-light-1" x="36" y="104" width="8" height="4" rx="1" fill="#FFD700" opacity="0"/><rect id="key-light-2" x="48" y="104" width="12" height="4" rx="1" fill="#00D2FF" opacity="0"/><rect id="key-light-3" x="66" y="104" width="10" height="4" rx="1" fill="#FF3366" opacity="0"/><rect id="key-light-4" x="80" y="104" width="6" height="4" rx="1" fill="#00FF66" opacity="0"/><path d="M 35 102 L 20 80 L 100 80 L 85 102 Z" fill="url(#screen-glow)" opacity="0.15"/></g>
-  </svg>`;
+
+    <g id="food-crumbs" fill="#FFD166">
+      <circle cx="53" cy="67.5" r="1.2">
+        <animate attributeName="opacity" values="1;1;0" dur="0.6s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="66.5" cy="68.5" r="1">
+        <animate attributeName="opacity" values="1;0" dur="0.6s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    
+    <line x1="20" y1="62" x2="10" y2="60" stroke="#98A2B3" stroke-width="1.5"/><line x1="20" y1="66" x2="8" y2="67" stroke="#98A2B3" stroke-width="1.5"/><line x1="100" y1="62" x2="110" y2="60" stroke="#98A2B3" stroke-width="1.5"/><line x1="100" y1="66" x2="112" y2="67" stroke="#98A2B3" stroke-width="1.5"/>
+  </g>
+  
+  <g id="pet-glasses" opacity="0"><rect x="38" y="52" width="16" height="14" rx="2" stroke="#FF9800" stroke-width="2" fill="none"/><rect x="66" y="52" width="16" height="14" rx="2" stroke="#FF9800" stroke-width="2" fill="none"/><line x1="54" y1="59" x2="66" y2="59" stroke="#FF9800" stroke-width="2"/></g>
+  <g id="zzz-group" opacity="0"><text x="88" y="22" font-size="10" fill="#999" font-weight="bold">z</text><text x="96" y="12" font-size="14" fill="#999" font-weight="bold" opacity="0.6">z</text><text x="104" y="2" font-size="18" fill="#999" font-weight="bold" opacity="0.3">z</text></g>
+  <defs><linearGradient id="screen-glow" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#00D2FF" stop-opacity="1"/><stop offset="100%" stop-color="#00D2FF" stop-opacity="0"/></linearGradient></defs>
+  <g id="pet-cyber-keyboard" opacity="0"><rect x="30" y="102" width="60" height="8" rx="2" fill="#344054" stroke="#475467" stroke-width="1.5"/><rect id="key-light-1" x="36" y="104" width="8" height="4" rx="1" fill="#FFD700" opacity="0"/><rect id="key-light-2" x="48" y="104" width="12" height="4" rx="1" fill="#00D2FF" opacity="0"/><rect id="key-light-3" x="66" y="104" width="10" height="4" rx="1" fill="#FF3366" opacity="0"/><rect id="key-light-4" x="80" y="104" width="6" height="4" rx="1" fill="#00FF66" opacity="0"/><path d="M 35 102 L 20 80 L 100 80 L 85 102 Z" fill="url(#screen-glow)" opacity="0.15"/></g>
+
+  <g id="pet-food-bowl">
+    <path d="M42 106 C42 106, 44 118, 60 118 C76 118, 78 106, 78 106 Z" fill="#F48E8E" />
+    <ellipse cx="60" cy="106" rx="16" ry="3" fill="#FFD166" />
+  </g>
+</svg>`;
 
   SVG.shiba = `<svg width="140" height="145" viewBox="-2 -2 154 150" fill="none" xmlns="http://www.w3.org/2000/svg">
   <style>
