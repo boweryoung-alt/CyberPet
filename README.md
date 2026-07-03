@@ -99,6 +99,10 @@ chrome://extensions/ → Ctrl+R → refresh your page
 
 ---
 
+## ❤️ Support
+
+If CyberPet makes your workdays a bit more fun, consider [buying me a coffee on Ko-fi](https://ko-fi.com/boweryoung) ☕
+
 ## 📝 License
 
 MIT
