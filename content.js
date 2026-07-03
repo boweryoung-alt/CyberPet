@@ -13,151 +13,198 @@
 
   const SVG = {};
 
-  SVG.cat = `<svg width="120" height="130" viewBox="0 0 120 130" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <ellipse cx="60" cy="115" rx="30" ry="6" fill="#D0D5DD" opacity="0.6"/>
-    <g id="pet-tail"><rect x="78" y="85" width="8" height="20" rx="4" fill="#5C5C5C"/><rect x="82" y="75" width="8" height="12" rx="4" fill="#7A7A7A"/></g>
-    <g id="pet-body"><rect x="35" y="65" width="50" height="45" rx="12" fill="#5C5C5C"/><rect x="43" y="75" width="34" height="30" rx="8" fill="#F2F4F7"/><rect x="42" y="105" width="10" height="10" rx="4" fill="#7A7A7A"/><rect x="68" y="105" width="10" height="10" rx="4" fill="#7A7A7A"/></g>
-    <g id="pet-head">
-      <path id="ear-left" d="M30 45 L45 25 L50 45 Z" fill="#475467"/><path d="M34 43 L44 29 L47 43 Z" fill="#F48E8E"/>
-      <path id="ear-right" d="M90 45 L75 25 L70 45 Z" fill="#475467"/><path d="M86 43 L76 29 L73 43 Z" fill="#F48E8E"/>
-      <rect x="25" y="40" width="70" height="40" rx="16" fill="#475467"/>
-      <circle cx="33" cy="68" r="4" fill="#FFA5A5" opacity="0.8"/><circle cx="87" cy="68" r="4" fill="#FFA5A5" opacity="0.8"/>
-      <g id="pet-eyes"><rect id="eye-left" x="42" y="54" width="8" height="10" rx="4" fill="#1D2939"/><rect id="eye-right" x="70" y="54" width="8" height="10" rx="4" fill="#1D2939"/><circle id="eye-light-l" cx="44" cy="56" r="1.5" fill="white"/><circle id="eye-light-r" cx="72" cy="56" r="1.5" fill="white"/></g>
-      <path d="M56 66 Q60 69 64 66" stroke="#1D2939" stroke-width="2" stroke-linecap="round" fill="none"/>
-      <line x1="20" y1="62" x2="10" y2="60" stroke="#98A2B3" stroke-width="1.5"/><line x1="20" y1="66" x2="8" y2="67" stroke="#98A2B3" stroke-width="1.5"/><line x1="100" y1="62" x2="110" y2="60" stroke="#98A2B3" stroke-width="1.5"/><line x1="100" y1="66" x2="112" y2="67" stroke="#98A2B3" stroke-width="1.5"/>
-    </g>
-    <g id="pet-glasses" opacity="0"><rect x="38" y="52" width="16" height="14" rx="2" stroke="#FF9800" stroke-width="2" fill="none"/><rect x="66" y="52" width="16" height="14" rx="2" stroke="#FF9800" stroke-width="2" fill="none"/><line x1="54" y1="59" x2="66" y2="59" stroke="#FF9800" stroke-width="2"/></g>
-    <g id="zzz-group" opacity="0"><text x="88" y="22" font-size="10" fill="#999" font-weight="bold">z</text><text x="96" y="12" font-size="14" fill="#999" font-weight="bold" opacity="0.6">z</text><text x="104" y="2" font-size="18" fill="#999" font-weight="bold" opacity="0.3">z</text></g>
-    <defs><linearGradient id="screen-glow" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#00D2FF" stop-opacity="1"/><stop offset="100%" stop-color="#00D2FF" stop-opacity="0"/></linearGradient></defs>
-    <g id="pet-cyber-keyboard" opacity="0"><rect x="30" y="102" width="60" height="8" rx="2" fill="#344054" stroke="#475467" stroke-width="1.5"/><rect id="key-light-1" x="36" y="104" width="8" height="4" rx="1" fill="#FFD700" opacity="0"/><rect id="key-light-2" x="48" y="104" width="12" height="4" rx="1" fill="#00D2FF" opacity="0"/><rect id="key-light-3" x="66" y="104" width="10" height="4" rx="1" fill="#FF3366" opacity="0"/><rect id="key-light-4" x="80" y="104" width="6" height="4" rx="1" fill="#00FF66" opacity="0"/><path d="M 35 102 L 20 80 L 100 80 L 85 102 Z" fill="url(#screen-glow)" opacity="0.15"/></g>
-  </svg>`;
-
-  SVG.shiba = `<svg width="140" height="145" viewBox="-2 -2 154 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+  SVG.cat = `<svg width="150" height="150" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
   <style>
-    .bg-shadow { fill: #EBF1F2; opacity: 0.7; }
-    .corgi-latte { fill: #D29062; }
-    .corgi-white { fill: #FFFFFF; }
-    .corgi-paws { fill: #6B4423; }
-    .corgi-pink { fill: #FFAEB9; }
-    .corgi-dark { fill: #232F3E; }
-    .geometry-line { stroke: #232F3E; stroke-width: 2.5; stroke-linecap: round; }
+    svg { shape-rendering: geometricPrecision; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+    :root {
+      --bg-shadow: #EBF1F2; --blush-pink: #FFAEB9; --feature-dark: #232F3E; --highlight-white: #FFFFFF;
+      --cat-main: #5C677D; --rabbit-main: #F6F3ED; --dog-main: #D29062; --dog-paws: #6B4423; --marmot-main: #A67C52;
+    }
+    .cls-shadow { fill: var(--bg-shadow); opacity: 0.7; }
+    .cls-blush { fill: var(--blush-pink); } .cls-dark { fill: var(--feature-dark); }
+    .cls-white { fill: var(--highlight-white); }
+    .cls-line { stroke: var(--feature-dark); stroke-width: 2.5; stroke-linecap: round; fill: none; }
+    .cls-paws { fill: var(--feature-dark); }
+    .cls-dog-paws { fill: var(--dog-paws); }
+    @keyframes bobble { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-2.5px)} }
+    @keyframes ear-twitch { 0%,90%,100%{transform:rotate(0deg)} 93%{transform:rotate(2deg)} 96%{transform:rotate(-2deg)} }
+    #head-bobble { animation: bobble 3s ease-in-out infinite; transform-origin: 75px 90px; }
+    #ear-twister { animation: ear-twitch 4.5s ease-in-out infinite; transform-origin: 75px 38px; }
   </style>
-  <ellipse cx="75" cy="132" rx="38" ry="5" class="bg-shadow" />
-  <g id="dog-tail">
-    <rect x="110" y="88" width="14" height="22" rx="7" transform="rotate(45 110 88)" class="corgi-latte" />
+  <ellipse cx="75" cy="132" rx="38" ry="5" class="cls-shadow" />
+  <g id="animal-body">
+    <rect x="45" y="76" width="60" height="46" rx="22" fill="var(--cat-main)" />
+    <rect x="51" y="84" width="48" height="38" rx="14" class="cls-white" />
+    <rect x="53" y="116" width="14" height="12" rx="6" class="cls-paws" />
+    <rect x="83" y="116" width="14" height="12" rx="6" class="cls-paws" />
   </g>
-  <g id="dog-body">
-    <rect x="45" y="76" width="60" height="46" rx="22" class="corgi-latte" />
-    <rect x="51" y="84" width="48" height="38" rx="14" class="corgi-white" />
-    <rect x="53" y="116" width="14" height="12" rx="6" class="corgi-paws" />
-    <rect x="83" y="116" width="14" height="12" rx="6" class="corgi-paws" />
-  </g>
-  <g id="dog-head">
-    <path d="M 46 44 L 18 22 C 16 16, 26 8, 38 14 Z" class="corgi-latte" />
-    <path d="M 43 40 L 24 24 C 23 20, 30 14, 37 18 Z" class="corgi-pink" />
-    <path d="M 104 44 L 132 22 C 134 16, 124 8, 112 14 Z" class="corgi-latte" />
-    <path d="M 107 40 L 126 24 C 127 20, 120 14, 113 18 Z" class="corgi-pink" />
-    <rect x="25" y="38" width="100" height="52" rx="24" class="corgi-latte" />
-    <path d="M 25 64 C 25 78, 40 90, 75 90 C 110 90, 125 78, 125 64 Z" class="corgi-white" />
-    <polygon points="75,38 68,56 82,56" class="corgi-white" />
-    <circle cx="44" cy="50" r="3.5" class="corgi-white" />
-    <circle cx="106" cy="50" r="3.5" class="corgi-white" />
-    <circle cx="36" cy="72" r="6" class="corgi-pink" />
-    <circle cx="114" cy="72" r="6" class="corgi-pink" />
-    <circle cx="52" cy="62" r="5" class="corgi-dark" />
-    <circle cx="50" cy="59.5" r="1.5" class="corgi-white" />
-    <circle cx="98" cy="62" r="5" class="corgi-dark" />
-    <circle cx="96" cy="59.5" r="1.5" class="corgi-white" />
-    <g id="corgi-mouth">
-      <polygon points="75,64 72,61 78,61" class="corgi-pink" />
-      <path d="M 69 69 Q 72 72 75 69 Q 78 72 81 69" fill="none" class="geometry-line" />
+  <g id="head-bobble">
+    <g id="ear-twister">
+      <path id="ear-l" d="M 32 46 L 22 12 C 24 8, 34 8, 44 22 Z" fill="var(--cat-main)" />
+      <path d="M 33 40 L 26 16 C 28 14, 34 14, 39 24 Z" class="cls-blush" />
+      <path id="ear-r" d="M 118 46 L 128 12 C 126 8, 116 8, 106 22 Z" fill="var(--cat-main)" />
+      <path d="M 117 40 L 124 16 C 122 14, 116 14, 111 24 Z" class="cls-blush" />
     </g>
+    <rect x="25" y="38" width="100" height="52" rx="24" fill="var(--cat-main)" />
+    <path d="M 25 64 C 25 78, 40 90, 75 90 C 110 90, 125 78, 125 64 Z" class="cls-white" />
+    <g id="cat-stripes" transform="translate(0, -5)" class="cls-white">
+      <rect x="25" y="70" width="8" height="2" rx="1"/><rect x="25" y="75" width="8" height="2" rx="1"/>
+      <rect x="117" y="70" width="8" height="2" rx="1"/><rect x="117" y="75" width="8" height="2" rx="1"/>
+    </g>
+    <circle cx="36" cy="72" r="6" class="cls-blush" /><circle cx="114" cy="72" r="6" class="cls-blush" />
+    <circle cx="52" cy="62" r="5" class="cls-dark" /><circle cx="50" cy="59.5" r="1.5" class="cls-white" />
+    <circle cx="98" cy="62" r="5" class="cls-dark" /><circle cx="96" cy="59.5" r="1.5" class="cls-white" />
+    <polygon points="75,64 72,61 78,61" class="cls-blush" />
+    <path d="M 69 69 Q 72 72 75 69 Q 78 72 81 69" fill="none" class="cls-line" />
   </g>
-  <g id="dog-glasses" opacity="0"><rect x="46" y="52" width="14" height="10" rx="2" stroke="#FF9800" stroke-width="1.5" fill="none" opacity="0.8"/><rect x="90" y="52" width="14" height="10" rx="2" stroke="#FF9800" stroke-width="1.5" fill="none" opacity="0.8"/><line x1="60" y1="57" x2="90" y2="57" stroke="#FF9800" stroke-width="1.5" opacity="0.8"/></g>
+  <g id="pet-glasses" opacity="0"><rect x="46" y="52" width="14" height="10" rx="2" stroke="#FF9800" stroke-width="1.5" fill="none" opacity="0.8"/><rect x="90" y="52" width="14" height="10" rx="2" stroke="#FF9800" stroke-width="1.5" fill="none" opacity="0.8"/><line x1="60" y1="57" x2="90" y2="57" stroke="#FF9800" stroke-width="1.5" opacity="0.8"/></g>
   <g id="zzz-group" opacity="0"><text x="112" y="22" font-size="10" fill="#999" font-weight="bold">z</text><text x="120" y="12" font-size="13" fill="#999" font-weight="bold" opacity="0.6">z</text><text x="128" y="2" font-size="16" fill="#999" font-weight="bold" opacity="0.3">z</text></g>
   <defs><linearGradient id="screen-glow" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#00D2FF" stop-opacity="1"/><stop offset="100%" stop-color="#00D2FF" stop-opacity="0"/></linearGradient></defs>
   <g id="pet-cyber-keyboard" opacity="0"><rect x="30" y="102" width="90" height="10" rx="3" fill="#344054" stroke="#475467" stroke-width="1.5"/><rect id="key-light-1" x="38" y="104" width="10" height="5" rx="1.5" fill="#FFD700" opacity="0"/><rect id="key-light-2" x="54" y="104" width="14" height="5" rx="1.5" fill="#00D2FF" opacity="0"/><rect id="key-light-3" x="78" y="104" width="12" height="5" rx="1.5" fill="#FF3366" opacity="0"/><rect id="key-light-4" x="96" y="104" width="10" height="5" rx="1.5" fill="#00FF66" opacity="0"/><path d="M 42 100 L 28 78 L 122 78 L 108 100 Z" fill="url(#screen-glow)" opacity="0.12"/></g>
 </svg>`;
 
-  SVG.rabbit = `<svg width="140" height="150" viewBox="-2 -2 154 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+  SVG.shiba = `<svg width="150" height="150" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
   <style>
-    .bg-shadow { fill: #EBF1F2; opacity: 0.7; }
-    .rabbit-cream { fill: #F6F3ED; }
-    .rabbit-white { fill: #FFFFFF; }
-    .rabbit-pink { fill: #FFAEB9; }
-    .rabbit-dark { fill: #2D3748; }
-    .geometry-line { stroke: #2D3748; stroke-width: 2.5; stroke-linecap: round; }
+    svg { shape-rendering: geometricPrecision; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+    :root {
+      --bg-shadow: #EBF1F2; --blush-pink: #FFAEB9; --feature-dark: #232F3E; --highlight-white: #FFFFFF;
+      --cat-main: #5C677D; --rabbit-main: #F6F3ED; --dog-main: #D29062; --dog-paws: #6B4423; --marmot-main: #A67C52;
+    }
+    .cls-shadow { fill: var(--bg-shadow); opacity: 0.7; }
+    .cls-blush { fill: var(--blush-pink); } .cls-dark { fill: var(--feature-dark); }
+    .cls-white { fill: var(--highlight-white); }
+    .cls-line { stroke: var(--feature-dark); stroke-width: 2.5; stroke-linecap: round; fill: none; }
+    .cls-paws { fill: var(--feature-dark); }
+    .cls-dog-paws { fill: var(--dog-paws); }
+    @keyframes bobble { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-2.5px)} }
+    @keyframes ear-twitch { 0%,90%,100%{transform:rotate(0deg)} 93%{transform:rotate(2deg)} 96%{transform:rotate(-2deg)} }
+    #head-bobble { animation: bobble 3s ease-in-out infinite; transform-origin: 75px 90px; }
+    #ear-twister { animation: ear-twitch 4.5s ease-in-out infinite; transform-origin: 75px 38px; }
   </style>
-  <ellipse cx="75" cy="128" rx="36" ry="6" class="bg-shadow" />
-  <g id="rabbit-body">
-    <rect x="43" y="74" width="64" height="46" rx="20" class="rabbit-cream" />
-    <rect x="51" y="82" width="48" height="38" rx="14" class="rabbit-white" />
-    <rect x="52" y="114" width="12" height="12" rx="6" class="rabbit-cream" />
-    <rect x="86" y="114" width="12" height="12" rx="6" class="rabbit-cream" />
+  <ellipse cx="75" cy="132" rx="38" ry="5" class="cls-shadow" />
+  <g id="animal-body">
+    <rect x="45" y="76" width="60" height="46" rx="22" fill="var(--dog-main)" />
+    <rect x="51" y="84" width="48" height="38" rx="14" class="cls-white" />
+    <rect x="53" y="116" width="14" height="12" rx="6" class="cls-dog-paws" />
+    <rect x="83" y="116" width="14" height="12" rx="6" class="cls-dog-paws" />
   </g>
-  <g id="rabbit-head">
-    <g id="rabbit-ear-l"><rect x="40" y="8" width="16" height="40" rx="8" class="rabbit-cream" /><rect x="44" y="14" width="8" height="28" rx="4" class="rabbit-pink" /></g>
-    <g id="rabbit-ear-r"><rect x="94" y="8" width="16" height="40" rx="8" class="rabbit-cream" /><rect x="98" y="14" width="8" height="28" rx="4" class="rabbit-pink" /></g>
-    <rect x="25" y="38" width="100" height="52" rx="24" class="rabbit-cream" />
-    <path d="M 37 66 C 37 78, 50 84, 75 84 C 100 84, 113 78, 113 66 Z" class="rabbit-white" />
-    <circle cx="36" cy="72" r="6" class="rabbit-pink" />
-    <circle cx="114" cy="72" r="6" class="rabbit-pink" />
-    <circle cx="52" cy="62" r="5" class="rabbit-dark" />
-    <circle cx="50" cy="59.5" r="1.5" class="rabbit-white" />
-    <circle cx="98" cy="62" r="5" class="rabbit-dark" />
-    <circle cx="96" cy="59.5" r="1.5" class="rabbit-white" />
-    <g id="rabbit-mouth">
-      <polygon points="75,64 72,61 78,61" class="rabbit-pink" />
-      <path d="M 71 69 Q 75 72 75 69 Q 75 72 79 69" fill="none" class="geometry-line" />
+  <g id="head-bobble">
+    <g id="ear-twister">
+      <path id="ear-l" d="M 46 44 L 18 22 C 16 16, 26 8, 38 14 Z" fill="var(--dog-main)" />
+      <path d="M 43 40 L 24 24 C 23 20, 30 14, 37 18 Z" class="cls-blush" />
+      <path id="ear-r" d="M 104 44 L 132 22 C 134 16, 124 8, 112 14 Z" fill="var(--dog-main)" />
+      <path d="M 107 40 L 126 24 C 127 20, 120 14, 113 18 Z" class="cls-blush" />
     </g>
+    <rect x="25" y="38" width="100" height="52" rx="24" fill="var(--dog-main)" />
+    <path d="M 25 64 C 25 78, 40 90, 75 90 C 110 90, 125 78, 125 64 Z" class="cls-white" />
+    <g id="corgi-brows-blaze">
+      <circle cx="44" cy="50" r="3.5" class="cls-white" /><circle cx="106" cy="50" r="3.5" class="cls-white" />
+      <polygon points="75,38 68,56 82,56" class="cls-white" />
+    </g>
+    <circle cx="36" cy="72" r="6" class="cls-blush" /><circle cx="114" cy="72" r="6" class="cls-blush" />
+    <circle cx="52" cy="62" r="5" class="cls-dark" /><circle cx="50" cy="59.5" r="1.5" class="cls-white" />
+    <circle cx="98" cy="62" r="5" class="cls-dark" /><circle cx="96" cy="59.5" r="1.5" class="cls-white" />
+    <polygon points="75,64 72,61 78,61" class="cls-blush" />
+    <path d="M 69 69 Q 72 72 75 69 Q 78 72 81 69" fill="none" class="cls-line" />
   </g>
-  <g id="pet-glasses" opacity="0"><rect x="47" y="52" width="12" height="10" rx="2" stroke="#FF9800" stroke-width="1.5" fill="none" opacity="0.8"/><rect x="91" y="52" width="12" height="10" rx="2" stroke="#FF9800" stroke-width="1.5" fill="none" opacity="0.8"/><line x1="59" y1="57" x2="91" y2="57" stroke="#FF9800" stroke-width="1.5" opacity="0.8"/></g>
+  <g id="dog-tail"><rect x="110" y="88" width="14" height="22" rx="7" transform="rotate(45 110 88)" fill="var(--dog-main)" /></g>
+  <g id="pet-glasses" opacity="0"><rect x="46" y="52" width="14" height="10" rx="2" stroke="#FF9800" stroke-width="1.5" fill="none" opacity="0.8"/><rect x="90" y="52" width="14" height="10" rx="2" stroke="#FF9800" stroke-width="1.5" fill="none" opacity="0.8"/><line x1="60" y1="57" x2="90" y2="57" stroke="#FF9800" stroke-width="1.5" opacity="0.8"/></g>
   <g id="zzz-group" opacity="0"><text x="112" y="22" font-size="10" fill="#999" font-weight="bold">z</text><text x="120" y="12" font-size="13" fill="#999" font-weight="bold" opacity="0.6">z</text><text x="128" y="2" font-size="16" fill="#999" font-weight="bold" opacity="0.3">z</text></g>
   <defs><linearGradient id="screen-glow" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#00D2FF" stop-opacity="1"/><stop offset="100%" stop-color="#00D2FF" stop-opacity="0"/></linearGradient></defs>
   <g id="pet-cyber-keyboard" opacity="0"><rect x="30" y="102" width="90" height="10" rx="3" fill="#344054" stroke="#475467" stroke-width="1.5"/><rect id="key-light-1" x="38" y="104" width="10" height="5" rx="1.5" fill="#FFD700" opacity="0"/><rect id="key-light-2" x="54" y="104" width="14" height="5" rx="1.5" fill="#00D2FF" opacity="0"/><rect id="key-light-3" x="78" y="104" width="12" height="5" rx="1.5" fill="#FF3366" opacity="0"/><rect id="key-light-4" x="96" y="104" width="10" height="5" rx="1.5" fill="#00FF66" opacity="0"/><path d="M 42 100 L 28 78 L 122 78 L 108 100 Z" fill="url(#screen-glow)" opacity="0.12"/></g>
 </svg>`;
 
-  SVG.marmot = `<svg width="140" height="145" viewBox="-2 -2 154 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+  SVG.rabbit = `<svg width="150" height="150" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
   <style>
-    .bg-shadow { fill: #EBF1F2; opacity: 0.7; }
-    .marmot-chestnut { fill: #A67C52; }
-    .marmot-oat { fill: #F1E4D3; }
-    .marmot-paws { fill: #4A3525; }
-    .marmot-pink { fill: #FFAEB9; }
-    .marmot-dark { fill: #232F3E; }
-    .marmot-teeth { fill: #FFFFFF; }
-    .geometry-line { stroke: #232F3E; stroke-width: 2.5; stroke-linecap: round; }
+    svg { shape-rendering: geometricPrecision; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+    :root {
+      --bg-shadow: #EBF1F2; --blush-pink: #FFAEB9; --feature-dark: #232F3E; --highlight-white: #FFFFFF;
+      --cat-main: #5C677D; --rabbit-main: #F6F3ED; --dog-main: #D29062; --dog-paws: #6B4423; --marmot-main: #A67C52;
+    }
+    .cls-shadow { fill: var(--bg-shadow); opacity: 0.7; }
+    .cls-blush { fill: var(--blush-pink); } .cls-dark { fill: var(--feature-dark); }
+    .cls-white { fill: var(--highlight-white); }
+    .cls-line { stroke: var(--feature-dark); stroke-width: 2.5; stroke-linecap: round; fill: none; }
+    .cls-paws { fill: var(--feature-dark); }
+    .cls-dog-paws { fill: var(--dog-paws); }
+    @keyframes bobble { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-2.5px)} }
+    @keyframes ear-twitch { 0%,90%,100%{transform:rotate(0deg)} 93%{transform:rotate(2deg)} 96%{transform:rotate(-2deg)} }
+    #head-bobble { animation: bobble 3s ease-in-out infinite; transform-origin: 75px 90px; }
+    #ear-twister { animation: ear-twitch 4.5s ease-in-out infinite; transform-origin: 75px 38px; }
   </style>
-  <ellipse cx="75" cy="132" rx="42" ry="6" class="bg-shadow" />
-  <g id="marmot-body">
-    <rect x="41" y="76" width="68" height="46" rx="22" class="marmot-chestnut" />
-    <rect x="49" y="82" width="52" height="38" rx="16" class="marmot-oat" />
-    <rect x="52" y="116" width="14" height="12" rx="6" class="marmot-paws" />
-    <rect x="84" y="116" width="14" height="12" rx="6" class="marmot-paws" />
+  <ellipse cx="75" cy="132" rx="38" ry="5" class="cls-shadow" />
+  <g id="animal-body">
+    <rect x="45" y="76" width="60" height="46" rx="22" fill="var(--rabbit-main)" />
+    <rect x="51" y="84" width="48" height="38" rx="14" class="cls-white" />
+    <rect x="53" y="116" width="14" height="12" rx="6" class="cls-paws" />
+    <rect x="83" y="116" width="14" height="12" rx="6" class="cls-paws" />
   </g>
-  <g id="marmot-head">
-    <circle cx="30" cy="46" r="8" class="marmot-chestnut" />
-    <circle cx="31" cy="46" r="5" class="marmot-pink" />
-    <circle cx="120" cy="46" r="8" class="marmot-chestnut" />
-    <circle cx="119" cy="46" r="5" class="marmot-pink" />
-    <polygon points="71,38 75,30 76,38" class="marmot-chestnut" />
-    <polygon points="75,38 78,32 81,38" class="marmot-chestnut" />
-    <rect x="25" y="38" width="100" height="52" rx="24" class="marmot-chestnut" />
-    <path d="M 25 64 C 25 78, 40 90, 75 90 C 110 90, 125 78, 125 64 Z" class="marmot-oat" />
-    <circle cx="36" cy="72" r="6" class="marmot-pink" />
-    <circle cx="114" cy="72" r="6" class="marmot-pink" />
-    <circle cx="52" cy="62" r="5" class="marmot-dark" />
-    <circle cx="50" cy="59.5" r="1.5" fill="#FFFFFF" />
-    <circle cx="98" cy="62" r="5" class="marmot-dark" />
-    <circle cx="96" cy="59.5" r="1.5" fill="#FFFFFF" />
-    <g id="marmot-mouth-group">
-      <rect x="71" y="69" width="8" height="6" rx="1.5" class="marmot-teeth" />
-      <line x1="75" y1="69" x2="75" y2="75" class="geometry-line" stroke-width="1.5" />
-      <polygon points="75,64 72,61 78,61" class="marmot-pink" />
-      <path d="M 69 69 Q 72 72 75 69 Q 78 72 81 69" fill="none" class="geometry-line" />
+  <g id="head-bobble">
+    <g id="ear-twister">
+      <rect id="ear-l" x="40" y="8" width="16" height="40" rx="8" fill="var(--rabbit-main)" />
+      <rect x="44" y="14" width="8" height="28" rx="4" class="cls-blush" />
+      <rect id="ear-r" x="94" y="8" width="16" height="40" rx="8" fill="var(--rabbit-main)" />
+      <rect x="98" y="14" width="8" height="28" rx="4" class="cls-blush" />
     </g>
+    <rect x="25" y="38" width="100" height="52" rx="24" fill="var(--rabbit-main)" />
+    <path d="M 25 64 C 25 78, 40 90, 75 90 C 110 90, 125 78, 125 64 Z" class="cls-white" />
+    <circle cx="36" cy="72" r="6" class="cls-blush" /><circle cx="114" cy="72" r="6" class="cls-blush" />
+    <circle cx="52" cy="62" r="5" class="cls-dark" /><circle cx="50" cy="59.5" r="1.5" class="cls-white" />
+    <circle cx="98" cy="62" r="5" class="cls-dark" /><circle cx="96" cy="59.5" r="1.5" class="cls-white" />
+    <polygon points="75,64 72,61 78,61" class="cls-blush" />
+    <path d="M 69 69 Q 72 72 75 69 Q 78 72 81 69" fill="none" class="cls-line" />
   </g>
-  <g id="marmot-hands"><rect x="40" y="100" width="14" height="12" rx="6" class="marmot-paws" /><rect x="96" y="100" width="14" height="12" rx="6" class="marmot-paws" /></g>
+  <g id="pet-glasses" opacity="0"><rect x="46" y="52" width="14" height="10" rx="2" stroke="#FF9800" stroke-width="1.5" fill="none" opacity="0.8"/><rect x="90" y="52" width="14" height="10" rx="2" stroke="#FF9800" stroke-width="1.5" fill="none" opacity="0.8"/><line x1="60" y1="57" x2="90" y2="57" stroke="#FF9800" stroke-width="1.5" opacity="0.8"/></g>
+  <g id="zzz-group" opacity="0"><text x="112" y="22" font-size="10" fill="#999" font-weight="bold">z</text><text x="120" y="12" font-size="13" fill="#999" font-weight="bold" opacity="0.6">z</text><text x="128" y="2" font-size="16" fill="#999" font-weight="bold" opacity="0.3">z</text></g>
+  <defs><linearGradient id="screen-glow" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#00D2FF" stop-opacity="1"/><stop offset="100%" stop-color="#00D2FF" stop-opacity="0"/></linearGradient></defs>
+  <g id="pet-cyber-keyboard" opacity="0"><rect x="30" y="102" width="90" height="10" rx="3" fill="#344054" stroke="#475467" stroke-width="1.5"/><rect id="key-light-1" x="38" y="104" width="10" height="5" rx="1.5" fill="#FFD700" opacity="0"/><rect id="key-light-2" x="54" y="104" width="14" height="5" rx="1.5" fill="#00D2FF" opacity="0"/><rect id="key-light-3" x="78" y="104" width="12" height="5" rx="1.5" fill="#FF3366" opacity="0"/><rect id="key-light-4" x="96" y="104" width="10" height="5" rx="1.5" fill="#00FF66" opacity="0"/><path d="M 42 100 L 28 78 L 122 78 L 108 100 Z" fill="url(#screen-glow)" opacity="0.12"/></g>
+</svg>`;
+
+  SVG.marmot = `<svg width="150" height="150" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    svg { shape-rendering: geometricPrecision; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+    :root {
+      --bg-shadow: #EBF1F2; --blush-pink: #FFAEB9; --feature-dark: #232F3E; --highlight-white: #FFFFFF;
+      --cat-main: #5C677D; --rabbit-main: #F6F3ED; --dog-main: #D29062; --dog-paws: #6B4423; --marmot-main: #A67C52;
+    }
+    .cls-shadow { fill: var(--bg-shadow); opacity: 0.7; }
+    .cls-blush { fill: var(--blush-pink); } .cls-dark { fill: var(--feature-dark); }
+    .cls-white { fill: var(--highlight-white); }
+    .cls-line { stroke: var(--feature-dark); stroke-width: 2.5; stroke-linecap: round; fill: none; }
+    .cls-paws { fill: var(--feature-dark); }
+    .cls-dog-paws { fill: var(--dog-paws); }
+    @keyframes bobble { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-2.5px)} }
+    @keyframes ear-twitch { 0%,90%,100%{transform:rotate(0deg)} 93%{transform:rotate(2deg)} 96%{transform:rotate(-2deg)} }
+    #head-bobble { animation: bobble 3s ease-in-out infinite; transform-origin: 75px 90px; }
+    #ear-twister { animation: ear-twitch 4.5s ease-in-out infinite; transform-origin: 75px 38px; }
+  </style>
+  <ellipse cx="75" cy="132" rx="38" ry="5" class="cls-shadow" />
+  <g id="animal-body">
+    <rect x="45" y="76" width="60" height="46" rx="22" fill="var(--marmot-main)" />
+    <rect x="51" y="84" width="48" height="38" rx="14" class="cls-white" />
+    <rect x="53" y="116" width="14" height="12" rx="6" class="cls-paws" />
+    <rect x="83" y="116" width="14" height="12" rx="6" class="cls-paws" />
+  </g>
+  <g id="head-bobble">
+    <g id="ear-twister">
+      <circle id="ear-l" cx="30" cy="46" r="8" fill="var(--marmot-main)" /><circle cx="31" cy="46" r="5" class="cls-blush" />
+      <circle id="ear-r" cx="120" cy="46" r="8" fill="var(--marmot-main)" /><circle cx="119" cy="46" r="5" class="cls-blush" />
+    </g>
+    <rect x="25" y="38" width="100" height="52" rx="24" fill="var(--marmot-main)" />
+    <path d="M 25 64 C 25 78, 40 90, 75 90 C 110 90, 125 78, 125 64 Z" class="cls-white" />
+    <g id="marmot-details">
+      <polygon points="71,38 75,30 76,38" fill="var(--marmot-main)" />
+      <polygon points="75,38 78,32 81,38" fill="var(--marmot-main)" />
+      <g fill="var(--marmot-main)"><circle cx="36" cy="67" r="1"/><circle cx="40" cy="69" r="1"/><circle cx="114" cy="67" r="1"/><circle cx="110" cy="69" r="1"/></g>
+    </g>
+    <circle cx="36" cy="72" r="6" class="cls-blush" /><circle cx="114" cy="72" r="6" class="cls-blush" />
+    <circle cx="52" cy="62" r="5" class="cls-dark" /><circle cx="50" cy="59.5" r="1.5" class="cls-white" />
+    <circle cx="98" cy="62" r="5" class="cls-dark" /><circle cx="96" cy="59.5" r="1.5" class="cls-white" />
+    <polygon points="75,64 72,61 78,61" class="cls-blush" />
+    <path d="M 69 69 Q 72 72 75 69 Q 78 72 81 69" fill="none" class="cls-line" />
+    <g id="marmot-teeth"><rect x="71" y="69" width="8" height="6" rx="1.5" class="cls-white" /><line x1="75" y1="69" x2="75" y2="75" stroke="var(--feature-dark)" stroke-width="1.5" /></g>
+  </g>
+  <g id="marmot-hands"><rect x="40" y="100" width="14" height="12" rx="6" class="cls-paws" /><rect x="96" y="100" width="14" height="12" rx="6" class="cls-paws" /></g>
   <g id="pet-glasses" opacity="0"><rect x="46" y="52" width="14" height="10" rx="2" stroke="#FF9800" stroke-width="1.5" fill="none" opacity="0.8"/><rect x="90" y="52" width="14" height="10" rx="2" stroke="#FF9800" stroke-width="1.5" fill="none" opacity="0.8"/><line x1="60" y1="57" x2="90" y2="57" stroke="#FF9800" stroke-width="1.5" opacity="0.8"/></g>
   <g id="zzz-group" opacity="0"><text x="112" y="22" font-size="10" fill="#999" font-weight="bold">z</text><text x="120" y="12" font-size="13" fill="#999" font-weight="bold" opacity="0.6">z</text><text x="128" y="2" font-size="16" fill="#999" font-weight="bold" opacity="0.3">z</text></g>
   <defs><linearGradient id="screen-glow" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#00D2FF" stop-opacity="1"/><stop offset="100%" stop-color="#00D2FF" stop-opacity="0"/></linearGradient></defs>

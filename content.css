@@ -50,36 +50,36 @@
    🐱 CAT — idle / sleep / working / surprised / hungry / curious
    ═══════════════════════════════════════════════════════════════════════════ */
 
-.pet-cat.state-idle #pet-head   { animation: headBob 2.4s infinite alternate ease-in-out; }
-.pet-cat.state-idle #pet-body   { animation: bodyBreathe 2.4s infinite alternate ease-in-out; }
+.pet-cat.state-idle #head-bobble   { animation: headBob 2.4s infinite alternate ease-in-out; }
+.pet-cat.state-idle #animal-body   { animation: bodyBreathe 2.4s infinite alternate ease-in-out; }
 .pet-cat.state-idle #pet-tail   { transform-origin:bottom left; animation: tailWag 1.2s infinite alternate ease-in-out; }
 
 .pet-cat.state-sleeping { transform: translateY(10px) rotate(5deg); }
-.pet-cat.state-sleeping #eye-left, .pet-cat.state-sleeping #eye-right { height:2px!important; transform:translateY(4px); }
-.pet-cat.state-sleeping #eye-light-l, .pet-cat.state-sleeping #eye-light-r { opacity:0; }
-.pet-cat.state-sleeping #pet-body, .pet-cat.state-sleeping #pet-head { animation: deepSleep 3.5s infinite alternate ease-in-out; }
+.pet-cat.state-sleeping #eyes .cls-dark { transform:scaleY(0.3) translateY(4px); transform-origin:center; }
+.pet-cat.state-sleeping #eyes .cls-white { opacity:0; }
+.pet-cat.state-sleeping #animal-body, .pet-cat.state-sleeping #head-bobble { animation: deepSleep 3.5s infinite alternate ease-in-out; }
 
 .pet-cat.state-working #pet-glasses { opacity:1!important; }
-.pet-cat.state-working #pet-head { animation: catHeadMicroGlow .12s infinite alternate ease-in-out; }
-.pet-cat.state-working #pet-body rect[fill="#7A7A7A"] { animation: catClawPrecise 0.06s infinite alternate linear; }
+.pet-cat.state-working #head-bobble { animation: catHeadMicroGlow .12s infinite alternate ease-in-out; }
+.pet-cat.state-working .cls-paws { animation: catClawPrecise 0.06s infinite alternate linear; }
 @keyframes catClawPrecise { 0%{transform:translateY(-1.5px) scaleY(1.05);transform-origin:top center} 100%{transform:translateY(1.5px) scaleY(0.95);transform-origin:top center} }
 @keyframes catHeadMicroGlow { 0%{transform:translateY(-0.5px)} 100%{transform:translateY(0.5px)} }
 
 .pet-cat.state-surprised { animation: scareJump .5s ease-out; }
-.pet-cat.state-surprised #eye-left, .pet-cat.state-surprised #eye-right { transform:scale(1.4); transform-origin:center; }
+.pet-cat.state-surprised #eyes .cls-dark { transform:scale(1.4); transform-origin:center; }
 
-.pet-cat.state-hungry #pet-head { animation: wobble .5s ease-in-out infinite; }
-.pet-cat.state-hungry #pet-body { animation: bodyBreathe .5s ease-in-out infinite; }
+.pet-cat.state-hungry #head-bobble { animation: wobble .5s ease-in-out infinite; }
+.pet-cat.state-hungry #animal-body { animation: bodyBreathe .5s ease-in-out infinite; }
 
-.pet-cat.state-curious #pet-head { animation: curiousTilt .6s ease-in-out; }
+.pet-cat.state-curious #head-bobble { animation: curiousTilt .6s ease-in-out; }
 
 /* ═══════════════════════════════════════════════════════════════════════════
    🐕 CORGI — 柯基（扁几何色块风格）
    ═══════════════════════════════════════════════════════════════════════════ */
 
-.pet-shiba#cp-canvas { width: 130px; height: 140px; }
 
-.pet-shiba.state-idle #dog-head {
+
+.pet-shiba.state-idle #head-bobble {
   animation: dogHead 2.4s infinite alternate ease-in-out;
   transform-origin: bottom center;
 }
@@ -90,12 +90,12 @@
 @keyframes dogHead { 0%{transform:rotate(-2deg) translateY(0)} 100%{transform:rotate(2deg) translateY(-1px)} }
 @keyframes corgiTailWag { 0%{transform:rotate(-10deg)} 100%{transform:rotate(15deg)} }
 
-.pet-shiba.state-sleeping #dog-head,
-.pet-shiba.state-sleeping #dog-body { animation: deepSleep 3.5s infinite alternate ease-in-out; }
+.pet-shiba.state-sleeping #head-bobble,
+.pet-shiba.state-sleeping #animal-body { animation: deepSleep 3.5s infinite alternate ease-in-out; }
 .pet-shiba.state-sleeping { transform: translateY(10px) rotate(5deg); }
 
 .pet-shiba.state-working #dog-glasses { opacity:1!important; }
-.pet-shiba.state-working #dog-body { animation: corgiBodyBob .08s infinite alternate ease-in-out; }
+.pet-shiba.state-working #animal-body { animation: corgiBodyBob .08s infinite alternate ease-in-out; }
 @keyframes corgiBodyBob { 0%{transform:translateY(-1px)} 100%{transform:translateY(2px)} }
 
 .pet-shiba.state-surprised { animation: corgiScare .5s ease-out; }
@@ -107,45 +107,45 @@
   100% { transform: translateY(0); }
 }
 
-.pet-shiba.state-hungry #dog-head { animation: wobble .5s ease-in-out infinite; }
-.pet-shiba.state-curious #dog-head { animation: curiousTilt .6s ease-in-out; }
+.pet-shiba.state-hungry #head-bobble { animation: wobble .5s ease-in-out infinite; }
+.pet-shiba.state-curious #head-bobble { animation: curiousTilt .6s ease-in-out; }
 
 /* ═══════════════════════════════════════════════════════════════════════════
    🐰 RABBIT — 淡奶色几何兔（扁平风格）
    ═══════════════════════════════════════════════════════════════════════════ */
 
-.pet-rabbit#cp-canvas { width: 140px; height: 150px; }
 
-.pet-rabbit.state-idle #rabbit-ear-l {
+
+.pet-rabbit.state-idle #ear-l {
   animation: earJiggleL 1.5s infinite ease-in-out;
   transform-origin: bottom right;
 }
-.pet-rabbit.state-idle #rabbit-ear-r {
+.pet-rabbit.state-idle #ear-r {
   animation: earJiggleR 1.5s infinite 0.2s ease-in-out;
   transform-origin: bottom left;
 }
 @keyframes earJiggleL { 0%,100%{transform:rotate(0deg)} 50%{transform:rotate(-6deg)} }
 @keyframes earJiggleR { 0%,100%{transform:rotate(0deg)} 50%{transform:rotate(6deg)} }
 
-.pet-rabbit.state-sleeping #rabbit-ear-l {
+.pet-rabbit.state-sleeping #ear-l {
   transform: rotate(-75deg) translate(-5px, 12px);
   transform-origin: bottom right;
   transition: transform 0.5s ease-in-out;
 }
-.pet-rabbit.state-sleeping #rabbit-ear-r {
+.pet-rabbit.state-sleeping #ear-r {
   transform: rotate(75deg) translate(5px, 12px);
   transform-origin: bottom left;
   transition: transform 0.5s ease-in-out;
 }
-.pet-rabbit.state-sleeping #rabbit-body,
-.pet-rabbit.state-sleeping #rabbit-head { animation: rabbitDeepSleep 3s infinite alternate ease-in-out; }
+.pet-rabbit.state-sleeping #animal-body,
+.pet-rabbit.state-sleeping #head-bobble { animation: rabbitDeepSleep 3s infinite alternate ease-in-out; }
 @keyframes rabbitDeepSleep { 0%{transform:scale(0.96);transform-origin:bottom center} 100%{transform:scale(1.03);transform-origin:bottom center} }
 
 .pet-rabbit.state-working #pet-glasses { opacity:1!important; }
-.pet-rabbit.state-working #rabbit-ear-l { animation: rabbitWorkEarL .15s infinite alternate linear; transform-origin:bottom right; }
-.pet-rabbit.state-working #rabbit-ear-r { animation: rabbitWorkEarR .15s infinite alternate linear; transform-origin:bottom left; }
-.pet-rabbit.state-working #rabbit-head { animation: rabbitTyping .1s infinite alternate ease-in-out; }
-.pet-rabbit.state-working #rabbit-body rect { animation: rabbitFastPaws 0.06s infinite alternate-reverse linear; }
+.pet-rabbit.state-working #ear-l { animation: rabbitWorkEarL .15s infinite alternate linear; transform-origin:bottom right; }
+.pet-rabbit.state-working #ear-r { animation: rabbitWorkEarR .15s infinite alternate linear; transform-origin:bottom left; }
+.pet-rabbit.state-working #head-bobble { animation: rabbitTyping .1s infinite alternate ease-in-out; }
+.pet-rabbit.state-working #animal-body rect { animation: rabbitFastPaws 0.06s infinite alternate-reverse linear; }
 @keyframes rabbitWorkEarL { 0%{transform:rotate(-5deg)} 100%{transform:rotate(5deg)} }
 @keyframes rabbitWorkEarR { 0%{transform:rotate(5deg)} 100%{transform:rotate(-5deg)} }
 @keyframes rabbitTyping { 0%{transform:translateY(0)} 100%{transform:translateY(1.5px) scaleX(1.02)} }
@@ -159,16 +159,16 @@
   70% { transform: translateY(-3px); }
   100% { transform: translateY(0); }
 }
-.pet-rabbit.state-hungry #rabbit-head { animation: wobble .5s ease-in-out infinite; }
-.pet-rabbit.state-curious #rabbit-head { animation: curiousTilt .6s ease-in-out; }
+.pet-rabbit.state-hungry #head-bobble { animation: wobble .5s ease-in-out infinite; }
+.pet-rabbit.state-curious #head-bobble { animation: curiousTilt .6s ease-in-out; }
 
 /* ═══════════════════════════════════════════════════════════════════════════
    🐹 GROUNDHOG (MARMOT) — surprised/hungry → 尖叫 shaking + 手 panic
    ═══════════════════════════════════════════════════════════════════════════ */
 
-.pet-marmot#cp-canvas { width: 140px; height: 145px; }
-.pet-marmot.state-idle #marmot-head { animation: marmotHeadBob 2s infinite alternate ease-in-out; }
-.pet-marmot.state-idle #marmot-body { animation: marmotBreathe 2s infinite alternate ease-in-out; }
+
+.pet-marmot.state-idle #head-bobble { animation: marmotHeadBob 2s infinite alternate ease-in-out; }
+.pet-marmot.state-idle #animal-body { animation: marmotBreathe 2s infinite alternate ease-in-out; }
 .pet-marmot.state-idle #marmot-hands { animation: marmotHandIdle 1s infinite alternate ease-in-out; }
 @keyframes marmotHeadBob { 0%{transform:translateY(0)} 100%{transform:translateY(1.5px)} }
 @keyframes marmotBreathe { 0%{transform:scaleY(1);transform-origin:bottom center} 100%{transform:scaleY(0.97);transform-origin:bottom center} }
@@ -177,8 +177,8 @@
 .pet-marmot.state-sleeping .marmot-dark { transform:scaleY(0.2) translateY(180px); transform-origin:center; }
 .pet-marmot.state-sleeping #marmot-mouth-group { transform:scale(0.9) translateY(-1px); transform-origin:center; }
 .pet-marmot.state-sleeping #marmot-hands { transform:translateY(4px) rotate(5deg); transform-origin:center; }
-.pet-marmot.state-sleeping #marmot-body,
-.pet-marmot.state-sleeping #marmot-head { animation: marmotSnoring 4s infinite alternate ease-in-out; }
+.pet-marmot.state-sleeping #animal-body,
+.pet-marmot.state-sleeping #head-bobble { animation: marmotSnoring 4s infinite alternate ease-in-out; }
 @keyframes marmotSnoring { 0%{transform:scaleY(0.95) rotate(-1deg);transform-origin:bottom center} 100%{transform:scaleY(1.04) rotate(1deg);transform-origin:bottom center} }
 
 .pet-marmot.state-working {
@@ -216,17 +216,17 @@
 }
 @keyframes marmotHungryShiver { 0%{transform:translate(-1px,1px)} 100%{transform:translate(1px,-1px)} }
 
-.pet-marmot.state-curious #marmot-head { animation: curiousTilt .6s ease-in-out; }
+.pet-marmot.state-curious #head-bobble { animation: curiousTilt .6s ease-in-out; }
 
 /* ═══════════════════════════════════════════════════════════════════════════
    GLOBAL: sick state (health ≤ 0) — all pets become dizzy + collapsed
    ═══════════════════════════════════════════════════════════════════════════ */
 .state-sick { transform: translateY(6px) rotate(-4deg); transform-origin: bottom center; }
-.state-sick #pet-body, .state-sick #pet-head,
-.pet-cat.state-sick #pet-body, .pet-cat.state-sick #pet-head,
-.pet-shiba.state-sick #pet-body, .pet-shiba.state-sick #dog-head,
-.pet-rabbit.state-sick #rabbit-body, .pet-rabbit.state-sick #rabbit-head,
-.pet-marmot.state-sick #marmot-body, .pet-marmot.state-sick #marmot-head {
+.state-sick #animal-body, .state-sick #head-bobble,
+.pet-cat.state-sick #animal-body, .pet-cat.state-sick #head-bobble,
+.pet-shiba.state-sick #animal-body, .pet-shiba.state-sick #head-bobble,
+.pet-rabbit.state-sick #animal-body, .pet-rabbit.state-sick #head-bobble,
+.pet-marmot.state-sick #animal-body, .pet-marmot.state-sick #head-bobble {
   animation: sickDizzy 0.6s infinite alternate ease-in-out;
 }
 @keyframes sickDizzy {
@@ -278,6 +278,7 @@
 
 /* ─── Hover ─── */
 #cp-canvas:hover svg { filter:drop-shadow(4px 6px 16px rgba(0,0,0,0.25)) brightness(1.04); transition:filter .2s; }
+.pet-cat#cp-canvas, .pet-shiba#cp-canvas, .pet-rabbit#cp-canvas, .pet-marmot#cp-canvas { width: 150px; height: 150px; }
 
 /* ─── Entrance ─── */
 #cyber-pet-root { animation:appear .5s ease-out; }
