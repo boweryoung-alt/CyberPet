@@ -95,72 +95,6 @@
     marmot:{ name: '🐹 Groundhog',   svg: SVG.marmot,css: 'pet-marmot' },
   };
 
-  // ─── Sprite Sheet config ─────────────────────────────────────────
-  const SPRITES = {
-    cat: {
-      url: 'assets/cat_sprite.png',
-      frameW: 256,       // source: 2048 ÷ 8 (max frames)
-      rowH: 2048 / 6,    // source: 2048 ÷ 6 rows
-      displayW: 120, displayH: 130,
-      states: {
-        idle:      { row: 0, frames: 8,  speed: 200, loop: true  },
-        working:   { row: 1, frames: 5,  speed: 150, loop: true  },
-        sleeping:  { row: 2, frames: 6,  speed: 400, loop: true  },
-        surprised: { row: 3, frames: 5,  speed: 100, loop: false },
-        hungry:    { row: 4, frames: 4,  speed: 300, loop: true  },
-        curious:   { row: 5, frames: 4,  speed: 250, loop: false },
-      }
-    }
-  };
-  let sprite = { img: null, loaded: false, frame: 0, timer: null, active: null };
-
-  function initSprite(petName) {
-    const cfg = SPRITES[petName];
-    if (!cfg) { sprite.active = null; return; }
-    sprite.active = petName;
-    sprite.frame = 0;
-    if (!sprite.img) {
-      sprite.img = new Image();
-      sprite.img.onload = () => { sprite.loaded = true; showFrame(); };
-      sprite.img.src = chrome.runtime.getURL(cfg.url);
-    } else if (sprite.loaded) {
-      showFrame();
-    }
-  }
-
-  function showFrame() {
-    const cfg = SPRITES[sprite.active];
-    if (!cfg || !sprite.loaded) return;
-    const st = cfg.states[S.pet] || cfg.states.idle;
-    const cvs = document.getElementById('cp-sprite');
-    if (!cvs) return;
-    const ctx = cvs.getContext('2d');
-    ctx.drawImage(sprite.img, sprite.frame * cfg.frameW, st.row * cfg.rowH, cfg.frameW, cfg.rowH, 0, 0, cfg.displayW, cfg.displayH);
-  }
-
-  function advanceFrame() {
-    const cfg = SPRITES[sprite.active];
-    if (!cfg) return;
-    const st = cfg.states[S.pet] || cfg.states.idle;
-    sprite.frame++;
-    if (sprite.frame >= st.frames) {
-      if (st.loop) sprite.frame = 0;
-      else { sprite.frame = st.frames - 1; stopSpriteLoop(); return; }
-    }
-    showFrame();
-  }
-
-  function startSpriteLoop() {
-    stopSpriteLoop();
-    const cfg = SPRITES[sprite.active];
-    if (!cfg) return;
-    const st = cfg.states[S.pet] || cfg.states.idle;
-    sprite.timer = setInterval(advanceFrame, st.speed);
-  }
-
-  function stopSpriteLoop() {
-    if (sprite.timer) { clearInterval(sprite.timer); sprite.timer = null; }
-  }
 
   // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   // 2. BUILD DOM
@@ -172,7 +106,6 @@
     <div id="cp-bubble" class="cp-bubble-hidden"></div>
     <div id="cp-canvas" class="pet-cat state-idle">
       <svg width="120" height="130" viewBox="0 0 120 130" fill="none" xmlns="http://www.w3.org/2000/svg">${SVG.cat}</svg>
-      <canvas id="cp-sprite" width="120" height="130" style="display:none;position:absolute;top:0;left:0"></canvas>
     </div>
     <div id="cp-glow" class="cp-glow-idle"></div>
     <canvas id="cp-particles" width="200" height="200"></canvas>
@@ -223,26 +156,8 @@
     const pet = PETS[name];
     if (!pet || name === S.currentPet) return;
     S.currentPet = name;
-    const svgParent = document.getElementById('cp-canvas');
-    const cvs = document.getElementById('cp-sprite');
-
-    // Is this a sprite-based pet?
-    if (SPRITES[name]) {
-      // Show canvas sprite, hide SVG
-      svgEl.style.display = 'none';
-      cvs.style.display = 'block';
-      initSprite(name);
-      canvas.className = canvas.className.replace(/pet-\w+/g, '').trim() + ' ' + pet.css;
-      startSpriteLoop();
-    } else {
-      // Show SVG, hide canvas sprite
-      stopSpriteLoop();
-      sprite.loaded = false; sprite.img = null; sprite.active = null;
-      svgEl.style.display = '';
-      cvs.style.display = 'none';
-      svgEl.innerHTML = pet.svg;
-      canvas.className = canvas.className.replace(/pet-\w+/g, '').trim() + ' ' + pet.css;
-    }
+    svgEl.innerHTML = pet.svg;
+    canvas.className = canvas.className.replace(/pet-\w+/g, '').trim() + ' ' + pet.css;
   }
 
   // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -254,15 +169,6 @@
     const prev = S.pet; S.pet = st;
     // Replace state class (state-idle → state-working etc.)
     canvas.className = canvas.className.replace(/state-\w+/g, '').trim() + ' state-' + st;
-
-    // Sprite frame sync
-    if (SPRITES[S.currentPet] && sprite.loaded) {
-      stopSpriteLoop();
-      sprite.frame = 0;
-      showFrame();
-      const c = SPRITES[S.currentPet];
-      if (c.states[st]) { sprite.frame = 0; startSpriteLoop(); }
-    }
 
     // Glasses on/off for any pet (cat/shiba/rabbit/marmot all have one glasses group)
     const g = svgEl.querySelector('#pet-glasses') || svgEl.querySelector('#dog-glasses');
@@ -364,10 +270,7 @@
       S.focusing = d.isFocusing ?? false;
 
       // Apply saved pet
-      if (d.selectedPet && PETS[d.selectedPet]) {
-        if (d.selectedPet !== S.currentPet) applyPet(d.selectedPet);
-        else if (SPRITES[d.selectedPet] && !sprite.loaded) { initSprite(d.selectedPet); startSpriteLoop(); }
-      }
+      if (d.selectedPet && d.selectedPet !== S.currentPet && PETS[d.selectedPet]) applyPet(d.selectedPet);
 
       // Update visual health indicator
       applyHealthVisuals();
@@ -572,14 +475,8 @@
   // Load saved pet immediately (before pollState timer kicks in)
   if (extOK()) {
     chrome.storage.local.get(['selectedPet'], d => {
-      if (!chrome.runtime.lastError && d.selectedPet && PETS[d.selectedPet]) {
-        if (d.selectedPet !== S.currentPet) {
-          applyPet(d.selectedPet);
-        } else if (SPRITES[d.selectedPet]) {
-          // Same pet, but sprite engine needs explicit init (e.g. cat on first load)
-          initSprite(d.selectedPet);
-          startSpriteLoop();
-        }
+      if (!chrome.runtime.lastError && d.selectedPet && d.selectedPet !== S.currentPet && PETS[d.selectedPet]) {
+        applyPet(d.selectedPet);
       }
     });
   }
