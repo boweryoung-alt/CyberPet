@@ -32,42 +32,46 @@
     <g id="pet-cyber-keyboard" opacity="0"><rect x="30" y="102" width="60" height="8" rx="2" fill="#344054" stroke="#475467" stroke-width="1.5"/><rect id="key-light-1" x="36" y="104" width="8" height="4" rx="1" fill="#FFD700" opacity="0"/><rect id="key-light-2" x="48" y="104" width="12" height="4" rx="1" fill="#00D2FF" opacity="0"/><rect id="key-light-3" x="66" y="104" width="10" height="4" rx="1" fill="#FF3366" opacity="0"/><rect id="key-light-4" x="80" y="104" width="6" height="4" rx="1" fill="#00FF66" opacity="0"/><path d="M 35 102 L 20 80 L 100 80 L 85 102 Z" fill="url(#screen-glow)" opacity="0.15"/></g>
   </svg>`;
 
-  SVG.shiba = `<svg width="130" height="140" viewBox="-2 -2 154 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+  SVG.shiba = `<svg width="140" height="145" viewBox="-2 -2 154 150" fill="none" xmlns="http://www.w3.org/2000/svg">
   <style>
-    .bg-shadow { fill: #EBF1F6; }
-    .corgi-orange { fill: #E28739; }
+    .bg-shadow { fill: #EBF1F2; opacity: 0.7; }
+    .corgi-latte { fill: #D29062; }
     .corgi-white { fill: #FFFFFF; }
-    .corgi-pink { fill: #FF8E9E; }
+    .corgi-paws { fill: #6B4423; }
+    .corgi-pink { fill: #FFAEB9; }
     .corgi-dark { fill: #232F3E; }
-    .geometry-line { stroke: #232F3E; stroke-width: 3; stroke-linecap: round; }
+    .geometry-line { stroke: #232F3E; stroke-width: 2.5; stroke-linecap: round; }
   </style>
-  <ellipse cx="75" cy="128" rx="36" ry="6" class="bg-shadow" />
+  <ellipse cx="75" cy="132" rx="38" ry="5" class="bg-shadow" />
   <g id="dog-tail">
-    <rect x="106" y="92" width="14" height="22" rx="7" transform="rotate(45 106 92)" class="corgi-orange" />
+    <rect x="110" y="88" width="14" height="22" rx="7" transform="rotate(45 110 88)" class="corgi-latte" />
   </g>
   <g id="dog-body">
-    <rect x="43" y="74" width="64" height="46" rx="20" class="corgi-orange" />
-    <rect x="43" y="86" width="50" height="34" rx="12" class="corgi-white" />
-    <rect x="50" y="112" width="12" height="14" rx="6" class="corgi-white" />
-    <rect x="78" y="112" width="12" height="14" rx="6" class="corgi-white" />
+    <rect x="45" y="76" width="60" height="46" rx="22" class="corgi-latte" />
+    <rect x="51" y="84" width="48" height="38" rx="14" class="corgi-white" />
+    <rect x="53" y="116" width="14" height="12" rx="6" class="corgi-paws" />
+    <rect x="83" y="116" width="14" height="12" rx="6" class="corgi-paws" />
   </g>
   <g id="dog-head">
-    <path d="M 38 46 L 28 14 C 30 10, 38 10, 48 24 Z" class="corgi-orange" />
-    <path d="M 39 41 L 32 18 C 34 16, 38 16, 43 25 Z" class="corgi-pink" />
-    <path d="M 112 46 L 122 14 C 120 10, 112 10, 102 24 Z" class="corgi-orange" />
-    <path d="M 111 41 L 118 18 C 116 16, 112 16, 107 25 Z" class="corgi-pink" />
-    <rect x="32" y="40" width="86" height="50" rx="22" class="corgi-orange" />
-    <path d="M 32 64 C 32 78, 48 88, 75 88 C 102 88, 118 78, 118 64 Z" class="corgi-white" />
-    <polygon points="75,40 68,58 82,58" class="corgi-white" />
-    <circle cx="46" cy="50" r="4" class="corgi-white" />
-    <circle cx="104" cy="50" r="4" class="corgi-white" />
-    <circle cx="40" cy="72" r="5" class="corgi-pink" />
-    <circle cx="110" cy="72" r="5" class="corgi-pink" />
+    <path d="M 46 44 L 18 22 C 16 16, 26 8, 38 14 Z" class="corgi-latte" />
+    <path d="M 43 40 L 24 24 C 23 20, 30 14, 37 18 Z" class="corgi-pink" />
+    <path d="M 104 44 L 132 22 C 134 16, 124 8, 112 14 Z" class="corgi-latte" />
+    <path d="M 107 40 L 126 24 C 127 20, 120 14, 113 18 Z" class="corgi-pink" />
+    <rect x="25" y="38" width="100" height="52" rx="24" class="corgi-latte" />
+    <path d="M 25 64 C 25 78, 40 90, 75 90 C 110 90, 125 78, 125 64 Z" class="corgi-white" />
+    <polygon points="75,38 68,56 82,56" class="corgi-white" />
+    <circle cx="44" cy="50" r="3.5" class="corgi-white" />
+    <circle cx="106" cy="50" r="3.5" class="corgi-white" />
+    <circle cx="36" cy="72" r="6" class="corgi-pink" />
+    <circle cx="114" cy="72" r="6" class="corgi-pink" />
     <circle cx="52" cy="62" r="5" class="corgi-dark" />
     <circle cx="50" cy="59.5" r="1.5" class="corgi-white" />
     <circle cx="98" cy="62" r="5" class="corgi-dark" />
     <circle cx="96" cy="59.5" r="1.5" class="corgi-white" />
-    <path d="M 70 69 Q 75 73 80 69" fill="none" class="geometry-line" />
+    <g id="corgi-mouth">
+      <polygon points="75,64 72,61 78,61" class="corgi-pink" />
+      <path d="M 69 69 Q 72 72 75 69 Q 78 72 81 69" fill="none" class="geometry-line" />
+    </g>
   </g>
   <g id="dog-glasses" opacity="0"><rect x="46" y="52" width="14" height="10" rx="2" stroke="#FF9800" stroke-width="1.5" fill="none" opacity="0.8"/><rect x="90" y="52" width="14" height="10" rx="2" stroke="#FF9800" stroke-width="1.5" fill="none" opacity="0.8"/><line x1="60" y1="57" x2="90" y2="57" stroke="#FF9800" stroke-width="1.5" opacity="0.8"/></g>
   <g id="zzz-group" opacity="0"><text x="112" y="22" font-size="10" fill="#999" font-weight="bold">z</text><text x="120" y="12" font-size="13" fill="#999" font-weight="bold" opacity="0.6">z</text><text x="128" y="2" font-size="16" fill="#999" font-weight="bold" opacity="0.3">z</text></g>
