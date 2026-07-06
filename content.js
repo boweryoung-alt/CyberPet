@@ -602,7 +602,7 @@ SVG.shiba = DOG_SVG.idle;
   // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
   function checkInactive() {
-    if (Date.now() - S.lastMove > 120000 && S.pet === 'idle' && !S.focusing) setState('sleeping');
+    if (Date.now() - S.lastMove > 120000 && S.pet === 'idle' && !S.focusing) { setState('sleeping'); if (S.currentPet === 'cat') setCatState('idle'); else if (S.currentPet === 'shiba') setDogState('sleeping'); }
   }
 
   // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
