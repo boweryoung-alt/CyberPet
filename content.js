@@ -54,7 +54,7 @@ const CAT_SVG = {
   <ellipse cx="60" cy="115" rx="30" ry="6" fill="#D0D5DD" opacity="0.6"/>
   <g id="pet-tail"><animateTransform attributeName="transform" type="rotate" values="-10,78,105;-10,78,105" dur="1s" repeatCount="indefinite"/><rect x="78" y="85" width="8" height="20" rx="4" fill="#5C5C5C"/><rect x="82" y="75" width="8" height="12" rx="4" fill="#7A7A7A"/></g>
   <g id="pet-body"><rect x="35" y="65" width="50" height="45" rx="12" fill="#5C5C5C"/><rect x="43" y="75" width="34" height="30" rx="8" fill="#F2F4F7"/><rect x="42" y="105" width="10" height="10" rx="4" fill="#7A7A7A"/><rect x="68" y="105" width="10" height="10" rx="4" fill="#7A7A7A"/></g>
-  <g id="pet-head"><animateTransform attributeName="transform" type="translate" values="0,0; 0.6,0; -0.6,0; 0,0" dur="0.15s" repeatCount="indefinite" />
+  <g id="pet-head">
   <path id="ear-left" d="M30 45 L45 25 L50 45 Z" fill="#475467"/><path d="M34 43 L44 29 L47 43 Z" fill="#F48E8E"/><path id="ear-right" d="M90 45 L75 25 L70 45 Z" fill="#475467"/><path d="M86 43 L76 29 L73 43 Z" fill="#F48E8E"/><rect x="25" y="40" width="70" height="40" rx="16" fill="#475467"/><circle cx="33" cy="68" r="4" fill="#FFA5A5" opacity="0.8"/><circle cx="87" cy="68" r="4" fill="#FFA5A5" opacity="0.8"/><g id="pet-eyes" stroke="#1D2939" stroke-width="2" stroke-linecap="round"><line x1="42" y1="55" x2="48" y2="61" /><line x1="48" y1="55" x2="42" y2="61" /><line x1="70" y1="55" x2="76" y2="61" /><line x1="76" y1="55" x2="70" y2="61" /></g><line x1="55" y1="67" x2="65" y2="67" stroke="#1D2939" stroke-width="2" stroke-linecap="round"/><line x1="20" y1="62" x2="10" y2="60" stroke="#98A2B3" stroke-width="1.5"/><line x1="20" y1="66" x2="8" y2="67" stroke="#98A2B3" stroke-width="1.5"/><line x1="100" y1="62" x2="110" y2="60" stroke="#98A2B3" stroke-width="1.5"/><line x1="100" y1="66" x2="112" y2="67" stroke="#98A2B3" stroke-width="1.5"/><rect x="44" y="28" width="32" height="12" rx="4" fill="#93C5FD"/><rect x="57" y="24" width="6" height="4" rx="1" fill="#60A5FA"/></g>
   <g id="pet-glasses" opacity="0"><rect x="38" y="52" width="16" height="14" rx="2" stroke="#FF9800" stroke-width="2" fill="none"/><rect x="66" y="52" width="16" height="14" rx="2" stroke="#FF9800" stroke-width="2" fill="none"/><line x1="54" y1="59" x2="66" y2="59" stroke="#FF9800" stroke-width="2"/></g>
   <g id="zzz-group" opacity="0"><text x="88" y="22" font-size="10" fill="#999" font-weight="bold">z</text><text x="96" y="12" font-size="14" fill="#999" font-weight="bold" opacity="0.6">z</text><text x="104" y="2" font-size="18" fill="#999" font-weight="bold" opacity="0.3">z</text></g>
@@ -385,11 +385,10 @@ function setCatState(name) {
       if (d.selectedPet && d.selectedPet !== S.currentPet && PETS[d.selectedPet]) applyPet(d.selectedPet);
 
       if (S.pet === 'sleeping' && !S.focusing) return;
-      if (S.health > 20 && SVG.cat === CAT_SVG.sick) { setCatState('idle'); }
+      if (S.health > 20 && SVG.cat === CAT_SVG.sick) { setState('idle'); setCatState('idle'); }
       if (S.focusing) setState('working');
-      else if (S.health <= 0) setState('sick');
-      else if (S.health <= 20) { setCatState('sick'); } else if (S.fullness < 20) setState('hungry');
-      else if (['working','hungry','sick','surprised'].includes(S.pet)) setState('idle');
+      else if (S.health <= 20) { setState('sick'); setCatState('sick'); } else if (S.fullness < 20) setState('hungry');
+      else if (['working','hungry','surprised'].includes(S.pet)) setState('idle');
       if (bubble.className === 'cp-bubble-hidden') {
         if (S.focusing) return;
         if (S.health <= 0) showBubble('I feel terrible... 😵', 5000);
