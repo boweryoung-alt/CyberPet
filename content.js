@@ -217,23 +217,23 @@ const DOG_SVG = {
   
   <!-- Rising bath bubbles -->
   <g id="bath-bubbles">
-    <circle cx="38" cy="105" r="3" fill="#93C5FD" opacity="0.6">
+    <circle cx="38" cy="105" r="6" fill="#93C5FD" opacity="0.7">
       <animate attributeName="cy" values="105;90;75" dur="2s" repeatCount="indefinite"/>
       <animate attributeName="opacity" values="0.6;0.3;0" dur="2s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="50" cy="98" r="2" fill="#93C5FD" opacity="0.5">
+    <circle cx="50" cy="98" r="5" fill="#93C5FD" opacity="0.6">
       <animate attributeName="cy" values="98;82;66" dur="2.5s" repeatCount="indefinite"/>
       <animate attributeName="opacity" values="0.5;0.2;0" dur="2.5s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="95" cy="100" r="2.5" fill="#93C5FD" opacity="0.5">
+    <circle cx="95" cy="100" r="6" fill="#93C5FD" opacity="0.6">
       <animate attributeName="cy" values="100;85;70" dur="1.8s" repeatCount="indefinite"/>
       <animate attributeName="opacity" values="0.5;0.2;0" dur="1.8s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="110" cy="108" r="3.5" fill="#93C5FD" opacity="0.4">
+    <circle cx="110" cy="108" r="7" fill="#93C5FD" opacity="0.5">
       <animate attributeName="cy" values="108;92;76" dur="2.2s" repeatCount="indefinite"/>
       <animate attributeName="opacity" values="0.4;0.2;0" dur="2.2s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="42" cy="112" r="1.5" fill="#93C5FD" opacity="0.6">
+    <circle cx="42" cy="112" r="4" fill="#93C5FD" opacity="0.7">
       <animate attributeName="cy" values="112;98;84" dur="3s" repeatCount="indefinite"/>
       <animate attributeName="opacity" values="0.6;0.3;0" dur="3s" repeatCount="indefinite"/>
     </circle>
