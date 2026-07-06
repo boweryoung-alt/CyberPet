@@ -76,6 +76,8 @@
 .cat-eating #pet-tail { animation: tailWag 0.4s infinite alternate ease-in-out; transform-box: fill-box; transform-origin:0% 100%; }
 .cat-bathing #pet-tail { animation: none; transform: rotate(-5deg); transform-box: fill-box; transform-origin:0% 100%; }
 .cat-sick #pet-tail { animation: none; transform: rotate(-10deg); transform-box: fill-box; transform-origin:0% 100%; }
+.dog-eating #dog-head { animation: none !important; }
+.dog-eating #dog-body { animation: none !important; }
 
 
 /* ═══════════════════════════════════════════════════════════════════════════

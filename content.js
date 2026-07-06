@@ -68,6 +68,7 @@ SVG.cat = CAT_SVG.idle;
 function setDogState(name) {
   SVG.shiba = DOG_SVG[name];
   svgEl.innerHTML = SVG.shiba;
+  canvas.className = canvas.className.replace(/dog-\w+/g, '').trim() + ' dog-' + name;
 }function setCatState(name) {
   SVG.cat = CAT_SVG[name];
   svgEl.innerHTML = SVG.cat;
@@ -144,15 +145,13 @@ const DOG_SVG = {
     }
   </style>
   <ellipse cx="75" cy="142" rx="36" ry="5" class="husky-shadow" />
-  <rect x="42" y="136" width="66" height="6" rx="3" fill="#1E293B" opacity="0.1"/>
+  <rect x="40" y="136" width="70" height="6" rx="3" fill="#1E293B" opacity="0.1"/>
   <g id="dog-body">
-    <rect x="48" y="85" width="54" height="48" rx="14" fill="#333A42"/>
-    <path d="M 54 85 L 96 85 L 90 118 L 75 124 L 60 118 Z" fill="#F8F6F0"/>
-    <g id="dog-tail"><animateTransform attributeName="transform" type="rotate" values="-8,100,104; 12,100,104; -8,100,104" dur="0.4s" repeatCount="indefinite"/>
-      <path d="M 102 102 Q 115 95 110 85 C 105 78, 98 88, 102 96" stroke="#333A42" stroke-width="6" stroke-linecap="round" fill="none"/>
-    </g>
-    <rect x="54" y="126" width="14" height="9" rx="3" fill="#4B5563"/>
-    <rect x="82" y="126" width="14" height="9" rx="3" fill="#4B5563"/>
+    <rect x="52" y="85" width="46" height="48" rx="14" fill="#333A42"/>
+    <path d="M 58 85 L 92 85 L 86 118 L 75 124 L 64 118 Z" fill="#F8F6F0"/>
+    <path d="M 98 102 Q 111 95 106 85 C 101 78, 94 88, 98 96" stroke="#333A42" stroke-width="6" stroke-linecap="round" fill="none"/>
+    <rect x="58" y="126" width="12" height="9" rx="3" fill="#4B5563"/>
+    <rect x="80" y="126" width="12" height="9" rx="3" fill="#4B5563"/>
   </g>
   <g id="dog-head">
     <path d="M 32 50 L 26 14 L 64 36 Z" fill="#333A42" stroke="#333A42" stroke-width="2" stroke-linejoin="round"/>
@@ -174,7 +173,7 @@ const DOG_SVG = {
       <rect x="62" y="88" width="2" height="2" fill="#B45309"/><rect x="64" y="91" width="1.5" height="1.5" fill="#B45309"/><rect x="86" y="86" width="2" height="2" fill="#B45309"/>
     </g>
   </g>
-  <g id="food-bowl"><path d="M 60 124 L 90 124 L 86 134 L 64 134 Z" fill="#CBD5E1"/><ellipse cx="75" cy="124" rx="12" ry="2" fill="#92400E"/></g>
+  <g id="food-bowl"><path d="M 50 122 Q 75 110 100 122 Z" fill="#92400E"/><circle cx="63" cy="118" r="3" fill="#B45309"/><circle cx="75" cy="116" r="3.5" fill="#78350F"/><circle cx="87" cy="119" r="3" fill="#B45309"/><path d="M 46 122 L 104 122 L 98 138 L 52 138 Z" fill="#EF4444"/><path d="M 52 135 L 98 135 L 96 138 L 54 138 Z" fill="#DC2626"/><g transform="translate(64, 127)"><rect x="5" y="3" width="12" height="4" rx="1" fill="#FFFFFF"/><circle cx="5" cy="3" r="2.2" fill="#FFFFFF"/><circle cx="5" cy="7" r="2.2" fill="#FFFFFF"/><circle cx="17" cy="3" r="2.2" fill="#FFFFFF"/><circle cx="17" cy="7" r="2.2" fill="#FFFFFF"/></g></g>
   <g id="dog-glasses" opacity="0"><rect x="48" y="55" width="16" height="10" rx="2" stroke="#FF9800" stroke-width="1.5" fill="none" opacity="0.8"/><rect x="86" y="55" width="16" height="10" rx="2" stroke="#FF9800" stroke-width="1.5" fill="none" opacity="0.8"/><line x1="64" y1="60" x2="86" y2="60" stroke="#FF9800" stroke-width="1.5" opacity="0.8"/></g>
   <g id="zzz-group" opacity="0"><text x="120" y="25" font-size="11" fill="#999" font-weight="bold">z</text><text x="128" y="14" font-size="14" fill="#999" font-weight="bold" opacity="0.6">z</text><text x="135" y="3" font-size="17" fill="#999" font-weight="bold" opacity="0.3">z</text></g>
   <defs><linearGradient id="screen-glow" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#00D2FF" stop-opacity="1"/><stop offset="100%" stop-color="#00D2FF" stop-opacity="0"/></linearGradient></defs>
