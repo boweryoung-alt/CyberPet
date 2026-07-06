@@ -107,6 +107,7 @@ const DOG_SVG = {
     <path d="M 118 50 L 124 14 L 86 36 Z" fill="#333A42" stroke="#333A42" stroke-width="2" stroke-linejoin="round"/>
     <path d="M 114 45 L 118 24 L 94 37 Z" fill="#E11D48" opacity="0.15"/>
     <path d="M 110 45 L 112 30 L 98 38 Z" fill="#F8F6F0"/>
+    <g id="head-bobble"><animateTransform attributeName="transform" type="translate" values="0,0; 0,0.5; 0,0" dur="3s" repeatCount="indefinite"/>
     <rect x="28" y="32" width="94" height="66" rx="18" fill="#434C56"/>
     <path d="M 28 66 C 28 86, 42 96, 75 96 C 108 96, 122 86, 122 66 C 122 52, 108 48, 98 62 C 90 42, 84 42, 75 60 C 66 42, 60 42, 52 62 C 42 48, 28 52, 28 66 Z" fill="#F8F6F0"/>
     <circle cx="50" cy="46" r="4.5" fill="#F8F6F0"/>
@@ -131,7 +132,7 @@ const DOG_SVG = {
   <defs><linearGradient id="screen-glow" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#00D2FF" stop-opacity="1"/><stop offset="100%" stop-color="#00D2FF" stop-opacity="0"/></linearGradient></defs>
   <g id="pet-cyber-keyboard" opacity="0"><rect x="30" y="118" width="90" height="10" rx="3" fill="#344054" stroke="#475467" stroke-width="1.5"/><rect id="key-light-1" x="38" y="120" width="10" height="5" rx="1.5" fill="#FFD700" opacity="0"/><rect id="key-light-2" x="54" y="120" width="14" height="5" rx="1.5" fill="#00D2FF" opacity="0"/><rect id="key-light-3" x="78" y="120" width="12" height="5" rx="1.5" fill="#FF3366" opacity="0"/><rect id="key-light-4" x="96" y="120" width="10" height="5" rx="1.5" fill="#00FF66" opacity="0"/><path d="M 42 116 L 28 94 L 122 94 L 108 116 Z" fill="url(#screen-glow)" opacity="0.12"/></g>
 </svg>`,
-  eating: `<svg width="150" height="150" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+  eating: `<svg width="120" height="130" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
   <style>
     .husky-shadow { fill: #1E293B; opacity: 0.1; }
     .husky-body { fill: #333A42; }
@@ -143,7 +144,7 @@ const DOG_SVG = {
   </style>
   <ellipse cx="75" cy="142" rx="36" ry="5" class="husky-shadow" />
   <rect x="42" y="136" width="66" height="6" rx="3" class="husky-shadow"/>
-  <g id="body">
+  <g id="dog-body">
     <rect x="48" y="85" width="54" height="48" rx="14" fill="#333A42"/>
     <path d="M 54 85 L 96 85 L 90 118 L 75 124 L 60 118 Z" fill="#F8F6F0"/>
     <g id="dog-tail"><animateTransform attributeName="transform" type="rotate" values="-8,100,104; 12,100,104; -8,100,104" dur="0.4s" repeatCount="indefinite"/>
@@ -152,7 +153,7 @@ const DOG_SVG = {
     <rect x="54" y="126" width="14" height="9" rx="3" fill="#4B5563"/>
     <rect x="82" y="126" width="14" height="9" rx="3" fill="#4B5563"/>
   </g>
-  <g id="head">
+  <g id="dog-head">
     <path d="M 32 50 L 26 14 L 64 36 Z" fill="#333A42" stroke="#333A42" stroke-width="2" stroke-linejoin="round"/>
     <path d="M 36 45 L 32 24 L 56 37 Z" fill="#E11D48" opacity="0.15"/>
     <path d="M 40 45 L 38 30 L 52 38 Z" fill="#F8F6F0"/>
@@ -180,7 +181,7 @@ const DOG_SVG = {
   <defs><linearGradient id="screen-glow" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#00D2FF" stop-opacity="1"/><stop offset="100%" stop-color="#00D2FF" stop-opacity="0"/></linearGradient></defs>
   <g id="pet-cyber-keyboard" opacity="0"><rect x="30" y="118" width="90" height="10" rx="3" fill="#344054" stroke="#475467" stroke-width="1.5"/><rect id="key-light-1" x="38" y="120" width="10" height="5" rx="1.5" fill="#FFD700" opacity="0"/><rect id="key-light-2" x="54" y="120" width="14" height="5" rx="1.5" fill="#00D2FF" opacity="0"/><rect id="key-light-3" x="78" y="120" width="12" height="5" rx="1.5" fill="#FF3366" opacity="0"/><rect id="key-light-4" x="96" y="120" width="10" height="5" rx="1.5" fill="#00FF66" opacity="0"/><path d="M 42 116 L 28 94 L 122 94 L 108 116 Z" fill="url(#screen-glow)" opacity="0.12"/></g>
 </svg>`,
-  bathing: `<svg width="150" height="150" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+  bathing: `<svg width="120" height="130" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
   <style>
     .husky-shadow { fill: #1E293B; opacity: 0.1; }
     .husky-body { fill: #333A42; }
@@ -191,11 +192,11 @@ const DOG_SVG = {
   </style>
   <ellipse cx="75" cy="142" rx="36" ry="5" class="husky-shadow" />
   <rect x="35" y="138" width="80" height="6" rx="3" class="husky-shadow"/>
-  <g id="body">
+  <g id="dog-body">
     <rect x="48" y="85" width="54" height="40" rx="14" fill="#333A42"/>
     <path d="M 54 85 L 96 85 L 90 118 L 75 122 L 60 118 Z" fill="#F8F6F0"/>
   </g>
-  <g id="head">
+  <g id="dog-head">
     <path d="M 32 50 L 26 14 L 64 36 Z" fill="#333A42" stroke="#333A42" stroke-width="2" stroke-linejoin="round"/>
     <path d="M 40 45 L 38 30 L 52 38 Z" fill="#F8F6F0"/>
     <path d="M 118 50 L 124 14 L 86 36 Z" fill="#333A42" stroke="#333A42" stroke-width="2" stroke-linejoin="round"/>
@@ -219,7 +220,7 @@ const DOG_SVG = {
   <defs><linearGradient id="screen-glow" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#00D2FF" stop-opacity="1"/><stop offset="100%" stop-color="#00D2FF" stop-opacity="0"/></linearGradient></defs>
   <g id="pet-cyber-keyboard" opacity="0"><rect x="30" y="118" width="90" height="10" rx="3" fill="#344054" stroke="#475467" stroke-width="1.5"/><rect id="key-light-1" x="38" y="120" width="10" height="5" rx="1.5" fill="#FFD700" opacity="0"/><rect id="key-light-2" x="54" y="120" width="14" height="5" rx="1.5" fill="#00D2FF" opacity="0"/><rect id="key-light-3" x="78" y="120" width="12" height="5" rx="1.5" fill="#FF3366" opacity="0"/><rect id="key-light-4" x="96" y="120" width="10" height="5" rx="1.5" fill="#00FF66" opacity="0"/><path d="M 42 116 L 28 94 L 122 94 L 108 116 Z" fill="url(#screen-glow)" opacity="0.12"/></g>
 </svg>`,
-  sick: `<svg width="150" height="150" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+  sick: `<!-- DOG SICK --><svg width="120" height="130" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
   <style>
     .husky-shadow { fill: #1E293B; opacity: 0.1; }
     .husky-body { fill: #333A42; }
@@ -230,14 +231,14 @@ const DOG_SVG = {
   </style>
   <ellipse cx="75" cy="142" rx="36" ry="5" class="husky-shadow" />
   <rect x="42" y="136" width="66" height="6" rx="3" class="husky-shadow"/>
-  <g id="body">
+  <g id="dog-body">
     <rect x="48" y="85" width="54" height="48" rx="14" fill="#333A42"/>
     <path d="M 54 85 L 96 85 L 90 118 L 75 124 L 60 118 Z" fill="#F8F6F0"/>
     <path d="M 102 112 Q 106 122 103 128" stroke="#333A42" stroke-width="6" stroke-linecap="round" fill="none"/>
     <rect x="54" y="126" width="14" height="9" rx="3" fill="#4B5563"/>
     <rect x="82" y="126" width="14" height="9" rx="3" fill="#4B5563"/>
   </g>
-  <g id="head">
+  <g id="dog-head">
     <path d="M 34 52 L 18 22 L 60 40 Z" fill="#333A42" stroke="#333A42" stroke-width="2" stroke-linejoin="round"/>
     <path d="M 40 47 L 26 28 L 54 41 Z" fill="#F8F6F0"/>
     <path d="M 116 52 L 132 22 L 90 40 Z" fill="#333A42" stroke="#333A42" stroke-width="2" stroke-linejoin="round"/>
@@ -258,7 +259,7 @@ const DOG_SVG = {
   <defs><linearGradient id="screen-glow" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#00D2FF" stop-opacity="1"/><stop offset="100%" stop-color="#00D2FF" stop-opacity="0"/></linearGradient></defs>
   <g id="pet-cyber-keyboard" opacity="0"><rect x="30" y="118" width="90" height="10" rx="3" fill="#344054" stroke="#475467" stroke-width="1.5"/><rect id="key-light-1" x="38" y="120" width="10" height="5" rx="1.5" fill="#FFD700" opacity="0"/><rect id="key-light-2" x="54" y="120" width="14" height="5" rx="1.5" fill="#00D2FF" opacity="0"/><rect id="key-light-3" x="78" y="120" width="12" height="5" rx="1.5" fill="#FF3366" opacity="0"/><rect id="key-light-4" x="96" y="120" width="10" height="5" rx="1.5" fill="#00FF66" opacity="0"/><path d="M 42 116 L 28 94 L 122 94 L 108 116 Z" fill="url(#screen-glow)" opacity="0.12"/></g>
 </svg>`,
-  sleeping: `<svg width="150" height="150" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+  sleeping: `<svg width="120" height="130" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
   <style>
     .husky-shadow { fill: #1E293B; opacity: 0.1; }
     .husky-body { fill: #333A42; }
@@ -269,14 +270,14 @@ const DOG_SVG = {
   </style>
   <ellipse cx="75" cy="142" rx="36" ry="5" class="husky-shadow" />
   <rect x="45" y="138" width="60" height="5" rx="2.5" class="husky-shadow"/>
-  <g id="body">
+  <g id="dog-body">
     <rect x="50" y="90" width="50" height="42" rx="16" fill="#333A42"/>
     <path d="M 56 90 L 94 90 L 88 116 L 75 122 L 62 116 Z" fill="#F8F6F0"/>
     <path d="M 100 105 Q 108 112 105 120 C 102 128, 98 126, 100 120" stroke="#333A42" stroke-width="5" stroke-linecap="round" fill="none"/>
     <rect x="56" y="124" width="12" height="8" rx="3" fill="#4B5563"/>
     <rect x="82" y="124" width="12" height="8" rx="3" fill="#4B5563"/>
   </g>
-  <g id="head">
+  <g id="dog-head">
     <path d="M 32 50 L 26 14 L 64 36 Z" fill="#333A42" stroke="#333A42" stroke-width="2" stroke-linejoin="round"/>
     <path d="M 36 45 L 32 24 L 56 37 Z" fill="#E11D48" opacity="0.15"/>
     <path d="M 40 45 L 38 30 L 52 38 Z" fill="#F8F6F0"/>
