@@ -136,15 +136,15 @@ function setCatState(name) {
   </style>
   <ellipse cx="62" cy="128" rx="30" ry="6" class="bg-shadow" />
   <g id="rabbit-body">
-    <rect x="35" y="65" width="50" height="45" rx="12" class="rabbit-cream" />
-    <rect x="43" y="75" width="34" height="30" rx="8" class="rabbit-white" />
-    <rect x="42" y="105" width="10" height="10" rx="4" class="rabbit-cream" />
-    <rect x="68" y="105" width="10" height="10" rx="4" class="rabbit-cream" />
+    <rect x="43" y="74" width="64" height="46" rx="20" class="rabbit-cream" />
+    <rect x="51" y="82" width="48" height="38" rx="14" class="rabbit-white" />
+    <rect x="52" y="114" width="12" height="12" rx="6" class="rabbit-cream" />
+    <rect x="86" y="114" width="12" height="12" rx="6" class="rabbit-cream" />
   </g>
   <g id="rabbit-head">
-    <g id="rabbit-ear-l"><rect x="28" y="6" width="14" height="38" rx="7" class="rabbit-cream" /><rect x="32" y="12" width="6" height="26" rx="3" class="rabbit-pink" /></g>
-    <g id="rabbit-ear-r"><rect x="78" y="6" width="14" height="38" rx="7" class="rabbit-cream" /><rect x="82" y="12" width="6" height="26" rx="3" class="rabbit-pink" /></g>
-    <rect x="25" y="40" width="70" height="40" rx="16" class="rabbit-cream" />
+    <g id="rabbit-ear-l"><rect x="40" y="8" width="16" height="40" rx="8" class="rabbit-cream" /><rect x="44" y="14" width="8" height="28" rx="4" class="rabbit-pink" /></g>
+    <g id="rabbit-ear-r"><rect x="94" y="8" width="16" height="40" rx="8" class="rabbit-cream" /><rect x="98" y="14" width="8" height="28" rx="4" class="rabbit-pink" /></g>
+    <rect x="25" y="38" width="100" height="52" rx="24" class="rabbit-cream" />
     <path d="M 25 64 C 25 78, 40 88, 60 88 C 80 88, 95 78, 95 64 Z" class="rabbit-white" />
     <circle cx="33" cy="72" r="4" class="rabbit-pink" />
     <circle cx="87" cy="72" r="4" class="rabbit-pink" />
@@ -176,18 +176,19 @@ function setCatState(name) {
   </style>
   <ellipse cx="75" cy="132" rx="42" ry="6" class="bg-shadow" />
   <g id="marmot-body">
-    <rect x="35" y="65" width="50" height="45" rx="12" class="marmot-chestnut" />
-    <rect x="43" y="75" width="34" height="30" rx="8" class="marmot-oat" />
-    <rect x="42" y="105" width="10" height="10" rx="4" class="marmot-paws" />
-    <rect x="68" y="105" width="10" height="10" rx="4" class="marmot-paws" />
+    <rect x="41" y="76" width="68" height="46" rx="22" class="marmot-chestnut" />
+    <rect x="49" y="82" width="52" height="38" rx="16" class="marmot-oat" />
+    <rect x="52" y="116" width="14" height="12" rx="6" class="marmot-paws" />
+    <rect x="84" y="116" width="14" height="12" rx="6" class="marmot-paws" />
   </g>
   <g id="marmot-head">
-    <circle id="ear-l" cx="32" cy="48" r="7" class="marmot-chestnut" />
-    <circle cx="33" cy="48" r="4" class="marmot-pink" />
-    <circle id="ear-r" cx="88" cy="48" r="7" class="marmot-chestnut" />
-    <circle cx="87" cy="48" r="4" class="marmot-pink" />
-    <polygon points="58,40 60,33 62,40" class="marmot-chestnut" />
-    <rect x="25" y="40" width="70" height="40" rx="16" class="marmot-chestnut" />
+    <circle id="ear-l" cx="30" cy="46" r="8" class="marmot-chestnut" />
+    <circle cx="31" cy="46" r="5" class="marmot-pink" />
+    <circle id="ear-r" cx="120" cy="46" r="8" class="marmot-chestnut" />
+    <circle cx="119" cy="46" r="5" class="marmot-pink" />
+    <polygon points="71,38 75,30 76,38" class="marmot-chestnut" />
+    <polygon points="75,38 78,32 81,38" class="marmot-chestnut" />
+    <rect x="25" y="38" width="100" height="52" rx="24" class="marmot-chestnut" />
     <path d="M 25 64 C 25 78, 40 88, 60 88 C 80 88, 95 78, 95 64 Z" class="marmot-oat" />
     <circle cx="33" cy="72" r="4" class="marmot-pink" />
     <circle cx="87" cy="72" r="4" class="marmot-pink" />
