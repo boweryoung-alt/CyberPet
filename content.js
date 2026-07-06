@@ -15,7 +15,7 @@
 
   // 🐱 Cat state templates
 const CAT_SVG = {
-  idle: `<svg width="120" height="130" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+  idle: `<svg width="120" height="130" viewBox="0 0 120 130" fill="none" xmlns="http://www.w3.org/2000/svg">
   <ellipse cx="60" cy="115" rx="30" ry="6" fill="#D0D5DD" opacity="0.6"/>
   <g id="pet-tail"><animateTransform attributeName="transform" type="rotate" values="-5,78,105;15,78,105;-5,78,105" dur="1.2s" repeatCount="indefinite"/><rect x="78" y="85" width="8" height="20" rx="4" fill="#5C5C5C"/><rect x="82" y="75" width="8" height="12" rx="4" fill="#7A7A7A"/></g>
   <g id="pet-body"><rect x="35" y="65" width="50" height="45" rx="12" fill="#5C5C5C"/><rect x="43" y="75" width="34" height="30" rx="8" fill="#F2F4F7"/><rect x="42" y="105" width="10" height="10" rx="4" fill="#7A7A7A"/><rect x="68" y="105" width="10" height="10" rx="4" fill="#7A7A7A"/></g>
