@@ -71,7 +71,7 @@ function setCatState(name) {
 }
 
 
-  SVG.shiba = `<svg width="120" height="130" viewBox="0 0 120 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+  SVG.shiba = `<svg width="120" height="130" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
   <style>
     .husky-shadow { fill: #1E293B; opacity: 0.1; }
     .husky-body { fill: #333A42; }
@@ -81,7 +81,6 @@ function setCatState(name) {
     .husky-head { fill: #434C56; }
     .husky-tongue { fill: #FB7185; }
   </style>
-  <g transform="scale(0.8) translate(15 12.5)">
   <ellipse cx="75" cy="142" rx="36" ry="5" class="husky-shadow" />
   <rect x="42" y="136" width="66" height="6" rx="3" class="husky-shadow"/>
   <g id="dog-body">
@@ -94,7 +93,6 @@ function setCatState(name) {
     </g>
     <rect x="54" y="126" width="14" height="9" rx="3" fill="#4B5563"/>
     <rect x="82" y="126" width="14" height="9" rx="3" fill="#4B5563"/>
-  </g>
   <g id="dog-head">
     <animateTransform attributeName="transform" type="translate" values="0,0; 0,0.5; 0,0" dur="2.4s" repeatCount="indefinite"/>
     <path d="M 32 50 L 26 14 L 64 36 Z" fill="#333A42" stroke="#333A42" stroke-width="2" stroke-linejoin="round"/>
