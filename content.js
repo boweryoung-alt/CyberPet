@@ -132,18 +132,19 @@ const DOG_SVG = {
   <defs><linearGradient id="screen-glow" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#00D2FF" stop-opacity="1"/><stop offset="100%" stop-color="#00D2FF" stop-opacity="0"/></linearGradient></defs>
   <g id="pet-cyber-keyboard" opacity="0"><rect x="30" y="118" width="90" height="10" rx="3" fill="#344054" stroke="#475467" stroke-width="1.5"/><rect id="key-light-1" x="38" y="120" width="10" height="5" rx="1.5" fill="#FFD700" opacity="0"/><rect id="key-light-2" x="54" y="120" width="14" height="5" rx="1.5" fill="#00D2FF" opacity="0"/><rect id="key-light-3" x="78" y="120" width="12" height="5" rx="1.5" fill="#FF3366" opacity="0"/><rect id="key-light-4" x="96" y="120" width="10" height="5" rx="1.5" fill="#00FF66" opacity="0"/><path d="M 42 116 L 28 94 L 122 94 L 108 116 Z" fill="url(#screen-glow)" opacity="0.12"/></g>
 </svg>`,
-  eating: `<svg width="120" height="130" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+  eating: `<svg width="150" height="150" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
   <style>
-    .husky-shadow { fill: #1E293B; opacity: 0.1; }
-    .husky-body { fill: #333A42; }
-    .husky-white { fill: #F8F6F0; }
-    .husky-pink { fill: #E11D48; opacity: 0.15; }
-    .husky-paws { fill: #4B5563; }
-    .husky-head { fill: #434C56; }
-    .husky-tongue { fill: #FB7185; }
+    @keyframes chew {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(0, 1.5px) scale(0.95, 1.05); }
+    }
+    #animated-mouth {
+      animation: chew 0.4s ease-in-out infinite;
+      transform-origin: 75px 85px;
+    }
   </style>
   <ellipse cx="75" cy="142" rx="36" ry="5" class="husky-shadow" />
-  <rect x="42" y="136" width="66" height="6" rx="3" class="husky-shadow"/>
+  <rect x="42" y="136" width="66" height="6" rx="3" fill="#1E293B" opacity="0.1"/>
   <g id="dog-body">
     <rect x="48" y="85" width="54" height="48" rx="14" fill="#333A42"/>
     <path d="M 54 85 L 96 85 L 90 118 L 75 124 L 60 118 Z" fill="#F8F6F0"/>
@@ -167,15 +168,13 @@ const DOG_SVG = {
     <circle cx="99" cy="65" r="7.5" fill="#1E3A8A"/><circle cx="99" cy="65" r="5" fill="#3B82F6"/><circle cx="99" cy="65" r="2" fill="#0F172A"/><circle cx="97" cy="63" r="1.5" fill="#FFFFFF"/>
     <path d="M 64 74 L 86 74 L 88 84 L 75 92 L 62 84 Z" fill="#F8F6F0"/>
     <rect x="67" y="75" width="16" height="10" rx="5" fill="#111827"/>
-    <path d="M 66 85 Q 71 88 75 85 Q 79 88 84 85" stroke="#111827" stroke-width="2" stroke-linecap="round" fill="none"/>
-    <rect x="71" y="86" width="8" height="7" rx="3" fill="#FB7185"/><line x1="75" y1="86" x2="75" y2="91" stroke="#E11D48" stroke-width="1"/>
-    <!-- 🌟 food particles -->
-    <rect x="62" y="88" width="2" height="2" fill="#B45309"/><rect x="64" y="91" width="1.5" height="1.5" fill="#B45309"/><rect x="86" y="86" width="2" height="2" fill="#B45309"/>
+    <g id="animated-mouth">
+      <path d="M 66 85 Q 71 88 75 85 Q 79 88 84 85" stroke="#111827" stroke-width="2" stroke-linecap="round" fill="none"/>
+      <rect x="71" y="86" width="8" height="7" rx="3" fill="#FB7185"/><line x1="75" y1="86" x2="75" y2="91" stroke="#E11D48" stroke-width="1"/>
+      <rect x="62" y="88" width="2" height="2" fill="#B45309"/><rect x="64" y="91" width="1.5" height="1.5" fill="#B45309"/><rect x="86" y="86" width="2" height="2" fill="#B45309"/>
+    </g>
   </g>
-  <g id="food-bowl">
-    <path d="M 60 124 L 90 124 L 86 134 L 64 134 Z" fill="#CBD5E1"/>
-    <ellipse cx="75" cy="124" rx="12" ry="2" fill="#92400E"/>
-  </g>
+  <g id="food-bowl"><path d="M 60 124 L 90 124 L 86 134 L 64 134 Z" fill="#CBD5E1"/><ellipse cx="75" cy="124" rx="12" ry="2" fill="#92400E"/></g>
   <g id="dog-glasses" opacity="0"><rect x="48" y="55" width="16" height="10" rx="2" stroke="#FF9800" stroke-width="1.5" fill="none" opacity="0.8"/><rect x="86" y="55" width="16" height="10" rx="2" stroke="#FF9800" stroke-width="1.5" fill="none" opacity="0.8"/><line x1="64" y1="60" x2="86" y2="60" stroke="#FF9800" stroke-width="1.5" opacity="0.8"/></g>
   <g id="zzz-group" opacity="0"><text x="120" y="25" font-size="11" fill="#999" font-weight="bold">z</text><text x="128" y="14" font-size="14" fill="#999" font-weight="bold" opacity="0.6">z</text><text x="135" y="3" font-size="17" fill="#999" font-weight="bold" opacity="0.3">z</text></g>
   <defs><linearGradient id="screen-glow" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#00D2FF" stop-opacity="1"/><stop offset="100%" stop-color="#00D2FF" stop-opacity="0"/></linearGradient></defs>
