@@ -163,7 +163,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 
     case 'interact': {
       chrome.storage.local.get(
-        ['fullness', 'cleanliness', 'mood', 'cooldownUntil'],
+        ['fullness', 'cleanliness', 'mood', 'health', 'cooldownUntil'],
         (data) => {
           const now = Date.now();
           if (data.cooldownUntil && now < data.cooldownUntil) {
