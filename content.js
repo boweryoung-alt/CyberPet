@@ -96,7 +96,7 @@ const DOG_SVG = {
     <path d="M 54 85 L 96 85 L 90 118 L 75 124 L 60 118 Z" fill="#F8F6F0"/>
     <g id="dog-tail">
       <animateTransform attributeName="transform" type="rotate" values="-8,100,104; 12,100,104; -8,100,104" dur="1.2s" repeatCount="indefinite"/>
-      <path d="M 102 110 Q 110 108 107 102 C 104 96, 98 98, 100 104" stroke="#333A42" stroke-width="6" stroke-linecap="round" fill="none"/>
+      <path d="M 100 108 C 110 108, 112 96, 104 94 C 96 92, 94 102, 98 106 C 100 100, 106 98, 106 104 C 106 108, 102 108, 100 108 Z" fill="#333A42"/>
     </g>
     <rect x="54" y="126" width="14" height="9" rx="3" fill="#4B5563"/>
     <rect x="82" y="126" width="14" height="9" rx="3" fill="#4B5563"/></g>
