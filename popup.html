@@ -221,6 +221,14 @@
     }
 
     /* ─── Footer ──────────────────────────────────────────────────── */
+    /* ─── SVG Icon sizing ─── */
+    .icon { width: 16px; height: 16px; display: inline-block; vertical-align: middle; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .icon-sm { width: 14px; height: 14px; }
+    .icon-lg { width: 20px; height: 20px; }
+    .icon-heart { fill: none; }
+    .stat-header .icon { margin-right: 3px; opacity: 0.7; }
+    .actions button .icon { width: 22px; height: 22px; margin-bottom: 1px; }
+
     .footer {
       font-size: 9px;
       color: #BBB;
@@ -235,7 +243,9 @@
 
   <!-- Header -->
   <div class="header">
-    <span class="pet-icon">😺</span>
+    <span class="pet-icon" id="petIconHeader">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#6366F1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5c-4.5 0-8 3.5-8 8s3.5 8 8 8 8-3.5 8-8-3.5-8-8-8z"/><path d="M9 12c0 .5.5 1 1 1h4c.5 0 1-.5 1-1"/><path d="M9 10c.5 0 1 .5 1 1"/><path d="M14 10c.5 0 1 .5 1 1"/></svg>
+    </span>
     <h1>CyberPet</h1>
     <span id="statusDot" class="status-dot online"></span>
   </div>
@@ -248,7 +258,7 @@
     <button data-pet="marmot"><span class="pet-emoji">🐿️</span><span class="pet-name">Marmot</span></button>
   </div>
 
-  <!-- Mood indicator -->
+  <!-- Mood -->
   <div class="mood-indicator">
     <span id="moodFaces">😊</span>
   </div>
@@ -256,58 +266,50 @@
   <!-- Status Bars -->
   <div class="status-group">
     <div class="status-label">
-      <span>🍗 Fullness</span>
+      <span><svg class="icon" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>Fullness</span>
       <span id="val-fullness">100</span>
     </div>
-    <div class="progress-track">
-      <div id="bar-fullness" class="progress-fill good" style="width:100%"></div>
-    </div>
+    <div class="progress-track"><div id="bar-fullness" class="progress-fill good" style="width:100%"></div></div>
   </div>
 
   <div class="status-group">
     <div class="status-label">
-      <span>🛁 Cleanliness</span>
+      <span><svg class="icon" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Cleanliness</span>
       <span id="val-clean">100</span>
     </div>
-    <div class="progress-track">
-      <div id="bar-clean" class="progress-fill good" style="width:100%"></div>
-    </div>
+    <div class="progress-track"><div id="bar-clean" class="progress-fill good" style="width:100%"></div></div>
   </div>
 
   <div class="status-group">
     <div class="status-label">
-      <span>❤️ Mood</span>
+      <span><svg class="icon icon-heart" viewBox="0 0 24 24" fill="none"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>Mood</span>
       <span id="val-mood">100</span>
     </div>
-    <div class="progress-track">
-      <div id="bar-mood" class="progress-fill good" style="width:100%"></div>
-    </div>
+    <div class="progress-track"><div id="bar-mood" class="progress-fill good" style="width:100%"></div></div>
   </div>
 
   <div class="status-group">
     <div class="status-label">
-      <span>❤️‍🩹 Health</span>
+      <span><svg class="icon" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>Health</span>
       <span id="val-health">100</span>
     </div>
-    <div class="progress-track">
-      <div id="bar-health" class="progress-fill good" style="width:100%"></div>
-    </div>
+    <div class="progress-track"><div id="bar-health" class="progress-fill good" style="width:100%"></div></div>
   </div>
 
   <!-- Action Buttons -->
   <div class="actions">
     <button id="btn-feed">
-      <span class="emoji">🍖</span>
+      <svg class="icon-lg" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
       Feed
       <span class="cooldown-timer" id="cd-feed"></span>
     </button>
     <button id="btn-bath">
-      <span class="emoji">🧼</span>
+      <svg class="icon-lg" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
       Bath
       <span class="cooldown-timer" id="cd-bath"></span>
     </button>
     <button id="btn-pet">
-      <span class="emoji">🤚</span>
+      <svg class="icon-lg" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M7 10h10"/><path d="M7 14h6"/></svg>
       Pet
       <span class="cooldown-timer" id="cd-pet"></span>
     </button>
@@ -322,7 +324,10 @@
 
   <!-- Ko-fi Support -->
   <div style="text-align:center;margin-bottom:8px">
-    <a href="https://ko-fi.com/boweryoung" target="_blank" rel="noopener" class="kofi" style="display:inline-block;padding:6px 16px;background:linear-gradient(180deg,#FF5E5B,#FF8E53);color:#FFF!important;font-size:12px;font-weight:700;border-radius:20px;text-decoration:none;box-shadow:0 2px 8px rgba(255,94,91,0.3)">☕ Support CyberPet on Ko-fi</a>
+    <a href="https://ko-fi.com/boweryoung" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;padding:6px 16px;background:linear-gradient(135deg,#FF5E5B,#FF8E53);color:#FFF!important;font-size:12px;font-weight:700;border-radius:20px;text-decoration:none;box-shadow:0 2px 8px rgba(255,94,91,0.3)">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+      Support on Ko-fi
+    </a>
   </div>
 
   <!-- Footer -->
