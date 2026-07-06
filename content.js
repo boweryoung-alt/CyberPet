@@ -92,14 +92,14 @@ const DOG_SVG = {
   <rect x="42" y="136" width="66" height="6" rx="3" class="husky-shadow"/>
   <g id="dog-body">
     <animateTransform attributeName="transform" type="translate" values="0,0; 0,0.5; 0,0" dur="3s" repeatCount="indefinite"/>
-    <rect x="48" y="85" width="54" height="48" rx="14" fill="#333A42"/>
+    <g><animateTransform attributeName="transform" type="translate" values="0,0; 0,0.5; 0,0" dur="2s" repeatCount="indefinite"/><rect x="48" y="85" width="54" height="48" rx="14" fill="#333A42"/>
     <path d="M 54 85 L 96 85 L 90 118 L 75 124 L 60 118 Z" fill="#F8F6F0"/>
     <g id="dog-tail">
       <animateTransform attributeName="transform" type="rotate" values="-8,100,104; 12,100,104; -8,100,104" dur="1.2s" repeatCount="indefinite"/>
       <path d="M 102 110 Q 110 108 107 102 C 104 96, 98 98, 100 104" stroke="#333A42" stroke-width="6" stroke-linecap="round" fill="none"/>
     </g>
     <rect x="54" y="126" width="14" height="9" rx="3" fill="#4B5563"/>
-    <rect x="82" y="126" width="14" height="9" rx="3" fill="#4B5563"/>
+    <rect x="82" y="126" width="14" height="9" rx="3" fill="#4B5563"/></g>
   <g id="dog-head">
     <animateTransform attributeName="transform" type="translate" values="0,0; 0,0.5; 0,0" dur="2.4s" repeatCount="indefinite"/>
     <path d="M 32 50 L 26 14 L 64 36 Z" fill="#333A42" stroke="#333A42" stroke-width="2" stroke-linejoin="round"/>
@@ -124,7 +124,7 @@ const DOG_SVG = {
     <path d="M 64 74 L 86 74 L 88 84 L 75 92 L 62 84 Z" fill="#F8F6F0"/>
     <rect x="67" y="75" width="16" height="10" rx="5" fill="#111827"/>
     <path d="M 66 85 Q 71 88 75 85 Q 79 88 84 85" stroke="#111827" stroke-width="2" stroke-linecap="round" fill="none"/>
-    <rect x="71" y="86" width="8" height="7" rx="3" fill="#FB7185"/>
+    <rect id="dog-tongue" x="71" y="86" width="8" height="7" rx="3" fill="#FB7185"/>
     <line x1="75" y1="86" x2="75" y2="91" stroke="#E11D48" stroke-width="1"/>
   </g>
 

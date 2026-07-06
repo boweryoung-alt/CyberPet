@@ -87,15 +87,14 @@
 .pet-shiba#cp-canvas { width: 120px; height: 130px; }
 
 .pet-shiba.state-idle #dog-head {
-  animation: dogHead 2.4s infinite alternate ease-in-out;
-  transform-origin: bottom center;
+  animation: none;
 }
-.pet-shiba.state-idle #dog-tail {
-  animation: corgiTailWag 0.6s infinite alternate ease-in-out;
-  transform-origin: 113px 103px;
+.pet-shiba.state-idle #dog-body {
+  animation: none;
 }
-@keyframes dogHead { 0%{transform:rotate(-2deg) translateY(0)} 100%{transform:rotate(2deg) translateY(-1px)} }
-@keyframes corgiTailWag { 0%{transform:rotate(-10deg)} 100%{transform:rotate(15deg)} }
+.pet-shiba.state-idle {
+  /* Tongue panting is handled by SVG animateTransform inside the idle template */
+}
 
 .pet-shiba.state-sleeping #dog-head,
 .pet-shiba.state-sleeping #dog-body { animation: dogSleepBreathe 4s infinite alternate ease-in-out; }
