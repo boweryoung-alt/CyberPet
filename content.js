@@ -463,7 +463,22 @@ SVG.shiba = DOG_SVG.idle;
     slack: ["Caught you! 😾 Is that more interesting than your PM?","Focus! Or I will poop on your current webpage.","Hey! Are you slacking off?"],
     wake: ["Zzz... waking up... coffee? ☕","*yawn* Did I miss any bugs?","Stretch! 🐱 Now where's my snack?"]
   };
-  const pick = a => a[Math.floor(Math.random() * a.length)];
+
+const Q_DOG = {
+  idle: ["You're my favorite human! 🐕","Woof! Pet me please!","I love belly rubs! 🥹","Let's go for a walk! 🦮","Best day ever!","*sniff sniff* Whatcha doing?"],
+  hungry: ["I'm starving! Feed me! 🥺","My bowl is empty!","I could eat a horse! 🐴","*whines hungrily*"],
+  dirty: ["I need a bath! 🫤","I smell like... me.","Time for a shower?"],
+  happy: ["Woof woof! 🐕💖","That's the spot!","I love you hooman! ❤️","*tail wagging furiously*"],
+  slack: ["Stop slacking! WOOF! 😤","Get back to work or I'll chew your shoes!","Focus! 🐕"],
+  wake: ["*yawns* Good morning!","Did I miss walk time? 🐾","Stretch! Now pet me!"]
+};
+  
+// Pet-specific quote picker
+function pickQ(type) {
+  const source = S.currentPet === 'shiba' ? Q_DOG : Q;
+  return source[type][Math.floor(Math.random() * source[type].length)];
+}
+const pick = a => a[Math.floor(Math.random() * a.length)];
 
   // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   // 4. STATE
@@ -514,7 +529,7 @@ SVG.shiba = DOG_SVG.idle;
     }
 
     if (prev === 'sleeping' && st !== 'sleeping') {
-      setTimeout(() => showBubble(pick(Q.wake), 4000), 300);
+      setTimeout(() => showBubble(pickQ('wake'), 4000), 300);
     }
   }
 
@@ -609,10 +624,10 @@ SVG.shiba = DOG_SVG.idle;
       if (bubble.className === 'cp-bubble-hidden') {
         if (S.focusing) return;
         if (S.health <= 0) showBubble('I feel terrible... 😵', 5000);
-        else if (S.fullness < 20) showBubble(pick(Q.hungry), 5000);
-        else if (S.cleanliness < 20) showBubble(pick(Q.dirty), 5000);
-        else if (S.mood > 80 && Math.random() < 0.3) showBubble(pick(Q.happy), 3500);
-        else if (Math.random() < 0.3) showBubble(pick(Q.idle), 4000);
+        else if (S.fullness < 20) showBubble(pickQ('hungry'), 5000);
+        else if (S.cleanliness < 20) showBubble(pickQ('dirty'), 5000);
+        else if (S.mood > 80 && Math.random() < 0.3) showBubble(pickQ('happy'), 3500);
+        else if (Math.random() < 0.3) showBubble(pickQ('idle'), 4000);
       }
     });
   }
@@ -676,8 +691,8 @@ SVG.shiba = DOG_SVG.idle;
       cTimer = setTimeout(() => {
         cc = 0; const r = pick(REACTIONS);
         switch (r) {
-          case 'meow': showBubble('*meow* 🐱', 2500); break;
-          case 'purr': showBubble('Purrr~ ✨', 2500); break;
+          case 'meow': if (S.currentPet === 'shiba') { showBubble('*woof* 🐕', 2500); } else { showBubble('*meow* 🐱', 2500); } break;
+          case 'purr': if (S.currentPet === 'shiba') { showBubble('*pants happily* 🐕', 2500); } else { showBubble('Purrr~ ✨', 2500); } break;
           case 'tilt': showBubble('*tilts head* 🤔', 2500); doAction('curious', 1200); break;
           case 'surprised': showBubble('Mrow?! 👀', 2500); doAction('surprised', 1200); break;
         }
@@ -758,7 +773,7 @@ SVG.shiba = DOG_SVG.idle;
       const action = msg.action;
       if (!action) return;
       switch (action) {
-        case 'slackWarning': showBubble(pick(Q.slack), 5000); doAction('surprised', 800); break;
+        case 'slackWarning': showBubble(pickQ('slack'), 5000); doAction('surprised', 800); break;
         case 'petStateChange': setState(msg.state === 'working' ? 'working' : 'idle'); break;
         case 'working': setState('working'); break;
         case 'idle': setState('idle'); break;
