@@ -59,19 +59,19 @@
       // Bars
       els.fullness.val.textContent    = f;
       els.fullness.bar.style.width    = f + '%';
-      els.fullness.bar.className      = 'progress-fill ' + barClass(f);
+      els.fullness.bar.className      = 'stat-fill ' + barClass(f);
 
       els.cleanliness.val.textContent = c;
       els.cleanliness.bar.style.width = c + '%';
-      els.cleanliness.bar.className   = 'progress-fill ' + barClass(c);
+      els.cleanliness.bar.className   = 'stat-fill ' + barClass(c);
 
       els.mood.val.textContent        = m;
       els.mood.bar.style.width        = m + '%';
-      els.mood.bar.className          = 'progress-fill ' + barClass(m);
+      els.mood.bar.className          = 'stat-fill ' + barClass(m);
 
       els.health.val.textContent      = h;
       els.health.bar.style.width      = h + '%';
-      els.health.bar.className        = 'progress-fill ' + barClass(h);
+      els.health.bar.className        = 'stat-fill ' + barClass(h);
 
       // Mood face
       els.moodFaces.textContent = getEmojiForMood(m);
