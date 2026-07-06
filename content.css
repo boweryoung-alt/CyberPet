@@ -104,19 +104,19 @@
 .pet-shiba.state-working #dog-glasses { opacity:1!important; }
 /* Dog idle: tongue panting + gentle body breathe */
 .dog-idle #dog-tongue {
-  animation: tonguePant 0.6s ease-in-out infinite;
+  animation: tonguePant 0.5s ease-in-out infinite;
   transform-origin: 75px 89px;
 }
 .dog-idle #dog-body {
-  animation: dogIdleBreathe 2s ease-in-out infinite;
+  animation: dogIdleBreathe 0.5s ease-in-out infinite;
 }
 @keyframes tonguePant {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(2.5px); }
+  50% { transform: translateY(3px); }
 }
 @keyframes dogIdleBreathe {
   0%, 100% { transform: scaleY(1); transform-origin: bottom center; }
-  50% { transform: scaleY(0.97); transform-origin: bottom center; }
+  50% { transform: scaleY(0.96); transform-origin: bottom center; }
 }
 
 .pet-shiba.state-working #dog-body { animation: corgiBodyBob .08s infinite alternate ease-in-out; }
