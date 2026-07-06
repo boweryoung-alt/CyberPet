@@ -118,6 +118,14 @@
   0%, 100% { transform: scaleY(1); transform-origin: bottom center; }
   50% { transform: scaleY(0.96); transform-origin: bottom center; }
 }
+.dog-idle #dog-tail {
+  animation: dogTailWag 0.4s ease-in-out infinite;
+  transform-origin: 100px 104px;
+}
+@keyframes dogTailWag {
+  0%, 100% { transform: rotate(-8deg); }
+  50% { transform: rotate(12deg); }
+}
 
 .pet-shiba.state-working #dog-body { animation: corgiBodyBob .08s infinite alternate ease-in-out; }
 @keyframes corgiBodyBob { 0%{transform:translateY(-1px)} 100%{transform:translateY(2px)} }
