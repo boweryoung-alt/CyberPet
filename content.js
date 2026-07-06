@@ -397,7 +397,7 @@ SVG.shiba = DOG_SVG.idle;
   root.id = 'cyber-pet-root';
   root.innerHTML = `
     <div id="cp-bubble" class="cp-bubble-hidden"></div>
-    <div id="cp-canvas" class="pet-cat state-idle cat-idle">
+    <div id="cp-canvas" class="pet-cat state-idle cat-idle dog-idle">
       <svg width="120" height="130" viewBox="0 0 120 130" fill="none" xmlns="http://www.w3.org/2000/svg">${SVG.cat}</svg>
     </div>
     <div id="cp-glow" class="cp-glow-idle"></div>
@@ -450,6 +450,7 @@ SVG.shiba = DOG_SVG.idle;
     if (!pet || name === S.currentPet) return;
     S.currentPet = name;
     svgEl.innerHTML = pet.svg;
+    if (name === "shiba") setDogState("idle");
     canvas.className = canvas.className.replace(/pet-\w+/g, '').trim() + ' ' + pet.css;
   }
 

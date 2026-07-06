@@ -115,8 +115,8 @@
   50% { transform: translateY(2.5px); }
 }
 @keyframes dogIdleBreathe {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-0.5px); }
+  0%, 100% { transform: scaleY(1); transform-origin: bottom center; }
+  50% { transform: scaleY(0.97); transform-origin: bottom center; }
 }
 
 .pet-shiba.state-working #dog-body { animation: corgiBodyBob .08s infinite alternate ease-in-out; }
