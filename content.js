@@ -71,53 +71,60 @@ function setCatState(name) {
 }
 
 
-  SVG.shiba = `<svg width="120" height="130" viewBox="0 0 120 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+  SVG.shiba = `<svg width="150" height="150" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
   <style>
-    .bg-shadow { fill: #EBF1F2; opacity: 0.7; }
-    .corgi-latte { fill: #D29062; }
-    .corgi-white { fill: #FFFFFF; }
-    .corgi-paws { fill: #6B4423; }
-    .corgi-pink { fill: #FFAEB9; }
-    .corgi-dark { fill: #232F3E; }
-    .geometry-line { stroke: #232F3E; stroke-width: 2.5; stroke-linecap: round; }
+    .husky-shadow { fill: #1E293B; opacity: 0.1; }
+    .husky-body { fill: #333A42; }
+    .husky-white { fill: #F8F6F0; }
+    .husky-pink { fill: #E11D48; opacity: 0.15; }
+    .husky-paws { fill: #4B5563; }
+    .husky-head { fill: #434C56; }
+    .husky-tongue { fill: #FB7185; }
   </style>
-  <ellipse cx="62" cy="132" rx="30" ry="5" class="bg-shadow" />
-  <g id="dog-tail">
-    <rect x="100" y="88" width="14" height="22" rx="7" class="corgi-latte" />
-  </g>
+  <ellipse cx="75" cy="142" rx="36" ry="5" class="husky-shadow" />
+  <rect x="42" y="136" width="66" height="6" rx="3" class="husky-shadow"/>
   <g id="dog-body">
-    <rect x="35" y="65" width="50" height="45" rx="12" class="corgi-latte" />
-    <rect x="43" y="75" width="34" height="30" rx="8" class="corgi-white" />
-    <rect x="42" y="105" width="10" height="10" rx="4" class="corgi-paws" />
-    <rect x="68" y="105" width="10" height="10" rx="4" class="corgi-paws" />
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,0.5; 0,0" dur="3s" repeatCount="indefinite"/>
+    <rect x="48" y="85" width="54" height="48" rx="14" fill="#333A42"/>
+    <path d="M 54 85 L 96 85 L 90 118 L 75 124 L 60 118 Z" fill="#F8F6F0"/>
+    <g id="dog-tail">
+      <animateTransform attributeName="transform" type="rotate" values="-8,100,104; 12,100,104; -8,100,104" dur="1.2s" repeatCount="indefinite"/>
+      <path d="M 102 110 Q 110 108 107 102 C 104 96, 98 98, 100 104" stroke="#333A42" stroke-width="6" stroke-linecap="round" fill="none"/>
+    </g>
+    <rect x="54" y="126" width="14" height="9" rx="3" fill="#4B5563"/>
+    <rect x="82" y="126" width="14" height="9" rx="3" fill="#4B5563"/>
   </g>
   <g id="dog-head">
-    <path d="M 32 45 L 22 22 C 24 18, 34 18, 42 28 Z" class="corgi-latte" />
-    <path d="M 33 42 L 27 26 C 28 22, 34 22, 39 30 Z" class="corgi-pink" />
-    <path d="M 88 45 L 98 22 C 96 18, 86 18, 78 28 Z" class="corgi-latte" />
-    <path d="M 87 42 L 93 26 C 92 22, 86 22, 81 30 Z" class="corgi-pink" />
-    <rect x="25" y="40" width="70" height="40" rx="16" class="corgi-latte" />
-    <path d="M 25 64 C 25 78, 40 88, 60 88 C 80 88, 95 78, 95 64 Z" class="corgi-white" />
-    <polygon points="60,40 54,56 66,56" class="corgi-white" />
-    <circle cx="46" cy="58" r="3" class="corgi-white" />
-    <circle cx="74" cy="58" r="3" class="corgi-white" />
-    <circle cx="33" cy="72" r="4" class="corgi-pink" />
-    <circle cx="87" cy="72" r="4" class="corgi-pink" />
-    <circle cx="48" cy="64" r="3.5" class="corgi-dark" />
-    <circle cx="49" cy="63" r="1" class="corgi-white" />
-    <circle cx="72" cy="64" r="3.5" class="corgi-dark" />
-    <circle cx="73" cy="63" r="1" class="corgi-white" />
-    <g id="corgi-mouth">
-      <polygon points="60,66 57,63 63,63" class="corgi-pink" />
-      <path d="M 56 70 Q 60 73 60 70 Q 60 73 64 70" fill="none" class="geometry-line" />
-    </g>
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,0.5; 0,0" dur="2.4s" repeatCount="indefinite"/>
+    <path d="M 32 50 L 26 14 L 64 36 Z" fill="#333A42" stroke="#333A42" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M 36 45 L 32 24 L 56 37 Z" fill="#E11D48" opacity="0.15"/>
+    <path d="M 40 45 L 38 30 L 52 38 Z" fill="#F8F6F0"/>
+    <path d="M 118 50 L 124 14 L 86 36 Z" fill="#333A42" stroke="#333A42" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M 114 45 L 118 24 L 94 37 Z" fill="#E11D48" opacity="0.15"/>
+    <path d="M 110 45 L 112 30 L 98 38 Z" fill="#F8F6F0"/>
+    <rect x="28" y="32" width="94" height="66" rx="18" fill="#434C56"/>
+    <path d="M 28 66 C 28 86, 42 96, 75 96 C 108 96, 122 86, 122 66 C 122 52, 108 48, 98 62 C 90 42, 84 42, 75 60 C 66 42, 60 42, 52 62 C 42 48, 28 52, 28 66 Z" fill="#F8F6F0"/>
+    <circle cx="50" cy="46" r="4.5" fill="#F8F6F0"/>
+    <circle cx="100" cy="46" r="4.5" fill="#F8F6F0"/>
+    <circle cx="51" cy="65" r="7.5" fill="#1E3A8A"/>
+    <circle cx="51" cy="65" r="5" fill="#3B82F6"/>
+    <circle cx="51" cy="65" r="2" fill="#0F172A"/>
+    <circle cx="49" cy="63" r="1.5" fill="#FFFFFF"/>
+    <circle cx="99" cy="65" r="7.5" fill="#1E3A8A"/>
+    <circle cx="99" cy="65" r="5" fill="#3B82F6"/>
+    <circle cx="99" cy="65" r="2" fill="#0F172A"/>
+    <circle cx="97" cy="63" r="1.5" fill="#FFFFFF"/>
+    <path d="M 64 74 L 86 74 L 88 84 L 75 92 L 62 84 Z" fill="#F8F6F0"/>
+    <rect x="67" y="75" width="16" height="10" rx="5" fill="#111827"/>
+    <path d="M 66 85 Q 71 88 75 85 Q 79 88 84 85" stroke="#111827" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <rect x="71" y="86" width="8" height="7" rx="3" fill="#FB7185"/>
+    <line x1="75" y1="86" x2="75" y2="91" stroke="#E11D48" stroke-width="1"/>
   </g>
-  <g id="dog-glasses" opacity="0"><rect x="46" y="52" width="14" height="10" rx="2" stroke="#FF9800" stroke-width="1.5" fill="none" opacity="0.8"/><rect x="90" y="52" width="14" height="10" rx="2" stroke="#FF9800" stroke-width="1.5" fill="none" opacity="0.8"/><line x1="60" y1="57" x2="90" y2="57" stroke="#FF9800" stroke-width="1.5" opacity="0.8"/></g>
-  <g id="zzz-group" opacity="0"><text x="100" y="22" font-size="10" fill="#999" font-weight="bold">z</text><text x="108" y="12" font-size="13" fill="#999" font-weight="bold" opacity="0.6">z</text><text x="116" y="2" font-size="16" fill="#999" font-weight="bold" opacity="0.3">z</text></g>
+  <g id="dog-glasses" opacity="0"><rect x="48" y="55" width="16" height="10" rx="2" stroke="#FF9800" stroke-width="1.5" fill="none" opacity="0.8"/><rect x="86" y="55" width="16" height="10" rx="2" stroke="#FF9800" stroke-width="1.5" fill="none" opacity="0.8"/><line x1="64" y1="60" x2="86" y2="60" stroke="#FF9800" stroke-width="1.5" opacity="0.8"/></g>
+  <g id="zzz-group" opacity="0"><text x="120" y="25" font-size="11" fill="#999" font-weight="bold">z</text><text x="128" y="14" font-size="14" fill="#999" font-weight="bold" opacity="0.6">z</text><text x="135" y="3" font-size="17" fill="#999" font-weight="bold" opacity="0.3">z</text></g>
   <defs><linearGradient id="screen-glow" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#00D2FF" stop-opacity="1"/><stop offset="100%" stop-color="#00D2FF" stop-opacity="0"/></linearGradient></defs>
-  <g id="pet-cyber-keyboard" opacity="0"><rect x="30" y="102" width="72" height="10" rx="3" fill="#344054" stroke="#475467" stroke-width="1.5"/><rect id="key-light-1" x="34" y="104" width="8" height="5" rx="1.5" fill="#FFD700" opacity="0"/><rect id="key-light-2" x="48" y="104" width="12" height="5" rx="1.5" fill="#00D2FF" opacity="0"/><rect id="key-light-3" x="66" y="104" width="10" height="5" rx="1.5" fill="#FF3366" opacity="0"/><rect id="key-light-4" x="80" y="104" width="8" height="5" rx="1.5" fill="#00FF66" opacity="0"/><path d="M 36 100 L 22 78 L 100 78 L 88 100 Z" fill="url(#screen-glow)" opacity="0.12"/></g>
+  <g id="pet-cyber-keyboard" opacity="0"><rect x="30" y="118" width="90" height="10" rx="3" fill="#344054" stroke="#475467" stroke-width="1.5"/><rect id="key-light-1" x="38" y="120" width="10" height="5" rx="1.5" fill="#FFD700" opacity="0"/><rect id="key-light-2" x="54" y="120" width="14" height="5" rx="1.5" fill="#00D2FF" opacity="0"/><rect id="key-light-3" x="78" y="120" width="12" height="5" rx="1.5" fill="#FF3366" opacity="0"/><rect id="key-light-4" x="96" y="120" width="10" height="5" rx="1.5" fill="#00FF66" opacity="0"/><path d="M 42 116 L 28 94 L 122 94 L 108 116 Z" fill="url(#screen-glow)" opacity="0.12"/></g>
 </svg>`;
-
   SVG.rabbit = `<svg width="120" height="130" viewBox="0 0 120 130" fill="none" xmlns="http://www.w3.org/2000/svg">
   <style>
     .bg-shadow { fill: #EBF1F2; opacity: 0.7; }
