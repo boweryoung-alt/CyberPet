@@ -71,7 +71,7 @@ function setCatState(name) {
 }
 
 
-  SVG.shiba = `<svg width="150" height="150" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+  SVG.shiba = `<svg width="120" height="130" viewBox="0 0 120 130" fill="none" xmlns="http://www.w3.org/2000/svg">
   <style>
     .husky-shadow { fill: #1E293B; opacity: 0.1; }
     .husky-body { fill: #333A42; }
