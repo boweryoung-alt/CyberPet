@@ -153,6 +153,7 @@ const DOG_SVG = {
     <rect x="80" y="126" width="12" height="9" rx="3" fill="#4B5563"/>
   </g>
   <g id="dog-head">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,0.5; 0,0" dur="2.5s" repeatCount="indefinite"/>
     <path d="M 32 50 L 26 14 L 64 36 Z" fill="#333A42" stroke="#333A42" stroke-width="2" stroke-linejoin="round"/>
     <path d="M 36 45 L 32 24 L 56 37 Z" fill="#E11D48" opacity="0.15"/>
     <path d="M 40 45 L 38 30 L 52 38 Z" fill="#F8F6F0"/>
@@ -194,6 +195,7 @@ const DOG_SVG = {
     <path d="M 54 85 L 96 85 L 90 118 L 75 122 L 60 118 Z" fill="#F8F6F0"/>
   </g>
   <g id="dog-head">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,0.5; 0,0" dur="2.5s" repeatCount="indefinite"/>
     <path d="M 32 50 L 26 14 L 64 36 Z" fill="#333A42" stroke="#333A42" stroke-width="2" stroke-linejoin="round"/>
     <path d="M 40 45 L 38 30 L 52 38 Z" fill="#F8F6F0"/>
     <path d="M 118 50 L 124 14 L 86 36 Z" fill="#333A42" stroke="#333A42" stroke-width="2" stroke-linejoin="round"/>
@@ -212,7 +214,39 @@ const DOG_SVG = {
   <rect x="30" y="115" width="90" height="22" rx="4" fill="#B45309"/>
   <rect x="34" y="119" width="82" height="4" fill="#78350F"/>
   <circle cx="38" cy="108" r="2" fill="#60A5FA" opacity="0.7"/><circle cx="114" cy="110" r="3" fill="#60A5FA" opacity="0.7"/>
-  <g id="dog-glasses" opacity="0"><rect x="48" y="55" width="16" height="10" rx="2" stroke="#FF9800" stroke-width="1.5" fill="none" opacity="0.8"/><rect x="86" y="55" width="16" height="10" rx="2" stroke="#FF9800" stroke-width="1.5" fill="none" opacity="0.8"/><line x1="64" y1="60" x2="86" y2="60" stroke="#FF9800" stroke-width="1.5" opacity="0.8"/></g>
+  
+  <!-- Rising bath bubbles -->
+  <g id="bath-bubbles">
+    <circle cx="38" cy="105" r="3" fill="#93C5FD" opacity="0.6">
+      <animate attributeName="cy" values="105;90;75" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;0.3;0" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="50" cy="98" r="2" fill="#93C5FD" opacity="0.5">
+      <animate attributeName="cy" values="98;82;66" dur="2.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.5;0.2;0" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="95" cy="100" r="2.5" fill="#93C5FD" opacity="0.5">
+      <animate attributeName="cy" values="100;85;70" dur="1.8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.5;0.2;0" dur="1.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="110" cy="108" r="3.5" fill="#93C5FD" opacity="0.4">
+      <animate attributeName="cy" values="108;92;76" dur="2.2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;0.2;0" dur="2.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="42" cy="112" r="1.5" fill="#93C5FD" opacity="0.6">
+      <animate attributeName="cy" values="112;98;84" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;0.3;0" dur="3s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  <!-- Steam rising -->
+  <g stroke="#D0D5DD" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.4">
+    <path d="M 32 112 Q 28 102 34 92 Q 30 82 33 72">
+      <animate attributeName="opacity" values="0;0.4;0" dur="2.5s" repeatCount="indefinite"/>
+    </path>
+    <path d="M 118 108 Q 122 98 116 88 Q 120 78 118 68">
+      <animate attributeName="opacity" values="0;0.4;0" dur="3s" repeatCount="indefinite"/>
+    </path>
+  </g><g id="dog-glasses" opacity="0"><rect x="48" y="55" width="16" height="10" rx="2" stroke="#FF9800" stroke-width="1.5" fill="none" opacity="0.8"/><rect x="86" y="55" width="16" height="10" rx="2" stroke="#FF9800" stroke-width="1.5" fill="none" opacity="0.8"/><line x1="64" y1="60" x2="86" y2="60" stroke="#FF9800" stroke-width="1.5" opacity="0.8"/></g>
   <g id="zzz-group" opacity="0"><text x="120" y="25" font-size="11" fill="#999" font-weight="bold">z</text><text x="128" y="14" font-size="14" fill="#999" font-weight="bold" opacity="0.6">z</text><text x="135" y="3" font-size="17" fill="#999" font-weight="bold" opacity="0.3">z</text></g>
   <defs><linearGradient id="screen-glow" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#00D2FF" stop-opacity="1"/><stop offset="100%" stop-color="#00D2FF" stop-opacity="0"/></linearGradient></defs>
   <g id="pet-cyber-keyboard" opacity="0"><rect x="30" y="118" width="90" height="10" rx="3" fill="#344054" stroke="#475467" stroke-width="1.5"/><rect id="key-light-1" x="38" y="120" width="10" height="5" rx="1.5" fill="#FFD700" opacity="0"/><rect id="key-light-2" x="54" y="120" width="14" height="5" rx="1.5" fill="#00D2FF" opacity="0"/><rect id="key-light-3" x="78" y="120" width="12" height="5" rx="1.5" fill="#FF3366" opacity="0"/><rect id="key-light-4" x="96" y="120" width="10" height="5" rx="1.5" fill="#00FF66" opacity="0"/><path d="M 42 116 L 28 94 L 122 94 L 108 116 Z" fill="url(#screen-glow)" opacity="0.12"/></g>
@@ -275,6 +309,7 @@ const DOG_SVG = {
     <rect x="82" y="124" width="12" height="8" rx="3" fill="#4B5563"/>
   </g>
   <g id="dog-head">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,0.5; 0,0" dur="2.5s" repeatCount="indefinite"/>
     <path d="M 32 50 L 26 14 L 64 36 Z" fill="#333A42" stroke="#333A42" stroke-width="2" stroke-linejoin="round"/>
     <path d="M 36 45 L 32 24 L 56 37 Z" fill="#E11D48" opacity="0.15"/>
     <path d="M 40 45 L 38 30 L 52 38 Z" fill="#F8F6F0"/>
