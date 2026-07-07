@@ -335,50 +335,42 @@ const DOG_SVG = {
 SVG.shiba = DOG_SVG.idle;
   SVG.rabbit = `<svg width="120" height="130" viewBox="0 0 140 150" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="bodyG" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#FFFFFF"/><stop offset="85%" stop-color="#F1F5F9"/><stop offset="100%" stop-color="#E2E8F0"/>
-    </linearGradient>
-    <linearGradient id="earP" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#FF6B9A"/><stop offset="100%" stop-color="#FF9EBB"/>
-    </linearGradient>
-    <linearGradient id="neo" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#00F0FF"/><stop offset="50%" stop-color="#6366F1"/><stop offset="100%" stop-color="#D946EF"/>
-    </linearGradient>
-    <radialGradient id="ds" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#0F172A" stop-opacity="0.12"/><stop offset="100%" stop-color="#0F172A" stop-opacity="0"/>
-    </radialGradient>
+    <linearGradient id="warmMilkPink" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#FFB3C7"/><stop offset="100%" stop-color="#FFD4D4"/></linearGradient>
+    <linearGradient id="glowSoftCyan" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#DDFDFF"/><stop offset="100%" stop-color="#E9D5FF"/></linearGradient>
+    <linearGradient id="glowOuterSoftCyan" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#A7F3F0"/><stop offset="100%" stop-color="#C4B5FD"/></linearGradient>
   </defs>
-  <g transform="matrix(0.3 0 0 0.3 20 8)">
-    <ellipse cx="200" cy="430" rx="60" ry="7" fill="url(#ds)"/>
+  <g transform="matrix(0.3 0 0 0.3 25 10)">
+    <ellipse cx="200" cy="432" rx="55" ry="6" fill="#A88E8E" opacity="0.08"/>
     <g id="rabbit-ear-l">
-      <path d="M130,140 C95,5 125,5 150,40 C170,70 162,110 158,140 Z" fill="url(#bodyG)"/>
-      <path d="M135,128 C108,25 128,23 144,52 C156,74 151,108 148,128 Z" fill="url(#earP)"/>
+      <path d="M130,150 C85,-10 125,-20 155,25 C178,60 168,110 162,150 Z" fill="#FFFFFF" stroke="#3A2422" stroke-width="7" stroke-linejoin="round"/>
+      <path d="M135,135 C98,15 125,10 146,45 C160,70 154,110 151,135 Z" fill="url(#warmMilkPink)"/>
     </g>
     <g id="rabbit-ear-r">
-      <path d="M270,140 C305,5 275,5 250,40 C230,70 238,110 242,140 Z" fill="url(#bodyG)"/>
-      <path d="M265,128 C292,25 272,23 256,52 C244,74 249,108 252,128 Z" fill="url(#earP)"/>
+      <path d="M270,150 C315,-10 275,-20 245,25 C222,60 232,110 238,150 Z" fill="#FFFFFF" stroke="#3A2422" stroke-width="7" stroke-linejoin="round"/>
+      <path d="M265,135 C302,15 275,10 254,45 C240,70 246,110 249,135 Z" fill="url(#warmMilkPink)"/>
     </g>
-    <circle cx="275" cy="380" r="22" fill="#E2E8F0"/>
-    <circle cx="273" cy="378" r="19" fill="#FFFFFF"/>
-    <path d="M160,225 C135,285 128,385 200,385 C272,385 265,285 240,225 Z" fill="url(#bodyG)"/>
-    <circle cx="200" cy="285" r="15" fill="#0F172A"/>
-    <circle cx="200" cy="285" r="11" fill="url(#neo)"/>
-    <circle cx="197" cy="282" r="3" fill="#FFFFFF" opacity="0.6"/>
-    <path d="M146,255 C146,285 166,298 172,285 C176,272 164,250 154,250" fill="#FFFFFF"/>
-    <path d="M254,255 C254,285 234,298 228,285 C224,272 236,250 246,250" fill="#FFFFFF"/>
-    <ellipse cx="152" cy="380" rx="15" ry="9" fill="#E2E8F0"/><ellipse cx="152" cy="378" rx="15" ry="9" fill="#FFFFFF"/>
-    <ellipse cx="248" cy="380" rx="15" ry="9" fill="#E2E8F0"/><ellipse cx="248" cy="378" rx="15" ry="9" fill="#FFFFFF"/>
+    <path d="M275,370 C295,360 310,375 305,395 C300,410 285,410 282,395 Z" fill="#FFFFFF" stroke="#3A2422" stroke-width="6" stroke-linejoin="round"/>
+    <path d="M155,235 C132,295 125,385 200,385 C275,385 268,295 245,235 Z" fill="#FFFFFF" stroke="#3A2422" stroke-width="7" stroke-linejoin="round"/>
+    <circle cx="200" cy="275" r="14" fill="#E2E8F0" stroke="#3A2422" stroke-width="4"/>
+    <circle cx="200" cy="275" r="8" fill="url(#glowSoftCyan)" stroke="url(#glowOuterSoftCyan)" stroke-width="2"/>
+    <path d="M150,260 C150,295 170,305 178,290 C182,275 168,255 156,255" fill="#FFFFFF" stroke="#3A2422" stroke-width="6" stroke-linejoin="round"/>
+    <path d="M162,290 Q168,284 174,292" fill="none" stroke="#F87171" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M250,260 C250,295 230,305 222,290 C218,275 232,255 244,255" fill="#FFFFFF" stroke="#3A2422" stroke-width="6" stroke-linejoin="round"/>
+    <path d="M238,290 Q232,284 226,292" fill="none" stroke="#F87171" stroke-width="2.5" stroke-linecap="round"/>
+    <ellipse cx="150" cy="380" rx="16" ry="10" fill="#FFFFFF" stroke="#3A2422" stroke-width="6"/>
+    <ellipse cx="250" cy="380" rx="16" ry="10" fill="#FFFFFF" stroke="#3A2422" stroke-width="6"/>
     <g id="rabbit-head">
-      <path d="M102,180 C102,130 146,105 200,105 C254,105 298,130 298,180 C298,235 254,248 200,248 C146,248 102,235 102,180 Z" fill="#E2E8F0"/>
-      <path d="M102,178 C102,128 146,103 200,103 C254,103 298,128 298,178 C298,233 254,245 200,245 C146,245 102,233 102,178 Z" fill="url(#bodyG)"/>
+      <path d="M102,185 C102,135 146,110 200,110 C254,110 298,135 298,185 C298,240 254,252 200,252 C146,252 102,240 102,185 Z" fill="#FFFFFF" stroke="#3A2422" stroke-width="7" stroke-linejoin="round"/>
       <g id="rabbit-eyes">
-        <ellipse cx="162" cy="172" rx="17" ry="21" fill="#0F172A"/><ellipse cx="156" cy="163" rx="7" ry="9" fill="#FFFFFF"/><circle cx="168" cy="179" r="3" fill="#FFFFFF"/>
-        <ellipse cx="238" cy="172" rx="17" ry="21" fill="#0F172A"/><ellipse cx="232" cy="163" rx="7" ry="9" fill="#FFFFFF"/><circle cx="244" cy="179" r="3" fill="#FFFFFF"/>
+        <ellipse cx="160" cy="182" rx="18" ry="22" fill="#3A2422"/>
+        <ellipse cx="153" cy="172" rx="8" ry="10" fill="#FFFFFF"/><circle cx="167" cy="190" r="3.5" fill="#FFFFFF"/>
+        <ellipse cx="240" cy="182" rx="18" ry="22" fill="#3A2422"/>
+        <ellipse cx="233" cy="172" rx="8" ry="10" fill="#FFFFFF"/><circle cx="247" cy="190" r="3.5" fill="#FFFFFF"/>
       </g>
-      <ellipse cx="128" cy="198" rx="12" ry="6" fill="#FF75A0" opacity="0.4"/>
-      <ellipse cx="272" cy="198" rx="12" ry="6" fill="#FF75A0" opacity="0.4"/>
-      <polygon points="196,186 204,186 200,191" fill="#FF75A0"/>
-      <path d="M189,197 C194,203 199,198 200,197 C201,198 206,203 211,197" fill="none" stroke="#0F172A" stroke-width="4" stroke-linecap="round"/>
+      <ellipse cx="128" cy="212" rx="16" ry="8" fill="#FF75A0" opacity="0.3"/>
+      <ellipse cx="272" cy="212" rx="16" ry="8" fill="#FF75A0" opacity="0.3"/>
+      <path d="M196,195 L204,195 Q200,200 196,195 Z" fill="#FDA4AF" stroke="#3A2422" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M188,206 Q194,213 200,207 Q206,213 212,206" fill="none" stroke="#3A2422" stroke-width="4.5" stroke-linecap="round"/>
     </g>
   </g>
   <g id="pet-glasses" opacity="0"><rect x="46" y="60" width="14" height="10" rx="2" stroke="#FF9800" stroke-width="1.5" fill="none" opacity="0.8"/><rect x="80" y="60" width="14" height="10" rx="2" stroke="#FF9800" stroke-width="1.5" fill="none" opacity="0.8"/><line x1="60" y1="65" x2="80" y2="65" stroke="#FF9800" stroke-width="1.5" opacity="0.8"/></g>
