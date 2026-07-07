@@ -333,44 +333,59 @@ const DOG_SVG = {
   <g id="pet-cyber-keyboard" opacity="0"><rect x="30" y="118" width="90" height="10" rx="3" fill="#344054" stroke="#475467" stroke-width="1.5"/><rect id="key-light-1" x="38" y="120" width="10" height="5" rx="1.5" fill="#FFD700" opacity="0"/><rect id="key-light-2" x="54" y="120" width="14" height="5" rx="1.5" fill="#00D2FF" opacity="0"/><rect id="key-light-3" x="78" y="120" width="12" height="5" rx="1.5" fill="#FF3366" opacity="0"/><rect id="key-light-4" x="96" y="120" width="10" height="5" rx="1.5" fill="#00FF66" opacity="0"/><path d="M 42 116 L 28 94 L 122 94 L 108 116 Z" fill="url(#screen-glow)" opacity="0.12"/></g>
 </svg>`};
 SVG.shiba = DOG_SVG.idle;
-  SVG.rabbit = `<svg width="120" height="130" viewBox="0 0 120 130" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <style>
-    .bg-shadow { fill: #EBF1F2; opacity: 0.7; }
-    .rabbit-cream { fill: #F6F3ED; }
-    .rabbit-white { fill: #FFFFFF; }
-    .rabbit-pink { fill: #FFAEB9; }
-    .rabbit-dark { fill: #2D3748; }
-    .geometry-line { stroke: #2D3748; stroke-width: 2.5; stroke-linecap: round; }
-  </style>
-  <ellipse cx="62" cy="128" rx="30" ry="6" class="bg-shadow" />
-  <g id="rabbit-body">
-    <rect x="43" y="74" width="64" height="46" rx="20" class="rabbit-cream" />
-    <rect x="51" y="82" width="48" height="38" rx="14" class="rabbit-white" />
-    <rect x="52" y="114" width="12" height="12" rx="6" class="rabbit-cream" />
-    <rect x="86" y="114" width="12" height="12" rx="6" class="rabbit-cream" />
-  </g>
-  <g id="rabbit-head">
-    <g id="rabbit-ear-l"><rect x="40" y="8" width="16" height="40" rx="8" class="rabbit-cream" /><rect x="44" y="14" width="8" height="28" rx="4" class="rabbit-pink" /></g>
-    <g id="rabbit-ear-r"><rect x="94" y="8" width="16" height="40" rx="8" class="rabbit-cream" /><rect x="98" y="14" width="8" height="28" rx="4" class="rabbit-pink" /></g>
-    <rect x="25" y="38" width="100" height="52" rx="24" class="rabbit-cream" />
-    <path d="M 25 64 C 25 78, 40 88, 60 88 C 80 88, 95 78, 95 64 Z" class="rabbit-white" />
-    <circle cx="33" cy="72" r="4" class="rabbit-pink" />
-    <circle cx="87" cy="72" r="4" class="rabbit-pink" />
-    <circle cx="48" cy="64" r="3.5" class="rabbit-dark" />
-    <circle cx="49" cy="63" r="1" class="rabbit-white" />
-    <circle cx="72" cy="64" r="3.5" class="rabbit-dark" />
-    <circle cx="73" cy="63" r="1" class="rabbit-white" />
-    <g id="rabbit-mouth">
-      <polygon points="60,66 57,63 63,63" class="rabbit-pink" />
-      <path d="M 56 70 Q 60 73 60 70 Q 60 73 64 70" fill="none" class="geometry-line" />
+  SVG.rabbit = `<svg width="120" height="130" viewBox="0 0 140 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bodyG" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/><stop offset="85%" stop-color="#F1F5F9"/><stop offset="100%" stop-color="#E2E8F0"/>
+    </linearGradient>
+    <linearGradient id="earP" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FF6B9A"/><stop offset="100%" stop-color="#FF9EBB"/>
+    </linearGradient>
+    <linearGradient id="neo" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F0FF"/><stop offset="50%" stop-color="#6366F1"/><stop offset="100%" stop-color="#D946EF"/>
+    </linearGradient>
+    <radialGradient id="ds" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0F172A" stop-opacity="0.12"/><stop offset="100%" stop-color="#0F172A" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <g transform="matrix(0.3 0 0 0.3 20 8)">
+    <ellipse cx="200" cy="430" rx="60" ry="7" fill="url(#ds)"/>
+    <g id="rabbit-ear-l">
+      <path d="M130,140 C95,5 125,5 150,40 C170,70 162,110 158,140 Z" fill="url(#bodyG)"/>
+      <path d="M135,128 C108,25 128,23 144,52 C156,74 151,108 148,128 Z" fill="url(#earP)"/>
+    </g>
+    <g id="rabbit-ear-r">
+      <path d="M270,140 C305,5 275,5 250,40 C230,70 238,110 242,140 Z" fill="url(#bodyG)"/>
+      <path d="M265,128 C292,25 272,23 256,52 C244,74 249,108 252,128 Z" fill="url(#earP)"/>
+    </g>
+    <circle cx="275" cy="380" r="22" fill="#E2E8F0"/>
+    <circle cx="273" cy="378" r="19" fill="#FFFFFF"/>
+    <path d="M160,225 C135,285 128,385 200,385 C272,385 265,285 240,225 Z" fill="url(#bodyG)"/>
+    <circle cx="200" cy="285" r="15" fill="#0F172A"/>
+    <circle cx="200" cy="285" r="11" fill="url(#neo)"/>
+    <circle cx="197" cy="282" r="3" fill="#FFFFFF" opacity="0.6"/>
+    <path d="M146,255 C146,285 166,298 172,285 C176,272 164,250 154,250" fill="#FFFFFF"/>
+    <path d="M254,255 C254,285 234,298 228,285 C224,272 236,250 246,250" fill="#FFFFFF"/>
+    <ellipse cx="152" cy="380" rx="15" ry="9" fill="#E2E8F0"/><ellipse cx="152" cy="378" rx="15" ry="9" fill="#FFFFFF"/>
+    <ellipse cx="248" cy="380" rx="15" ry="9" fill="#E2E8F0"/><ellipse cx="248" cy="378" rx="15" ry="9" fill="#FFFFFF"/>
+    <g id="rabbit-head">
+      <path d="M102,180 C102,130 146,105 200,105 C254,105 298,130 298,180 C298,235 254,248 200,248 C146,248 102,235 102,180 Z" fill="#E2E8F0"/>
+      <path d="M102,178 C102,128 146,103 200,103 C254,103 298,128 298,178 C298,233 254,245 200,245 C146,245 102,233 102,178 Z" fill="url(#bodyG)"/>
+      <g id="rabbit-eyes">
+        <ellipse cx="162" cy="172" rx="17" ry="21" fill="#0F172A"/><ellipse cx="156" cy="163" rx="7" ry="9" fill="#FFFFFF"/><circle cx="168" cy="179" r="3" fill="#FFFFFF"/>
+        <ellipse cx="238" cy="172" rx="17" ry="21" fill="#0F172A"/><ellipse cx="232" cy="163" rx="7" ry="9" fill="#FFFFFF"/><circle cx="244" cy="179" r="3" fill="#FFFFFF"/>
+      </g>
+      <ellipse cx="128" cy="198" rx="12" ry="6" fill="#FF75A0" opacity="0.4"/>
+      <ellipse cx="272" cy="198" rx="12" ry="6" fill="#FF75A0" opacity="0.4"/>
+      <polygon points="196,186 204,186 200,191" fill="#FF75A0"/>
+      <path d="M189,197 C194,203 199,198 200,197 C201,198 206,203 211,197" fill="none" stroke="#0F172A" stroke-width="4" stroke-linecap="round"/>
     </g>
   </g>
-  <g id="pet-glasses" opacity="0"><rect x="47" y="52" width="12" height="10" rx="2" stroke="#FF9800" stroke-width="1.5" fill="none" opacity="0.8"/><rect x="91" y="52" width="12" height="10" rx="2" stroke="#FF9800" stroke-width="1.5" fill="none" opacity="0.8"/><line x1="59" y1="57" x2="91" y2="57" stroke="#FF9800" stroke-width="1.5" opacity="0.8"/></g>
-  <g id="zzz-group" opacity="0"><text x="100" y="22" font-size="10" fill="#999" font-weight="bold">z</text><text x="108" y="12" font-size="13" fill="#999" font-weight="bold" opacity="0.6">z</text><text x="116" y="2" font-size="16" fill="#999" font-weight="bold" opacity="0.3">z</text></g>
+  <g id="pet-glasses" opacity="0"><rect x="46" y="60" width="14" height="10" rx="2" stroke="#FF9800" stroke-width="1.5" fill="none" opacity="0.8"/><rect x="80" y="60" width="14" height="10" rx="2" stroke="#FF9800" stroke-width="1.5" fill="none" opacity="0.8"/><line x1="60" y1="65" x2="80" y2="65" stroke="#FF9800" stroke-width="1.5" opacity="0.8"/></g>
+  <g id="zzz-group" opacity="0"><text x="110" y="25" font-size="10" fill="#999" font-weight="bold">z</text><text x="118" y="15" font-size="13" fill="#999" font-weight="bold" opacity="0.6">z</text><text x="126" y="5" font-size="16" fill="#999" font-weight="bold" opacity="0.3">z</text></g>
   <defs><linearGradient id="screen-glow" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#00D2FF" stop-opacity="1"/><stop offset="100%" stop-color="#00D2FF" stop-opacity="0"/></linearGradient></defs>
-  <g id="pet-cyber-keyboard" opacity="0"><rect x="30" y="102" width="72" height="10" rx="3" fill="#344054" stroke="#475467" stroke-width="1.5"/><rect id="key-light-1" x="34" y="104" width="8" height="5" rx="1.5" fill="#FFD700" opacity="0"/><rect id="key-light-2" x="48" y="104" width="12" height="5" rx="1.5" fill="#00D2FF" opacity="0"/><rect id="key-light-3" x="66" y="104" width="10" height="5" rx="1.5" fill="#FF3366" opacity="0"/><rect id="key-light-4" x="80" y="104" width="8" height="5" rx="1.5" fill="#00FF66" opacity="0"/><path d="M 36 100 L 22 78 L 100 78 L 88 100 Z" fill="url(#screen-glow)" opacity="0.12"/></g>
+  <g id="pet-cyber-keyboard" opacity="0"><rect x="30" y="105" width="60" height="8" rx="2" fill="#344054" stroke="#475467" stroke-width="1.5"/><rect id="key-light-1" x="36" y="107" width="8" height="4" rx="1" fill="#FFD700" opacity="0"/><rect id="key-light-2" x="48" y="107" width="12" height="4" rx="1" fill="#00D2FF" opacity="0"/><rect id="key-light-3" x="66" y="107" width="10" height="4" rx="1" fill="#FF3366" opacity="0"/><rect id="key-light-4" x="80" y="107" width="6" height="4" rx="1" fill="#00FF66" opacity="0"/><path d="M 35 105 L 20 85 L 100 85 L 85 105 Z" fill="url(#screen-glow)" opacity="0.15"/></g>
 </svg>`;
-
   SVG.marmot = `<svg width="120" height="130" viewBox="0 0 120 130" fill="none" xmlns="http://www.w3.org/2000/svg">
   <style>
     .bg-shadow { fill: #EBF1F2; opacity: 0.7; }
