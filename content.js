@@ -378,56 +378,12 @@ SVG.shiba = DOG_SVG.idle;
   <defs><linearGradient id="screen-glow" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#00D2FF" stop-opacity="1"/><stop offset="100%" stop-color="#00D2FF" stop-opacity="0"/></linearGradient></defs>
   <g id="pet-cyber-keyboard" opacity="0"><rect x="30" y="105" width="60" height="8" rx="2" fill="#344054" stroke="#475467" stroke-width="1.5"/><rect id="key-light-1" x="36" y="107" width="8" height="4" rx="1" fill="#FFD700" opacity="0"/><rect id="key-light-2" x="48" y="107" width="12" height="4" rx="1" fill="#00D2FF" opacity="0"/><rect id="key-light-3" x="66" y="107" width="10" height="4" rx="1" fill="#FF3366" opacity="0"/><rect id="key-light-4" x="80" y="107" width="6" height="4" rx="1" fill="#00FF66" opacity="0"/><path d="M 35 105 L 20 85 L 100 85 L 85 105 Z" fill="url(#screen-glow)" opacity="0.15"/></g>
 </svg>`;
-  SVG.marmot = `<svg width="120" height="130" viewBox="0 0 120 130" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <style>
-    .bg-shadow { fill: #EBF1F2; opacity: 0.7; }
-    .marmot-chestnut { fill: #A67C52; }
-    .marmot-oat { fill: #F1E4D3; }
-    .marmot-paws { fill: #4A3525; }
-    .marmot-pink { fill: #FFAEB9; }
-    .marmot-dark { fill: #232F3E; }
-    .marmot-teeth { fill: #FFFFFF; }
-    .geometry-line { stroke: #232F3E; stroke-width: 2.5; stroke-linecap: round; }
-  </style>
-  <ellipse cx="75" cy="132" rx="42" ry="6" class="bg-shadow" />
-  <g id="marmot-body">
-    <rect x="41" y="76" width="68" height="46" rx="22" class="marmot-chestnut" />
-    <rect x="49" y="82" width="52" height="38" rx="16" class="marmot-oat" />
-    <rect x="52" y="116" width="14" height="12" rx="6" class="marmot-paws" />
-    <rect x="84" y="116" width="14" height="12" rx="6" class="marmot-paws" />
-  </g>
-  <g id="marmot-head">
-    <circle id="ear-l" cx="30" cy="46" r="8" class="marmot-chestnut" />
-    <circle cx="31" cy="46" r="5" class="marmot-pink" />
-    <circle id="ear-r" cx="120" cy="46" r="8" class="marmot-chestnut" />
-    <circle cx="119" cy="46" r="5" class="marmot-pink" />
-    <polygon points="71,38 75,30 76,38" class="marmot-chestnut" />
-    <polygon points="75,38 78,32 81,38" class="marmot-chestnut" />
-    <rect x="25" y="38" width="100" height="52" rx="24" class="marmot-chestnut" />
-    <path d="M 25 64 C 25 78, 40 88, 60 88 C 80 88, 95 78, 95 64 Z" class="marmot-oat" />
-    <circle cx="33" cy="72" r="4" class="marmot-pink" />
-    <circle cx="87" cy="72" r="4" class="marmot-pink" />
-    <circle cx="48" cy="64" r="3.5" class="marmot-dark" />
-    <circle cx="49" cy="63" r="1" class="marmot-white" />
-    <circle cx="72" cy="64" r="3.5" class="marmot-dark" />
-    <circle cx="73" cy="63" r="1" class="marmot-white" />
-    <g id="marmot-mouth-group">
-      <polygon points="60,66 57,63 63,63" class="marmot-pink" />
-      <path d="M 56 70 Q 60 73 60 70 Q 60 73 64 70" fill="none" class="geometry-line" />
-    </g>
-  </g>
-  <g id="marmot-hands"><rect x="40" y="100" width="14" height="12" rx="6" class="marmot-paws" /><rect x="96" y="100" width="14" height="12" rx="6" class="marmot-paws" /></g>
-  <g id="pet-glasses" opacity="0"><rect x="46" y="52" width="14" height="10" rx="2" stroke="#FF9800" stroke-width="1.5" fill="none" opacity="0.8"/><rect x="90" y="52" width="14" height="10" rx="2" stroke="#FF9800" stroke-width="1.5" fill="none" opacity="0.8"/><line x1="60" y1="57" x2="90" y2="57" stroke="#FF9800" stroke-width="1.5" opacity="0.8"/></g>
-  <g id="zzz-group" opacity="0"><text x="100" y="22" font-size="10" fill="#999" font-weight="bold">z</text><text x="108" y="12" font-size="13" fill="#999" font-weight="bold" opacity="0.6">z</text><text x="116" y="2" font-size="16" fill="#999" font-weight="bold" opacity="0.3">z</text></g>
-  <defs><linearGradient id="screen-glow" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#00D2FF" stop-opacity="1"/><stop offset="100%" stop-color="#00D2FF" stop-opacity="0"/></linearGradient></defs>
-  <g id="pet-cyber-keyboard" opacity="0"><rect x="30" y="102" width="72" height="10" rx="3" fill="#344054" stroke="#475467" stroke-width="1.5"/><rect id="key-light-1" x="34" y="104" width="8" height="5" rx="1.5" fill="#FFD700" opacity="0"/><rect id="key-light-2" x="48" y="104" width="12" height="5" rx="1.5" fill="#00D2FF" opacity="0"/><rect id="key-light-3" x="66" y="104" width="10" height="5" rx="1.5" fill="#FF3366" opacity="0"/><rect id="key-light-4" x="80" y="104" width="8" height="5" rx="1.5" fill="#00FF66" opacity="0"/><path d="M 36 100 L 22 78 L 100 78 L 88 100 Z" fill="url(#screen-glow)" opacity="0.12"/></g>
-</svg>`;
+  
 
   const PETS = {
     cat:   { name: '🐱 CyberCat',    svg: SVG.cat,   css: 'pet-cat' },
     shiba: { name: '🐕 Shiba',       svg: SVG.shiba, css: 'pet-shiba' },
     rabbit:{ name: '🐰 Bunny',       svg: SVG.rabbit,css: 'pet-rabbit' },
-    marmot:{ name: '🐹 Groundhog',   svg: SVG.marmot,css: 'pet-marmot' },
   };
 
 
