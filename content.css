@@ -34,28 +34,81 @@
 .cp-glow-hungry { background: radial-gradient(circle, rgba(244,67,54,0.12), transparent 70%); animation: glowPulse 1s ease-in-out infinite; }
 @keyframes glowPulse { 0%,100%{transform:translate(-50%,-50%) scale(1)} 50%{transform:translate(-50%,-50%) scale(1.1)} }
 
+/* ═══════════════════════════════════════════════════════════════════════════
+   SHARED STATE ANIMATIONS (applied via pet-specific selectors below)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@keyframes headBob      { 0%,100%{transform:translateY(0)} 100%{transform:translateY(2px)} }
+@keyframes bodyBreathe  { 0%,100%{transform:scaleY(1);transform-origin:bottom} 100%{transform:scaleY(0.96);transform-origin:bottom} }
+@keyframes tailWag      { 0%{transform:rotate(-5deg)} 100%{transform:rotate(15deg)} }
+@keyframes deepSleep    { 0%{transform:scale(0.95);transform-origin:bottom center} 100%{transform:scale(1.02);transform-origin:bottom center} }
+@keyframes wobble       { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-3px)} 75%{transform:translateX(3px)} }
+@keyframes curiousTilt  { 0%{transform:rotate(0)} 40%{transform:rotate(-10deg)} 60%{transform:rotate(-10deg)} 100%{transform:rotate(0)} }
+@keyframes scareJump    { 0%{transform:translateY(0)} 30%{transform:translateY(-35px) scaleY(1.1)} 50%{transform:translateY(5px) scaleY(0.8)} 70%{transform:translateY(-5px)} 100%{transform:translateY(0)} }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   GLOBAL: sick state (health ≤ 0) — all pets become dizzy + collapsed
+   🐱 CAT — idle / sleep / working / surprised / hungry / curious
    ═══════════════════════════════════════════════════════════════════════════ */
-.state-sick { transform: translateY(6px) rotate(-4deg); transform-origin: bottom center; }
-.state-sick #pet-body, .state-sick #pet-head,
-.pet-cat.state-sick #pet-body, .pet-cat.state-sick #pet-head,
-.pet-shiba.state-sick #pet-body, .pet-shiba.state-sick #dog-head,
+
+.pet-cat.state-idle #pet-head   { animation: headBob 2.4s infinite alternate ease-in-out; }
+.pet-cat.state-idle #pet-body   { animation: bodyBreathe 2.4s infinite alternate ease-in-out; }
+
+.pet-cat.state-sleeping { transform: translateY(10px) rotate(5deg); }
+.pet-cat.state-sleeping #eye-left, .pet-cat.state-sleeping #eye-right { height:2px!important; transform:translateY(4px); }
+.pet-cat.state-sleeping #eye-light-l, .pet-cat.state-sleeping #eye-light-r { opacity:0; }
+.pet-cat.state-sleeping #pet-body, .pet-cat.state-sleeping #pet-head { animation: deepSleep 3.5s infinite alternate ease-in-out; }
+
+.pet-cat.state-working #pet-glasses { opacity:1!important; }
+.pet-cat.state-working #pet-head { animation: catHeadMicroGlow .12s infinite alternate ease-in-out; }
+.pet-cat.state-working #pet-body rect[fill="#7A7A7A"] { animation: catClawPrecise 0.06s infinite alternate linear; }
+@keyframes catClawPrecise { 0%{transform:translateY(-1.5px) scaleY(1.05);transform-origin:top center} 100%{transform:translateY(1.5px) scaleY(0.95);transform-origin:top center} }
+@keyframes catHeadMicroGlow { 0%{transform:translateY(-0.5px)} 100%{transform:translateY(0.5px)} }
+
+.pet-cat.state-surprised { animation: scareJump .5s ease-out; }
+.pet-cat.state-surprised #eye-left, .pet-cat.state-surprised #eye-right { transform:scale(1.4); transform-origin:center; }
+
+.pet-cat.state-hungry #pet-head { animation: wobble .5s ease-in-out infinite; }
+.pet-cat.state-hungry #pet-body { animation: bodyBreathe .5s ease-in-out infinite; }
+
+.pet-cat.state-curious #pet-head { animation: curiousTilt .6s ease-in-out; }
+/* ─── Cat state-specific tail animations ─── */
+.cat-idle #pet-tail { animation: tailWag 1.2s infinite alternate ease-in-out; transform-box: fill-box; transform-origin:0% 100%; }
+.cat-eating #pet-tail { animation: tailWag 0.4s infinite alternate ease-in-out; transform-box: fill-box; transform-origin:0% 100%; }
+.cat-bathing #pet-tail { animation: none; transform: rotate(-5deg); transform-box: fill-box; transform-origin:0% 100%; }
+.cat-sick #pet-tail { animation: none; transform: rotate(-10deg); transform-box: fill-box; transform-origin:0% 100%; }
+.dog-eating #dog-head { animation: none !important; }
+.dog-eating #dog-body { animation: none !important; }
 
 
+/* ═══════════════════════════════════════════════════════════════════════════
+   🐕 CORGI — 柯基（扁几何色块风格）
+   ═══════════════════════════════════════════════════════════════════════════ */
 
-/* Dog idle: tongue panting + tail wag + body breathe */
+.pet-shiba#cp-canvas { width: 120px; height: 130px; }
+
+.pet-shiba.state-idle #dog-head {
+  animation: none;
+}
+.pet-shiba.state-idle #dog-body {
+  animation: none;
+}
+.pet-shiba.state-idle {
+  /* Tongue panting is handled by SVG animateTransform inside the idle template */
+}
+
+.pet-shiba.state-sleeping #dog-head,
+.pet-shiba.state-sleeping #dog-body { animation: dogSleepBreathe 4s infinite alternate ease-in-out; }
+.pet-shiba.state-sleeping { transform: translateY(5px); }
+@keyframes dogSleepBreathe { 0%{transform:scale(0.98);transform-origin:bottom center} 100%{transform:scale(1.01);transform-origin:bottom center} }
+
+.pet-shiba.state-working #dog-glasses { opacity:1!important; }
+/* Dog idle: tongue panting + gentle body breathe */
 .dog-idle #dog-tongue {
   animation: tonguePant 0.5s ease-in-out infinite;
   transform-origin: 75px 89px;
 }
 .dog-idle #dog-body {
   animation: dogIdleBreathe 0.5s ease-in-out infinite;
-}
-.dog-idle #dog-tail {
-  animation: dogTailWag 0.4s ease-in-out infinite;
-  transform-origin: 100px 104px;
 }
 @keyframes tonguePant {
   0%, 100% { transform: translateY(0); }
@@ -65,18 +118,35 @@
   0%, 100% { transform: scaleY(1); transform-origin: bottom center; }
   50% { transform: scaleY(0.96); transform-origin: bottom center; }
 }
+.dog-idle #dog-tail {
+  animation: dogTailWag 0.4s ease-in-out infinite;
+  transform-origin: 100px 104px;
+}
 @keyframes dogTailWag {
   0%, 100% { transform: rotate(-8deg); }
   50% { transform: rotate(12deg); }
 }
-/* Dog sleeping: snore bubble */
-.pet-shiba.state-sleeping #dog-head,
-.pet-shiba.state-sleeping #dog-body { animation: dogSleepBreathe 4s infinite alternate ease-in-out; }
-.pet-shiba.state-sleeping { transform: translateY(5px); }
-@keyframes dogSleepBreathe { 0%{transform:scale(0.98);transform-origin:bottom center} 100%{transform:scale(1.01);transform-origin:bottom center} }
+
+.pet-shiba.state-working #dog-body { animation: corgiBodyBob .08s infinite alternate ease-in-out; }
+@keyframes corgiBodyBob { 0%{transform:translateY(-1px)} 100%{transform:translateY(2px)} }
+
+.pet-shiba.state-surprised { animation: corgiScare .5s ease-out; }
+@keyframes corgiScare {
+  0% { transform: translateY(0); }
+  30% { transform: translateY(-25px) scaleY(1.1); }
+  50% { transform: translateY(5px) scaleY(0.85); }
+  70% { transform: translateY(-3px); }
+  100% { transform: translateY(0); }
+}
+
+.pet-shiba.state-hungry #dog-head { animation: wobble .5s ease-in-out infinite; }
+.pet-shiba.state-curious #dog-head { animation: curiousTilt .6s ease-in-out; }
+
 /* ═══════════════════════════════════════════════════════════════════════════
-   🐰 RABBIT — 奶油白扁平风
+   🐰 RABBIT — 淡奶色几何兔（扁平风格）
    ═══════════════════════════════════════════════════════════════════════════ */
+
+.pet-rabbit#cp-canvas { width: 140px; height: 150px; }
 
 .pet-rabbit.state-idle #rabbit-ear-l {
   animation: earJiggleL 1.5s infinite ease-in-out;
@@ -118,12 +188,79 @@
   0% { transform: translateY(0); }
   30% { transform: translateY(-25px) scaleY(1.1); }
   50% { transform: translateY(5px) scaleY(0.85); }
-  70% { transform: translateY(-5px); }
+  70% { transform: translateY(-3px); }
   100% { transform: translateY(0); }
 }
 .pet-rabbit.state-hungry #rabbit-head { animation: wobble .5s ease-in-out infinite; }
 .pet-rabbit.state-curious #rabbit-head { animation: curiousTilt .6s ease-in-out; }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🐹 GROUNDHOG (MARMOT) — surprised/hungry → 尖叫 shaking + 手 panic
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.pet-marmot#cp-canvas { width: 140px; height: 145px; }
+.pet-marmot.state-idle #marmot-head { animation: marmotHeadBob 2s infinite alternate ease-in-out; }
+.pet-marmot.state-idle #marmot-body { animation: marmotBreathe 2s infinite alternate ease-in-out; }
+.pet-marmot.state-idle #marmot-hands { animation: marmotHandIdle 1s infinite alternate ease-in-out; }
+@keyframes marmotHeadBob { 0%{transform:translateY(0)} 100%{transform:translateY(1.5px)} }
+@keyframes marmotBreathe { 0%{transform:scaleY(1);transform-origin:bottom center} 100%{transform:scaleY(0.97);transform-origin:bottom center} }
+@keyframes marmotHandIdle { 0%{transform:translateY(0) rotate(0deg)} 100%{transform:translateY(2px) rotate(-3deg)} }
+
+.pet-marmot.state-sleeping .marmot-dark { transform:scaleY(0.2) translateY(180px); transform-origin:center; }
+.pet-marmot.state-sleeping #marmot-mouth-group { transform:scale(0.9) translateY(-1px); transform-origin:center; }
+.pet-marmot.state-sleeping #marmot-hands { transform:translateY(4px) rotate(5deg); transform-origin:center; }
+.pet-marmot.state-sleeping #marmot-body,
+.pet-marmot.state-sleeping #marmot-head { animation: marmotSnoring 4s infinite alternate ease-in-out; }
+@keyframes marmotSnoring { 0%{transform:scaleY(0.95) rotate(-1deg);transform-origin:bottom center} 100%{transform:scaleY(1.04) rotate(1deg);transform-origin:bottom center} }
+
+.pet-marmot.state-working {
+  transform: translateY(8px) rotate(3deg);
+  transform-origin: bottom center;
+  animation: marmotRageCrushing 0.1s infinite alternate ease-in-out;
+}
+.pet-marmot.state-working #pet-glasses { opacity:1!important; transform:translate(12px,-3px) scale(0.85); transform-origin:center; }
+.pet-marmot.state-working #pet-cyber-keyboard { transform: translateY(-8px); }
+.pet-marmot.state-working #marmot-hands { animation: marmotSmashKeyboard 0.06s infinite alternate linear; }
+.pet-marmot.state-working #marmot-mouth-group { animation: marmotTeethChatter 0.06s infinite alternate linear; }
+@keyframes marmotRageCrushing { 0%{transform:translateY(8px) rotate(2deg) scaleX(1.01)} 100%{transform:translateY(9px) rotate(4deg) scaleX(0.99)} }
+@keyframes marmotSmashKeyboard { 0%{transform:translateY(-6px) scaleY(1.2);transform-origin:top center} 100%{transform:translateY(6px) scaleY(0.8);transform-origin:top center} }
+@keyframes marmotTeethChatter { 0%{transform:translateY(-2px)} 100%{transform:translateY(3px) scaleY(1.2)} }
+
+.pet-marmot.state-surprised {
+  animation: marmotShaking 0.1s infinite alternate;
+}
+.pet-marmot.state-surprised #marmot-mouth-group {
+  transform: scaleY(1.6) translateY(2px);
+  transform-origin: top center;
+}
+.pet-marmot.state-surprised #marmot-hands {
+  animation: handPanic 0.1s infinite alternate;
+}
+@keyframes marmotShaking { 0%{transform:translate(1px,1px) scaleX(1.02)} 100%{transform:translate(-1px,-1px) scaleX(0.98)} }
+@keyframes handPanic     { 0%{transform:translateY(-3px)} 100%{transform:translateY(3px)} }
+
+.pet-marmot.state-hungry {
+  animation: marmotHungryShiver 0.08s infinite linear;
+}
+.pet-marmot.state-hungry .marmot-oat {
+  fill: #FECDCA !important;
+  transition: fill 0.5s ease;
+}
+@keyframes marmotHungryShiver { 0%{transform:translate(-1px,1px)} 100%{transform:translate(1px,-1px)} }
+
+.pet-marmot.state-curious #marmot-head { animation: curiousTilt .6s ease-in-out; }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   GLOBAL: sick state (health ≤ 0) — all pets become dizzy + collapsed
+   ═══════════════════════════════════════════════════════════════════════════ */
+.state-sick { transform: translateY(6px) rotate(-4deg); transform-origin: bottom center; }
+.state-sick #pet-body, .state-sick #pet-head,
+.pet-cat.state-sick #pet-body, .pet-cat.state-sick #pet-head,
+.pet-shiba.state-sick #pet-body, .pet-shiba.state-sick #dog-head,
 .pet-rabbit.state-sick #rabbit-body, .pet-rabbit.state-sick #rabbit-head,
+.pet-marmot.state-sick #marmot-body, .pet-marmot.state-sick #marmot-head {
+  animation: sickDizzy 0.15s infinite linear;
+}
 @keyframes sickDizzy {
   0%   { transform: translate(0, 0); }
   20%  { transform: translate(3px, 0); }
