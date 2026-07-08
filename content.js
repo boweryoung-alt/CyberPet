@@ -329,7 +329,14 @@ const DOG_SVG = {
   </g>
   <g id="zzz"><path d="M 110 50 L 118 50 L 110 58 L 118 58" stroke="#FDFBF7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.8"/><path d="M 120 40 L 128 40 L 120 48 L 128 48" stroke="#FDFBF7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.8"/></g>
   <g id="dog-glasses" opacity="0"><rect x="48" y="55" width="16" height="10" rx="2" stroke="#FF9800" stroke-width="1.5" fill="none" opacity="0.8"/><rect x="86" y="55" width="16" height="10" rx="2" stroke="#FF9800" stroke-width="1.5" fill="none" opacity="0.8"/><line x1="64" y1="60" x2="86" y2="60" stroke="#FF9800" stroke-width="1.5" opacity="0.8"/></g>
-  <g id="zzz-group" opacity="1"><text x="120" y="25" font-size="11" fill="#999" font-weight="bold">z</text><text x="128" y="14" font-size="14" fill="#999" font-weight="bold" opacity="0.6">z</text><text x="135" y="3" font-size="17" fill="#999" font-weight="bold" opacity="0.3">z</text></g>
+    <!-- Snore bubble -->
+  <g transform="translate(98, 52)">
+    <ellipse cx="8" cy="6" rx="10" ry="8" fill="white" stroke="#93C5FD" stroke-width="1.5" opacity="0.8">
+      <animate attributeName="rx" values="10;13;10" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="ry" values="8;11;8" dur="2s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="12" cy="5" rx="2" ry="3" fill="white" opacity="0.6"/>
+  </g><g id="zzz-group" opacity="1"><text x="120" y="25" font-size="11" fill="#999" font-weight="bold">z</text><text x="128" y="14" font-size="14" fill="#999" font-weight="bold" opacity="0.6">z</text><text x="135" y="3" font-size="17" fill="#999" font-weight="bold" opacity="0.3">z</text></g>
   <defs><linearGradient id="screen-glow" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#00D2FF" stop-opacity="1"/><stop offset="100%" stop-color="#00D2FF" stop-opacity="0"/></linearGradient></defs>
   <g id="pet-cyber-keyboard" opacity="0"><rect x="30" y="118" width="90" height="10" rx="3" fill="#344054" stroke="#475467" stroke-width="1.5"/><rect id="key-light-1" x="38" y="120" width="10" height="5" rx="1.5" fill="#FFD700" opacity="0"/><rect id="key-light-2" x="54" y="120" width="14" height="5" rx="1.5" fill="#00D2FF" opacity="0"/><rect id="key-light-3" x="78" y="120" width="12" height="5" rx="1.5" fill="#FF3366" opacity="0"/><rect id="key-light-4" x="96" y="120" width="10" height="5" rx="1.5" fill="#00FF66" opacity="0"/><path d="M 42 116 L 28 94 L 122 94 L 108 116 Z" fill="url(#screen-glow)" opacity="0.12"/></g>
 </svg>`};
@@ -372,8 +379,8 @@ SVG.shiba = DOG_SVG.idle;
     <g id="rabbit-ear-r"><rect x="70" y="10" width="12" height="36" rx="6" fill="#F9FAFB"/><rect x="74" y="16" width="4" height="24" rx="2" fill="#FECDD3"/></g>
     <rect x="25" y="40" width="70" height="40" rx="16" fill="#F9FAFB"/>
     <circle cx="33" cy="68" r="4" fill="#FFCDD2" opacity="0.8"/><circle cx="87" cy="68" r="4" fill="#FFCDD2" opacity="0.8"/>
-    <g id="rabbit-eyes"><rect x="42" y="54" width="8" height="10" rx="4" fill="#1D2939"/><rect x="70" y="54" width="8" height="10" rx="4" fill="#1D2939"/><circle cx="44" cy="56" r="1.5" fill="white"/><circle cx="72" cy="56" r="1.5" fill="white"/></g>
-    <path d="M56 66 Q60 68 64 66" stroke="#1D2939" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <g id="rabbit-eyes"><path d="M 42 58 Q 46 62 50 58" stroke="#1D2939" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M 70 58 Q 74 62 78 58" stroke="#1D2939" stroke-width="2" stroke-linecap="round" fill="none"/></g>
+    <g id="chewing-mouth"><path d="M56 66 Q60 68 64 66" stroke="#1D2939" stroke-width="2" stroke-linecap="round" fill="none"><animate attributeName="d" values="M56 66 Q60 68 64 66; M56 66 C56 69, 64 69, 64 66; M56 66 Q60 68 64 66" dur="0.6s" repeatCount="indefinite"/></path></g>
     <line x1="20" y1="62" x2="12" y2="60" stroke="#D1D5DB" stroke-width="1.5"/><line x1="20" y1="66" x2="12" y2="67" stroke="#D1D5DB" stroke-width="1.5"/><line x1="100" y1="62" x2="108" y2="60" stroke="#D1D5DB" stroke-width="1.5"/><line x1="100" y1="66" x2="108" y2="67" stroke="#D1D5DB" stroke-width="1.5"/>
   </g>
   <!-- Food bowl -->
@@ -393,7 +400,7 @@ SVG.shiba = DOG_SVG.idle;
     <rect x="25" y="40" width="70" height="40" rx="16" fill="#F9FAFB"/>
     <circle cx="33" cy="68" r="4" fill="#FFCDD2" opacity="0.8"/><circle cx="87" cy="68" r="4" fill="#FFCDD2" opacity="0.8"/>
     <g id="rabbit-eyes"><rect x="42" y="54" width="8" height="10" rx="4" fill="#1D2939"/><rect x="70" y="54" width="8" height="10" rx="4" fill="#1D2939"/><circle cx="44" cy="56" r="1.5" fill="white"/><circle cx="72" cy="56" r="1.5" fill="white"/></g>
-    <path d="M56 66 Q60 69 64 66" stroke="#1D2939" stroke-width="2" stroke-linecap="round" fill="none"/><line x1="20" y1="62" x2="12" y2="60" stroke="#D1D5DB" stroke-width="1.5"/><line x1="20" y1="66" x2="12" y2="67" stroke="#D1D5DB" stroke-width="1.5"/><line x1="100" y1="62" x2="108" y2="60" stroke="#D1D5DB" stroke-width="1.5"/><line x1="100" y1="66" x2="108" y2="67" stroke="#D1D5DB" stroke-width="1.5"/><rect x="48" y="34" width="24" height="7" rx="2" fill="#E2E8F0"/><rect x="52" y="31" width="16" height="4" rx="1" fill="#F2F4F7"/></g>
+    <path d="M56 66 Q60 69 64 66" stroke="#1D2939" stroke-width="2" stroke-linecap="round" fill="none"/><line x1="20" y1="62" x2="12" y2="60" stroke="#D1D5DB" stroke-width="1.5"/><line x1="20" y1="66" x2="12" y2="67" stroke="#D1D5DB" stroke-width="1.5"/><line x1="100" y1="62" x2="108" y2="60" stroke="#D1D5DB" stroke-width="1.5"/><line x1="100" y1="66" x2="108" y2="67" stroke="#D1D5DB" stroke-width="1.5"/><rect x="46" y="32" width="28" height="8" rx="2" fill="#E2E8F0"/><rect x="50" y="35" width="20" height="5" rx="1" fill="#FFFFFF"/></g>
   <g id="bath-basin"><path d="M 24 102 C 24 102, 27 118, 60 118 C 93 118, 96 102, 96 102 Z" fill="#93C5FD" opacity="0.85"/><circle cx="28" cy="100" r="2" fill="white" opacity="0.8"><animate attributeName="cy" values="100;92;84" dur="2s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.8;0.3;0" dur="2s" repeatCount="indefinite"/></circle><circle cx="92" cy="103" r="2" fill="white" opacity="0.8"><animate attributeName="cy" values="103;95;87" dur="2.5s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.8;0.3;0" dur="2.5s" repeatCount="indefinite"/></circle></g>
   <g id="pet-glasses" opacity="0"><rect x="38" y="52" width="16" height="14" rx="2" stroke="#FF9800" stroke-width="2" fill="none"/><rect x="66" y="52" width="16" height="14" rx="2" stroke="#FF9800" stroke-width="2" fill="none"/><line x1="54" y1="59" x2="66" y2="59" stroke="#FF9800" stroke-width="2"/></g>
   <g id="zzz-group" opacity="0"><text x="88" y="22" font-size="10" fill="#999" font-weight="bold">z</text><text x="96" y="12" font-size="14" fill="#999" font-weight="bold" opacity="0.6">z</text><text x="104" y="2" font-size="18" fill="#999" font-weight="bold" opacity="0.3">z</text></g>

@@ -42,6 +42,87 @@
 .state-sick #pet-body, .state-sick #pet-head,
 .pet-cat.state-sick #pet-body, .pet-cat.state-sick #pet-head,
 .pet-shiba.state-sick #pet-body, .pet-shiba.state-sick #dog-head,
+
+
+
+/* Dog idle: tongue panting + tail wag + body breathe */
+.dog-idle #dog-tongue {
+  animation: tonguePant 0.5s ease-in-out infinite;
+  transform-origin: 75px 89px;
+}
+.dog-idle #dog-body {
+  animation: dogIdleBreathe 0.5s ease-in-out infinite;
+}
+.dog-idle #dog-tail {
+  animation: dogTailWag 0.4s ease-in-out infinite;
+  transform-origin: 100px 104px;
+}
+@keyframes tonguePant {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(3px); }
+}
+@keyframes dogIdleBreathe {
+  0%, 100% { transform: scaleY(1); transform-origin: bottom center; }
+  50% { transform: scaleY(0.96); transform-origin: bottom center; }
+}
+@keyframes dogTailWag {
+  0%, 100% { transform: rotate(-8deg); }
+  50% { transform: rotate(12deg); }
+}
+/* Dog sleeping: snore bubble */
+.pet-shiba.state-sleeping #dog-head,
+.pet-shiba.state-sleeping #dog-body { animation: dogSleepBreathe 4s infinite alternate ease-in-out; }
+.pet-shiba.state-sleeping { transform: translateY(5px); }
+@keyframes dogSleepBreathe { 0%{transform:scale(0.98);transform-origin:bottom center} 100%{transform:scale(1.01);transform-origin:bottom center} }
+/* ═══════════════════════════════════════════════════════════════════════════
+   🐰 RABBIT — 奶油白扁平风
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.pet-rabbit.state-idle #rabbit-ear-l {
+  animation: earJiggleL 1.5s infinite ease-in-out;
+  transform-origin: bottom right;
+}
+.pet-rabbit.state-idle #rabbit-ear-r {
+  animation: earJiggleR 1.5s infinite 0.2s ease-in-out;
+  transform-origin: bottom left;
+}
+@keyframes earJiggleL { 0%,100%{transform:rotate(0deg)} 50%{transform:rotate(-6deg)} }
+@keyframes earJiggleR { 0%,100%{transform:rotate(0deg)} 50%{transform:rotate(6deg)} }
+
+.pet-rabbit.state-sleeping #rabbit-ear-l {
+  transform: rotate(-75deg) translate(-5px, 12px);
+  transform-origin: bottom right;
+  transition: transform 0.5s ease-in-out;
+}
+.pet-rabbit.state-sleeping #rabbit-ear-r {
+  transform: rotate(75deg) translate(5px, 12px);
+  transform-origin: bottom left;
+  transition: transform 0.5s ease-in-out;
+}
+.pet-rabbit.state-sleeping #rabbit-body,
+.pet-rabbit.state-sleeping #rabbit-head { animation: rabbitDeepSleep 3s infinite alternate ease-in-out; }
+@keyframes rabbitDeepSleep { 0%{transform:scale(0.96);transform-origin:bottom center} 100%{transform:scale(1.03);transform-origin:bottom center} }
+
+.pet-rabbit.state-working #pet-glasses { opacity:1!important; }
+.pet-rabbit.state-working #rabbit-ear-l { animation: rabbitWorkEarL .15s infinite alternate linear; transform-origin:bottom right; }
+.pet-rabbit.state-working #rabbit-ear-r { animation: rabbitWorkEarR .15s infinite alternate linear; transform-origin:bottom left; }
+.pet-rabbit.state-working #rabbit-head { animation: rabbitTyping .1s infinite alternate ease-in-out; }
+.pet-rabbit.state-working #rabbit-body rect { animation: rabbitFastPaws 0.06s infinite alternate-reverse linear; }
+@keyframes rabbitWorkEarL { 0%{transform:rotate(-5deg)} 100%{transform:rotate(5deg)} }
+@keyframes rabbitWorkEarR { 0%{transform:rotate(5deg)} 100%{transform:rotate(-5deg)} }
+@keyframes rabbitTyping { 0%{transform:translateY(0)} 100%{transform:translateY(1.5px) scaleX(1.02)} }
+@keyframes rabbitFastPaws { 0%{transform:translateY(-6px) scaleX(0.9)} 100%{transform:translateY(4px) scaleX(1.1)} }
+
+.pet-rabbit.state-surprised { animation: rabbitScare .5s ease-out; }
+@keyframes rabbitScare {
+  0% { transform: translateY(0); }
+  30% { transform: translateY(-25px) scaleY(1.1); }
+  50% { transform: translateY(5px) scaleY(0.85); }
+  70% { transform: translateY(-5px); }
+  100% { transform: translateY(0); }
+}
+.pet-rabbit.state-hungry #rabbit-head { animation: wobble .5s ease-in-out infinite; }
+.pet-rabbit.state-curious #rabbit-head { animation: curiousTilt .6s ease-in-out; }
 .pet-rabbit.state-sick #rabbit-body, .pet-rabbit.state-sick #rabbit-head,
 @keyframes sickDizzy {
   0%   { transform: translate(0, 0); }
