@@ -69,7 +69,8 @@ function setDogState(name) {
   SVG.shiba = DOG_SVG[name];
   svgEl.innerHTML = SVG.shiba;
   canvas.className = canvas.className.replace(/dog-\w+/g, '').trim() + ' dog-' + name;
-}function setCatState(name) {
+}
+function setCatState(name) {
   SVG.cat = CAT_SVG[name];
   svgEl.innerHTML = SVG.cat;
   canvas.className = canvas.className.replace(/cat-\w+/g, '').trim() + ' cat-' + name;
@@ -580,9 +581,9 @@ const pick = a => a[Math.floor(Math.random() * a.length)];
       if (d.selectedPet && d.selectedPet !== S.currentPet && PETS[d.selectedPet]) applyPet(d.selectedPet);
 
       if (S.pet === 'sleeping' && !S.focusing) return;
-      if (S.health > 20) { if (S.currentPet === 'shiba' && SVG.shiba === DOG_SVG.sick) { setDogState('idle'); } else if (SVG.cat === CAT_SVG.sick) { setState('idle'); setCatState('idle'); } }
+      if (S.health > 20) { if (S.currentPet === 'shiba' && SVG.shiba === DOG_SVG.sick) { setDogState('idle'); } else if (S.currentPet === 'cat' && SVG.cat === CAT_SVG.sick) { setState('idle'); setCatState('idle'); } }
       if (S.focusing) setState('working');
-      else if (S.health <= 20) { setState('sick'); if (S.currentPet === 'shiba') { setDogState('sick'); } else { setCatState('sick'); } } else if (S.fullness < 20) setState('hungry');
+      else if (S.health <= 20) { setState('sick'); if (S.currentPet === 'shiba') { setDogState('sick'); } else if (S.currentPet === 'cat') { setCatState('sick'); } } else if (S.fullness < 20) setState('hungry');
       else if (['working','hungry','surprised'].includes(S.pet)) setState('idle');
       if (bubble.className === 'cp-bubble-hidden') {
         if (S.focusing) return;
@@ -615,7 +616,7 @@ const pick = a => a[Math.floor(Math.random() * a.length)];
   // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
   function checkInactive() {
-    if (Date.now() - S.lastMove > 120000 && S.pet === 'idle' && !S.focusing) { setState('sleeping'); if (S.currentPet === 'cat') setCatState('idle'); else if (S.currentPet === 'shiba') setDogState('sleeping'); }
+    if (Date.now() - S.lastMove > 120000 && S.pet === 'idle' && !S.focusing) { setState('sleeping'); if (S.currentPet === 'shiba') setDogState('sleeping'); }
   }
 
   // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -649,7 +650,7 @@ const pick = a => a[Math.floor(Math.random() * a.length)];
   let cc = 0, cTimer = null;
   root.addEventListener('click', e => {
     if (S.isDragging) return;
-    if (S.pet === 'sleeping') { setState('idle'); if (S.currentPet === 'shiba') setDogState('idle'); }
+    if (S.pet === 'sleeping') { setState('idle'); if (S.currentPet === 'shiba') setDogState('idle'); else if (S.currentPet === 'cat') setCatState('idle'); }
     cc++;
     if (cc === 1) {
       cTimer = setTimeout(() => {
@@ -717,12 +718,12 @@ const pick = a => a[Math.floor(Math.random() * a.length)];
   // Local interact: send to background, react locally
   function doInteract(type) {
     if (!extOK()) return;
-    if (S.pet === 'sleeping') { setState('idle'); if (S.currentPet === 'shiba') setDogState('idle'); }
+    if (S.pet === 'sleeping') { setState('idle'); if (S.currentPet === 'shiba') setDogState('idle'); else if (S.currentPet === 'cat') setCatState('idle'); }
     chrome.runtime.sendMessage({ action: 'interact', type }, (response) => {
       if (chrome.runtime.lastError || !response || !response.success) return;
       switch (type) {
-        case 'feed': if (S.currentPet === 'shiba') { setDogState('eating'); setTimeout(() => { setDogState('idle'); }, 10000); } else { setCatState('eating'); setTimeout(() => { setCatState('idle'); }, 10000); } showBubble('*munch munch* 🍖 Yum!', 3500); spawn('food', 6); doAction('surprised', 500); break;
-        case 'bath': if (S.currentPet === 'shiba') { setDogState('bathing'); setTimeout(() => { setDogState('idle'); }, 10000); } else { setCatState('bathing'); setTimeout(() => { setCatState('idle'); }, 10000); } showBubble('*splash splash* 🛁 So clean!', 3500); spawn('sparkle', 8); break;
+        case 'feed': if (S.currentPet === 'shiba') { setDogState('eating'); setTimeout(() => { setDogState('idle'); }, 10000); } else if (S.currentPet === 'cat') { setCatState('eating'); setTimeout(() => { setCatState('idle'); }, 10000); } showBubble('*munch munch* 🍖 Yum!', 3500); spawn('food', 6); doAction('surprised', 500); break;
+        case 'bath': if (S.currentPet === 'shiba') { setDogState('bathing'); setTimeout(() => { setDogState('idle'); }, 10000); } else if (S.currentPet === 'cat') { setCatState('bathing'); setTimeout(() => { setCatState('idle'); }, 10000); } showBubble('*splash splash* 🛁 So clean!', 3500); spawn('sparkle', 8); break;
         case 'pet':  showBubble('Purrr~ ❤️', 3000); spawn('heart', 8); doAction('surprised', 400); break;
       }
     });
@@ -750,8 +751,8 @@ const pick = a => a[Math.floor(Math.random() * a.length)];
           break;
         case 'petReaction':
           switch (msg.type) {
-            case 'feed': if (S.currentPet === 'shiba') { setDogState('eating'); setTimeout(() => { setDogState('idle'); }, 10000); } else { setCatState('eating'); setTimeout(() => { setCatState('idle'); }, 10000); } showBubble('*munch munch* 🍖 Yum!', 3500); spawn('food', 6); doAction('surprised', 500); break;
-            case 'bath': if (S.currentPet === 'shiba') { setDogState('bathing'); setTimeout(() => { setDogState('idle'); }, 10000); } else { setCatState('bathing'); setTimeout(() => { setCatState('idle'); }, 10000); } showBubble('*splash splash* 🛁 So clean!', 3500); spawn('sparkle', 8); break;
+            case 'feed': if (S.currentPet === 'shiba') { setDogState('eating'); setTimeout(() => { setDogState('idle'); }, 10000); } else if (S.currentPet === 'cat') { setCatState('eating'); setTimeout(() => { setCatState('idle'); }, 10000); } showBubble('*munch munch* 🍖 Yum!', 3500); spawn('food', 6); doAction('surprised', 500); break;
+            case 'bath': if (S.currentPet === 'shiba') { setDogState('bathing'); setTimeout(() => { setDogState('idle'); }, 10000); } else if (S.currentPet === 'cat') { setCatState('bathing'); setTimeout(() => { setCatState('idle'); }, 10000); } showBubble('*splash splash* 🛁 So clean!', 3500); spawn('sparkle', 8); break;
             case 'pet': showBubble('Purrr~ ❤️', 3000); spawn('heart', 8); doAction('surprised', 400); break;
           } break;
       }
