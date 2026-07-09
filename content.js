@@ -703,7 +703,7 @@ const pick = a => a[Math.floor(Math.random() * a.length)];
   let cc = 0, cTimer = null;
   root.addEventListener('click', e => {
     if (S.isDragging) return;
-    if (S.pet === 'sleeping') { setState('idle'); if (S.currentPet === 'shiba') setDogState('idle'); else if (S.currentPet === 'cat') setCatState('idle'); }
+    if (S.pet !== 'idle') { setState('idle'); if (S.currentPet === 'shiba') setDogState('idle'); else if (S.currentPet === 'cat') setCatState('idle'); else if (S.currentPet === 'rabbit') setRabbitState('idle'); }
     cc++;
     if (cc === 1) {
       cTimer = setTimeout(() => {
@@ -771,7 +771,7 @@ const pick = a => a[Math.floor(Math.random() * a.length)];
   // Local interact: send to background, react locally
   function doInteract(type) {
     if (!extOK()) return;
-    if (S.pet === 'sleeping') { setState('idle'); if (S.currentPet === 'shiba') setDogState('idle'); else if (S.currentPet === 'cat') setCatState('idle'); }
+    if (S.pet !== 'idle') { setState('idle'); if (S.currentPet === 'shiba') setDogState('idle'); else if (S.currentPet === 'cat') setCatState('idle'); else if (S.currentPet === 'rabbit') setRabbitState('idle'); }
     chrome.runtime.sendMessage({ action: 'interact', type }, (response) => {
       if (chrome.runtime.lastError || !response || !response.success) return;
       switch (type) {
