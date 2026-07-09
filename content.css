@@ -150,23 +150,27 @@
 
 .pet-rabbit.state-idle #rabbit-ear-l {
   animation: earJiggleL 1.5s infinite ease-in-out;
-  transform-origin: bottom right;
+  transform-box: fill-box;
+  transform-origin: bottom center;
 }
 .pet-rabbit.state-idle #rabbit-ear-r {
   animation: earJiggleR 1.5s infinite 0.2s ease-in-out;
-  transform-origin: bottom left;
+  transform-box: fill-box;
+  transform-origin: bottom center;
 }
 @keyframes earJiggleL { 0%,100%{transform:rotate(0deg)} 50%{transform:rotate(-6deg)} }
 @keyframes earJiggleR { 0%,100%{transform:rotate(0deg)} 50%{transform:rotate(6deg)} }
 
 .pet-rabbit.state-sleeping #rabbit-ear-l {
-  transform: rotate(55deg) translate(3px, 12px);
-  transform-origin: bottom right;
+  transform-box: fill-box;
+  transform-origin: bottom center;
+  transform: rotate(40deg) translateY(6px);
   transition: transform 0.5s ease-in-out;
 }
 .pet-rabbit.state-sleeping #rabbit-ear-r {
-  transform: rotate(-55deg) translate(-3px, 12px);
-  transform-origin: bottom left;
+  transform-box: fill-box;
+  transform-origin: bottom center;
+  transform: rotate(-40deg) translateY(6px);
   transition: transform 0.5s ease-in-out;
 }
 .pet-rabbit.state-sleeping #rabbit-body,
