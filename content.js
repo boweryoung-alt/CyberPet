@@ -407,7 +407,25 @@ SVG.shiba = DOG_SVG.idle;
   <defs><linearGradient id="screen-glow" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#00D2FF" stop-opacity="1"/><stop offset="100%" stop-color="#00D2FF" stop-opacity="0"/></linearGradient></defs>
   <g id="pet-cyber-keyboard" opacity="0"><rect x="30" y="102" width="60" height="8" rx="2" fill="#344054" stroke="#475467" stroke-width="1.5"/><rect><animate attributeName="opacity" values="0;1;0" dur="0.4s" repeatCount="indefinite"/></rect></g>
 </svg>`,
-};
+  sick: `<svg width="120" height="130" viewBox="0 0 120 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <ellipse cx="60" cy="115" rx="30" ry="6" fill="#D0D5DD" opacity="0.6"/>
+  <g id="rabbit-tail"><circle cx="85" cy="95" r="8" fill="#F9FAFB"/></g>
+  <g id="rabbit-body"><rect x="35" y="65" width="50" height="45" rx="14" fill="#F9FAFB"/><rect x="43" y="75" width="34" height="30" rx="8" fill="#F2F4F7"/><rect x="42" y="105" width="10" height="10" rx="4" fill="#E4E7EC"/><rect x="68" y="105" width="10" height="10" rx="4" fill="#E4E7EC"/></g>
+  <g id="rabbit-head">
+    <g id="rabbit-ear-l"><rect x="38" y="10" width="12" height="36" rx="6" fill="#F9FAFB"/><rect x="42" y="16" width="4" height="24" rx="2" fill="#FECDD3"/></g>
+    <g id="rabbit-ear-r"><rect x="70" y="10" width="12" height="36" rx="6" fill="#F9FAFB"/><rect x="74" y="16" width="4" height="24" rx="2" fill="#FECDD3"/></g>
+    <rect x="25" y="40" width="70" height="40" rx="16" fill="#F9FAFB"/>
+    <circle cx="33" cy="68" r="4" fill="#FFCDD2" opacity="0.8"/><circle cx="87" cy="68" r="4" fill="#FFCDD2" opacity="0.8"/>
+    <g id="rabbit-eyes" stroke="#1D2939" stroke-width="2.5" stroke-linecap="round"><line x1="42" y1="54" x2="48" y2="60"/><line x1="48" y1="54" x2="42" y2="60"/><line x1="70" y1="54" x2="76" y2="60"/><line x1="76" y1="54" x2="70" y2="60"/></g>
+    <line x1="55" y1="67" x2="65" y2="67" stroke="#1D2939" stroke-width="2" stroke-linecap="round"/>
+    <line x1="20" y1="62" x2="12" y2="60" stroke="#D1D5DB" stroke-width="1.5"/><line x1="20" y1="66" x2="12" y2="67" stroke="#D1D5DB" stroke-width="1.5"/><line x1="100" y1="62" x2="108" y2="60" stroke="#D1D5DB" stroke-width="1.5"/><line x1="100" y1="66" x2="108" y2="67" stroke="#D1D5DB" stroke-width="1.5"/>
+    <rect x="44" y="28" width="32" height="12" rx="4" fill="#93C5FD"/><rect x="57" y="24" width="6" height="4" rx="1" fill="#60A5FA"/>
+  </g>
+  <g id="pet-glasses" opacity="0"><rect x="38" y="52" width="16" height="14" rx="2" stroke="#FF9800" stroke-width="2" fill="none"/><rect x="66" y="52" width="16" height="14" rx="2" stroke="#FF9800" stroke-width="2" fill="none"/><line x1="54" y1="59" x2="66" y2="59" stroke="#FF9800" stroke-width="2"/></g>
+  <g id="zzz-group" opacity="0"><text x="88" y="22" font-size="10" fill="#999" font-weight="bold">z</text><text x="96" y="12" font-size="14" fill="#999" font-weight="bold" opacity="0.6">z</text><text x="104" y="2" font-size="18" fill="#999" font-weight="bold" opacity="0.3">z</text></g>
+  <defs><linearGradient id="screen-glow" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#00D2FF" stop-opacity="1"/><stop offset="100%" stop-color="#00D2FF" stop-opacity="0"/></linearGradient></defs>
+  <g id="pet-cyber-keyboard" opacity="0"><rect x="30" y="102" width="60" height="8" rx="2" fill="#344054" stroke="#475467" stroke-width="1.5"/><rect id="key-light-1" x="36" y="104" width="8" height="4" rx="1" fill="#FFD700" opacity="0"/><rect id="key-light-2" x="48" y="104" width="12" height="4" rx="1" fill="#00D2FF" opacity="0"/><rect id="key-light-3" x="66" y="104" width="10" height="4" rx="1" fill="#FF3366" opacity="0"/><rect id="key-light-4" x="80" y="104" width="6" height="4" rx="1" fill="#00FF66" opacity="0"/><path d="M 35 102 L 20 80 L 100 80 L 85 102 Z" fill="url(#screen-glow)" opacity="0.15"/></g>
+</svg>`};
 SVG.rabbit = RABBIT_SVG.idle;
 
 // Rabbit state helper
@@ -616,9 +634,9 @@ const pick = a => a[Math.floor(Math.random() * a.length)];
       if (d.selectedPet && d.selectedPet !== S.currentPet && PETS[d.selectedPet]) applyPet(d.selectedPet);
 
       if (S.pet === 'sleeping' && !S.focusing) return;
-      if (S.health > 20) { if (S.currentPet === 'shiba' && SVG.shiba === DOG_SVG.sick) { setDogState('idle'); } else if (S.currentPet === 'cat' && SVG.cat === CAT_SVG.sick) { setState('idle'); setCatState('idle'); } }
+      if (S.health > 20) { if (S.currentPet === 'shiba' && SVG.shiba === DOG_SVG.sick) { setDogState('idle'); } else if (S.currentPet === 'cat' && SVG.cat === CAT_SVG.sick) { setState('idle'); setCatState('idle'); } else if (S.currentPet === 'rabbit' && SVG.rabbit === RABBIT_SVG.sick) { setRabbitState('idle'); } }
       if (S.focusing) setState('working');
-      else if (S.health <= 20) { setState('sick'); if (S.currentPet === 'shiba') { setDogState('sick'); } else if (S.currentPet === 'cat') { setCatState('sick'); } } else if (S.fullness < 20) setState('hungry');
+      else if (S.health <= 20) { setState('sick'); if (S.currentPet === 'shiba') { setDogState('sick'); } else if (S.currentPet === 'cat') { setCatState('sick'); } else if (S.currentPet === 'rabbit') { setRabbitState('sick'); } } else if (S.fullness < 20) setState('hungry');
       else if (['working','hungry','surprised'].includes(S.pet)) setState('idle');
       if (bubble.className === 'cp-bubble-hidden') {
         if (S.focusing) return;

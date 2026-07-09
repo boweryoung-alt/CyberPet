@@ -195,61 +195,6 @@
 .pet-rabbit.state-curious #rabbit-head { animation: curiousTilt .6s ease-in-out; }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   🐹 GROUNDHOG (MARMOT) — surprised/hungry → 尖叫 shaking + 手 panic
-   ═══════════════════════════════════════════════════════════════════════════ */
-
-.pet-marmot#cp-canvas { width: 140px; height: 145px; }
-.pet-marmot.state-idle #marmot-head { animation: marmotHeadBob 2s infinite alternate ease-in-out; }
-.pet-marmot.state-idle #marmot-body { animation: marmotBreathe 2s infinite alternate ease-in-out; }
-.pet-marmot.state-idle #marmot-hands { animation: marmotHandIdle 1s infinite alternate ease-in-out; }
-@keyframes marmotHeadBob { 0%{transform:translateY(0)} 100%{transform:translateY(1.5px)} }
-@keyframes marmotBreathe { 0%{transform:scaleY(1);transform-origin:bottom center} 100%{transform:scaleY(0.97);transform-origin:bottom center} }
-@keyframes marmotHandIdle { 0%{transform:translateY(0) rotate(0deg)} 100%{transform:translateY(2px) rotate(-3deg)} }
-
-.pet-marmot.state-sleeping .marmot-dark { transform:scaleY(0.2) translateY(180px); transform-origin:center; }
-.pet-marmot.state-sleeping #marmot-mouth-group { transform:scale(0.9) translateY(-1px); transform-origin:center; }
-.pet-marmot.state-sleeping #marmot-hands { transform:translateY(4px) rotate(5deg); transform-origin:center; }
-.pet-marmot.state-sleeping #marmot-body,
-.pet-marmot.state-sleeping #marmot-head { animation: marmotSnoring 4s infinite alternate ease-in-out; }
-@keyframes marmotSnoring { 0%{transform:scaleY(0.95) rotate(-1deg);transform-origin:bottom center} 100%{transform:scaleY(1.04) rotate(1deg);transform-origin:bottom center} }
-
-.pet-marmot.state-working {
-  transform: translateY(8px) rotate(3deg);
-  transform-origin: bottom center;
-  animation: marmotRageCrushing 0.1s infinite alternate ease-in-out;
-}
-.pet-marmot.state-working #pet-glasses { opacity:1!important; transform:translate(12px,-3px) scale(0.85); transform-origin:center; }
-.pet-marmot.state-working #pet-cyber-keyboard { transform: translateY(-8px); }
-.pet-marmot.state-working #marmot-hands { animation: marmotSmashKeyboard 0.06s infinite alternate linear; }
-.pet-marmot.state-working #marmot-mouth-group { animation: marmotTeethChatter 0.06s infinite alternate linear; }
-@keyframes marmotRageCrushing { 0%{transform:translateY(8px) rotate(2deg) scaleX(1.01)} 100%{transform:translateY(9px) rotate(4deg) scaleX(0.99)} }
-@keyframes marmotSmashKeyboard { 0%{transform:translateY(-6px) scaleY(1.2);transform-origin:top center} 100%{transform:translateY(6px) scaleY(0.8);transform-origin:top center} }
-@keyframes marmotTeethChatter { 0%{transform:translateY(-2px)} 100%{transform:translateY(3px) scaleY(1.2)} }
-
-.pet-marmot.state-surprised {
-  animation: marmotShaking 0.1s infinite alternate;
-}
-.pet-marmot.state-surprised #marmot-mouth-group {
-  transform: scaleY(1.6) translateY(2px);
-  transform-origin: top center;
-}
-.pet-marmot.state-surprised #marmot-hands {
-  animation: handPanic 0.1s infinite alternate;
-}
-@keyframes marmotShaking { 0%{transform:translate(1px,1px) scaleX(1.02)} 100%{transform:translate(-1px,-1px) scaleX(0.98)} }
-@keyframes handPanic     { 0%{transform:translateY(-3px)} 100%{transform:translateY(3px)} }
-
-.pet-marmot.state-hungry {
-  animation: marmotHungryShiver 0.08s infinite linear;
-}
-.pet-marmot.state-hungry .marmot-oat {
-  fill: #FECDCA !important;
-  transition: fill 0.5s ease;
-}
-@keyframes marmotHungryShiver { 0%{transform:translate(-1px,1px)} 100%{transform:translate(1px,-1px)} }
-
-.pet-marmot.state-curious #marmot-head { animation: curiousTilt .6s ease-in-out; }
-
 /* ═══════════════════════════════════════════════════════════════════════════
    GLOBAL: sick state (health ≤ 0) — all pets become dizzy + collapsed
    ═══════════════════════════════════════════════════════════════════════════ */
@@ -258,7 +203,6 @@
 .pet-cat.state-sick #pet-body, .pet-cat.state-sick #pet-head,
 .pet-shiba.state-sick #pet-body, .pet-shiba.state-sick #dog-head,
 .pet-rabbit.state-sick #rabbit-body, .pet-rabbit.state-sick #rabbit-head,
-.pet-marmot.state-sick #marmot-body, .pet-marmot.state-sick #marmot-head {
   animation: sickDizzy 0.15s infinite linear;
 }
 @keyframes sickDizzy {
