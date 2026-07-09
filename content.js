@@ -111,7 +111,7 @@ const DOG_SVG = {
     <path d="M 110 45 Q 113 32 110 30 Q 103 34 98 38 Z" fill="#F8F6F0"/>
     <g id="head-bobble"><animateTransform attributeName="transform" type="translate" values="0,0; 0,0.5; 0,0" dur="3s" repeatCount="indefinite"/>
     <rect x="28" y="32" width="94" height="66" rx="18" fill="#434C56"/>
-    <path d="M 36 66 C 36 84, 48 94, 75 94 C 102 94, 114 84, 114 66 C 114 54, 102 50, 94 62 C 87 44, 82 44, 75 60 C 68 44, 63 44, 56 62 C 48 50, 36 54, 36 66 Z" fill="#F8F6F0"/>
+    <path d="M 40 60 Q 40 92 75 92 Q 110 92 110 60 Q 110 52 100 54 Q 88 58 75 58 Q 62 58 50 54 Q 40 52 40 60 Z" fill="#F8F6F0"/>
     <circle cx="50" cy="46" r="4.5" fill="#F8F6F0"/>
     <circle cx="100" cy="46" r="4.5" fill="#F8F6F0"/>
     <circle cx="51" cy="65" r="7.5" fill="#1E3A8A"/>
