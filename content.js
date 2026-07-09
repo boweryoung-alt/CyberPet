@@ -103,15 +103,15 @@ const DOG_SVG = {
     <rect x="82" y="126" width="14" height="9" rx="3" fill="#4B5563"/></g>
   <g id="dog-head">
     <animateTransform attributeName="transform" type="translate" values="0,0; 0,0.5; 0,0" dur="2.4s" repeatCount="indefinite"/>
-    <path d="M 32 50 L 26 14 L 64 36 Z" fill="#333A42" stroke="#333A42" stroke-width="2" stroke-linejoin="round"/>
-    <path d="M 36 45 L 32 24 L 56 37 Z" fill="#E11D48" opacity="0.15"/>
-    <path d="M 40 45 L 38 30 L 52 38 Z" fill="#F8F6F0"/>
-    <path d="M 118 50 L 124 14 L 86 36 Z" fill="#333A42" stroke="#333A42" stroke-width="2" stroke-linejoin="round"/>
-    <path d="M 114 45 L 118 24 L 94 37 Z" fill="#E11D48" opacity="0.15"/>
-    <path d="M 110 45 L 112 30 L 98 38 Z" fill="#F8F6F0"/>
+    <path d="M 32 50 Q 24 20 30 16 Q 50 24 64 36 Z" fill="#333A42" stroke="#333A42" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M 36 45 Q 31 26 35 24 Q 48 30 56 37 Z" fill="#E11D48" opacity="0.15"/>
+    <path d="M 40 45 Q 37 32 40 30 Q 47 34 52 38 Z" fill="#F8F6F0"/>
+    <path d="M 118 50 Q 126 20 120 16 Q 100 24 86 36 Z" fill="#333A42" stroke="#333A42" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M 114 45 Q 119 26 115 24 Q 102 30 94 37 Z" fill="#E11D48" opacity="0.15"/>
+    <path d="M 110 45 Q 113 32 110 30 Q 103 34 98 38 Z" fill="#F8F6F0"/>
     <g id="head-bobble"><animateTransform attributeName="transform" type="translate" values="0,0; 0,0.5; 0,0" dur="3s" repeatCount="indefinite"/>
     <rect x="28" y="32" width="94" height="66" rx="18" fill="#434C56"/>
-    <path d="M 28 66 C 28 86, 42 96, 75 96 C 108 96, 122 86, 122 66 C 122 52, 108 48, 98 62 C 90 42, 84 42, 75 60 C 66 42, 60 42, 52 62 C 42 48, 28 52, 28 66 Z" fill="#F8F6F0"/>
+    <path d="M 36 66 C 36 84, 48 94, 75 94 C 102 94, 114 84, 114 66 C 114 54, 102 50, 94 62 C 87 44, 82 44, 75 60 C 68 44, 63 44, 56 62 C 48 50, 36 54, 36 66 Z" fill="#F8F6F0"/>
     <circle cx="50" cy="46" r="4.5" fill="#F8F6F0"/>
     <circle cx="100" cy="46" r="4.5" fill="#F8F6F0"/>
     <circle cx="51" cy="65" r="7.5" fill="#1E3A8A"/>
