@@ -634,7 +634,7 @@ const pick = a => a[Math.floor(Math.random() * a.length)];
       if (d.selectedPet && d.selectedPet !== S.currentPet && PETS[d.selectedPet]) applyPet(d.selectedPet);
 
       if (S.pet === 'sleeping' && !S.focusing) return;
-      if (S.health > 20) { if (S.currentPet === 'shiba' && SVG.shiba === DOG_SVG.sick) { setDogState('idle'); } else if (S.currentPet === 'cat' && SVG.cat === CAT_SVG.sick) { setState('idle'); setCatState('idle'); } else if (S.currentPet === 'rabbit' && SVG.rabbit === RABBIT_SVG.sick) { setRabbitState('idle'); } }
+      if (S.health > 20) { if (S.currentPet === 'shiba' && SVG.shiba === DOG_SVG.sick) { setState('idle'); setDogState('idle'); } else if (S.currentPet === 'cat' && SVG.cat === CAT_SVG.sick) { setState('idle'); setCatState('idle'); } else if (S.currentPet === 'rabbit' && SVG.rabbit === RABBIT_SVG.sick) { setState('idle'); setRabbitState('idle'); } }
       if (S.focusing) setState('working');
       else if (S.health <= 20) { setState('sick'); if (S.currentPet === 'shiba') { setDogState('sick'); } else if (S.currentPet === 'cat') { setCatState('sick'); } else if (S.currentPet === 'rabbit') { setRabbitState('sick'); } } else if (S.fullness < 20) setState('hungry');
       else if (['working','hungry','surprised'].includes(S.pet)) setState('idle');
