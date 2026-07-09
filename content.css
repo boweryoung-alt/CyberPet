@@ -171,6 +171,16 @@
 }
 .pet-rabbit.state-sleeping #rabbit-body,
 .pet-rabbit.state-sleeping #rabbit-head { animation: rabbitDeepSleep 3s infinite alternate ease-in-out; }
+
+.pet-rabbit.state-sleeping #rabbit-eyes #eye-left,
+.pet-rabbit.state-sleeping #rabbit-eyes #eye-right {
+  height: 2px !important;
+  transform: translateY(4px);
+}
+.pet-rabbit.state-sleeping #eye-light-l,
+.pet-rabbit.state-sleeping #eye-light-r {
+  opacity: 0;
+}
 @keyframes rabbitDeepSleep { 0%{transform:scale(0.96);transform-origin:bottom center} 100%{transform:scale(1.03);transform-origin:bottom center} }
 
 .pet-rabbit.state-working #pet-glasses { opacity:1!important; }
