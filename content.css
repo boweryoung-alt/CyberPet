@@ -104,27 +104,31 @@
 .pet-shiba.state-working #dog-glasses { opacity:1!important; }
 /* Dog idle: tongue panting + gentle body breathe */
 .dog-idle #dog-tongue {
-  animation: tonguePant 0.5s ease-in-out infinite;
-  transform-origin: 75px 89px;
+  animation: tonguePant 0.6s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: top center;
 }
-.dog-idle #dog-body {
-  animation: dogIdleBreathe 0.5s ease-in-out infinite;
+.dog-idle #dog-body, .dog-idle #dog-head {
+  animation: dogIdleBreathe 2.4s ease-in-out infinite alternate;
+  transform-box: fill-box;
+  transform-origin: bottom center;
 }
 @keyframes tonguePant {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(3px); }
+  50% { transform: translateY(2px) scaleY(1.15); }
 }
 @keyframes dogIdleBreathe {
-  0%, 100% { transform: scaleY(1); transform-origin: bottom center; }
-  50% { transform: scaleY(0.96); transform-origin: bottom center; }
+  0% { transform: translateY(0); }
+  100% { transform: translateY(1.5px); }
 }
 .dog-idle #dog-tail {
-  animation: dogTailWag 0.4s ease-in-out infinite;
-  transform-origin: 100px 104px;
+  animation: dogTailWag 0.5s ease-in-out infinite alternate;
+  transform-box: fill-box;
+  transform-origin: bottom left;
 }
 @keyframes dogTailWag {
-  0%, 100% { transform: rotate(-8deg); }
-  50% { transform: rotate(12deg); }
+  0% { transform: rotate(-8deg); }
+  100% { transform: rotate(14deg); }
 }
 
 .pet-shiba.state-working #dog-body { animation: corgiBodyBob .08s infinite alternate ease-in-out; }
@@ -215,8 +219,8 @@
 .state-sick { transform: translateY(3px); }
 .state-sick #pet-body, .state-sick #pet-head,
 .pet-cat.state-sick #pet-body, .pet-cat.state-sick #pet-head,
-.pet-shiba.state-sick #pet-body, .pet-shiba.state-sick #dog-head,
-.pet-rabbit.state-sick #rabbit-body, .pet-rabbit.state-sick #rabbit-head,
+.pet-shiba.state-sick #dog-body, .pet-shiba.state-sick #dog-head,
+.pet-rabbit.state-sick #rabbit-body, .pet-rabbit.state-sick #rabbit-head {
   animation: sickDizzy 0.15s infinite linear;
 }
 @keyframes sickDizzy {

@@ -79,267 +79,200 @@ function setCatState(name) {
 
   // 🐕 Dog state templates
 const DOG_SVG = {
-  idle: `<svg width="120" height="130" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <style>
-    .husky-shadow { fill: #1E293B; opacity: 0.1; }
-    .husky-body { fill: #333A42; }
-    .husky-white { fill: #F8F6F0; }
-    .husky-pink { fill: #E11D48; opacity: 0.15; }
-    .husky-paws { fill: #4B5563; }
-    .husky-head { fill: #434C56; }
-    .husky-tongue { fill: #FB7185; }
-  </style>
-  <ellipse cx="75" cy="142" rx="36" ry="5" class="husky-shadow" />
-  <rect x="42" y="136" width="66" height="6" rx="3" class="husky-shadow"/>
+  idle: `<svg width="120" height="130" viewBox="0 0 120 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <ellipse cx="60" cy="126" rx="27" ry="4.5" fill="#D0D5DD" opacity="0.5"/>
+  <g id="dog-tail"><path d="M77 117 Q98 115 100 92 Q101 77 87 80 Q78 83 83 98 Q85 87 92 90 Q99 94 94 105 Q90 115 77 117 Z" fill="#EAD9BE"/><path d="M95 89 Q99 97 93 105" stroke="#E5BC8E" stroke-width="3" fill="none" stroke-linecap="round"/></g>
   <g id="dog-body">
-    <animateTransform attributeName="transform" type="translate" values="0,0; 0,0.5; 0,0" dur="3s" repeatCount="indefinite"/>
-    <rect x="48" y="85" width="54" height="48" rx="14" fill="#333A42"/>
-    <path d="M 54 85 L 96 85 L 90 118 L 75 124 L 60 118 Z" fill="#F8F6F0"/>
-    <g id="dog-tail">
-      <animateTransform attributeName="transform" type="rotate" values="-8,100,104; 12,100,104; -8,100,104" dur="1.2s" repeatCount="indefinite"/>
-      <path d="M 100 108 C 110 108, 112 96, 104 94 C 96 92, 94 102, 98 106 C 100 100, 106 98, 106 104 C 106 108, 102 108, 100 108 Z" fill="#333A42"/>
-    </g>
-    <rect x="54" y="126" width="14" height="9" rx="3" fill="#4B5563"/>
-    <rect x="82" y="126" width="14" height="9" rx="3" fill="#4B5563"/></g>
+    <path d="M51 80 Q51 91 55 96 L65 96 Q69 91 69 80 Z" fill="#EAD9BE"/>
+    <path d="M53 85 Q45 87 43 99 Q37 106 38 114 Q40 122 52 122 Q60 123 68 122 Q80 122 82 114 Q83 106 77 99 Q75 87 67 85 Q60 83 53 85 Z" fill="#EAD9BE"/>
+    <path d="M60 89 Q72 92 72 106 Q72 116 60 117 Q48 116 48 106 Q48 92 60 89 Z" fill="#FCF9F3"/>
+    <path d="M44 99 Q41 109 45 118" stroke="#DBAF7C" stroke-width="1" fill="none" opacity="0.4"/>
+    <path d="M76 99 Q79 109 75 118" stroke="#DBAF7C" stroke-width="1" fill="none" opacity="0.4"/>
+    <path d="M52 106 Q49 114 51 121 L60 121 Q60 113 60 106 Z" fill="#FCF9F3"/>
+    <path d="M60 106 Q60 113 60 121 L69 121 Q71 114 68 106 Z" fill="#FCF9F3"/>
+    <path d="M60 107 L60 120" stroke="#E3D2B6" stroke-width="1.2" stroke-linecap="round" opacity="0.55"/>
+    <path d="M54 116 L54 121 M57 116 L57 121" stroke="#E3D2B6" stroke-width="0.8" stroke-linecap="round" opacity="0.5"/>
+    <path d="M63 116 L63 121 M66 116 L66 121" stroke="#E3D2B6" stroke-width="0.8" stroke-linecap="round" opacity="0.5"/>
   <g id="dog-head">
-    <animateTransform attributeName="transform" type="translate" values="0,0; 0,0.5; 0,0" dur="2.4s" repeatCount="indefinite"/>
-    <path d="M 32 50 Q 24 20 30 16 Q 50 24 64 36 Z" fill="#333A42" stroke="#333A42" stroke-width="2" stroke-linejoin="round"/>
-    <path d="M 36 45 Q 31 26 35 24 Q 48 30 56 37 Z" fill="#E11D48" opacity="0.15"/>
-    <path d="M 40 45 Q 37 32 40 30 Q 47 34 52 38 Z" fill="#F8F6F0"/>
-    <path d="M 118 50 Q 126 20 120 16 Q 100 24 86 36 Z" fill="#333A42" stroke="#333A42" stroke-width="2" stroke-linejoin="round"/>
-    <path d="M 114 45 Q 119 26 115 24 Q 102 30 94 37 Z" fill="#E11D48" opacity="0.15"/>
-    <path d="M 110 45 Q 113 32 110 30 Q 103 34 98 38 Z" fill="#F8F6F0"/>
-    <g id="head-bobble"><animateTransform attributeName="transform" type="translate" values="0,0; 0,0.5; 0,0" dur="3s" repeatCount="indefinite"/>
-    <rect x="28" y="32" width="94" height="66" rx="18" fill="#434C56"/>
-    <path d="M 40 60 Q 40 92 75 92 Q 110 92 110 60 Q 110 52 100 54 Q 88 58 75 58 Q 62 58 50 54 Q 40 52 40 60 Z" fill="#F8F6F0"/>
-    <circle cx="50" cy="46" r="4.5" fill="#F8F6F0"/>
-    <circle cx="100" cy="46" r="4.5" fill="#F8F6F0"/>
-    <circle cx="51" cy="65" r="7.5" fill="#1E3A8A"/>
-    <circle cx="51" cy="65" r="5" fill="#3B82F6"/>
-    <circle cx="51" cy="65" r="2" fill="#0F172A"/>
-    <circle cx="49" cy="63" r="1.5" fill="#FFFFFF"/>
-    <circle cx="99" cy="65" r="7.5" fill="#1E3A8A"/>
-    <circle cx="99" cy="65" r="5" fill="#3B82F6"/>
-    <circle cx="99" cy="65" r="2" fill="#0F172A"/>
-    <circle cx="97" cy="63" r="1.5" fill="#FFFFFF"/>
-    <path d="M 64 74 L 86 74 L 88 84 L 75 92 L 62 84 Z" fill="#F8F6F0"/>
-    <rect x="67" y="75" width="16" height="10" rx="5" fill="#111827"/>
-    <path d="M 66 85 Q 71 88 75 85 Q 79 88 84 85" stroke="#111827" stroke-width="2" stroke-linecap="round" fill="none"/>
-    <rect id="dog-tongue" x="71" y="86" width="8" height="7" rx="3" fill="#FB7185"/>
-    <line x1="75" y1="86" x2="75" y2="91" stroke="#E11D48" stroke-width="1"/>
+    <path id="ear-left" d="M31 47 Q27 20 38 18 Q50 26 51 47 Z" fill="#E5BC8E"/>
+    <path d="M36 44 Q34 26 40 25 Q47 31 47 44 Z" fill="#F2E3CE"/>
+    <path id="ear-right" d="M89 47 Q93 20 82 18 Q70 26 69 47 Z" fill="#E5BC8E"/>
+    <path d="M84 44 Q86 26 80 25 Q73 31 73 44 Z" fill="#F2E3CE"/>
+    <path d="M29 60 Q29 42 47 40 Q60 38.5 73 40 Q91 42 91 60 Q91 78 73 85 Q60 88 47 85 Q29 78 29 60 Z" fill="#E5BC8E"/>
+    <path d="M32 62 Q34 51 45 50 Q52 49 56 48 Q58 40.5 60 40.5 Q62 40.5 64 48 Q68 49 75 50 Q86 51 88 62 Q89 76 78 83 Q60 88 42 83 Q31 76 32 62 Z" fill="#FCF9F3"/>
+    <ellipse cx="46" cy="55" rx="3" ry="1.8" fill="#DBAF7C"/>
+    <ellipse cx="74" cy="55" rx="3" ry="1.8" fill="#DBAF7C"/>
+    <circle cx="35" cy="69" r="5" fill="#F3B0A8" opacity="0.5"/>
+    <circle cx="85" cy="69" r="5" fill="#F3B0A8" opacity="0.5"/>
+    <circle cx="46" cy="63" r="4.8" fill="#4A3F38"/><circle cx="44.2" cy="61.2" r="1.4" fill="#fff"/>
+    <circle cx="74" cy="63" r="4.8" fill="#4A3F38"/><circle cx="72.2" cy="61.2" r="1.4" fill="#fff"/>
+    <ellipse cx="60" cy="66" rx="4.6" ry="3.4" fill="#4A3F38"/>
+    <path d="M60 69 L60 71" stroke="#4A3F38" stroke-width="1.6" stroke-linecap="round"/>
+    <path d="M53 71 Q60 80 67 71 Z" fill="#4A3F38"/>
+    <path id="dog-tongue" d="M57 73 Q57 79 60 79 Q63 79 63 73 Z" fill="#FB99A0"/>
   </g>
-  <g id="dog-glasses" opacity="0"><rect x="48" y="55" width="16" height="10" rx="2" stroke="#FF9800" stroke-width="1.5" fill="none" opacity="0.8"/><rect x="86" y="55" width="16" height="10" rx="2" stroke="#FF9800" stroke-width="1.5" fill="none" opacity="0.8"/><line x1="64" y1="60" x2="86" y2="60" stroke="#FF9800" stroke-width="1.5" opacity="0.8"/></g>
-  <g id="zzz-group" opacity="0"><text x="120" y="25" font-size="11" fill="#999" font-weight="bold">z</text><text x="128" y="14" font-size="14" fill="#999" font-weight="bold" opacity="0.6">z</text><text x="135" y="3" font-size="17" fill="#999" font-weight="bold" opacity="0.3">z</text></g>
+  <g id="dog-glasses" opacity="0"><rect x="38" y="52" width="16" height="14" rx="2" stroke="#FF9800" stroke-width="2" fill="none"/><rect x="66" y="52" width="16" height="14" rx="2" stroke="#FF9800" stroke-width="2" fill="none"/><line x1="54" y1="59" x2="66" y2="59" stroke="#FF9800" stroke-width="2"/></g>
+  <g id="zzz-group" opacity="0"><text x="88" y="22" font-size="10" fill="#999" font-weight="bold">z</text><text x="96" y="12" font-size="14" fill="#999" font-weight="bold" opacity="0.6">z</text><text x="104" y="2" font-size="18" fill="#999" font-weight="bold" opacity="0.3">z</text></g>
   <defs><linearGradient id="screen-glow" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#00D2FF" stop-opacity="1"/><stop offset="100%" stop-color="#00D2FF" stop-opacity="0"/></linearGradient></defs>
-  <g id="pet-cyber-keyboard" opacity="0"><rect x="30" y="118" width="90" height="10" rx="3" fill="#344054" stroke="#475467" stroke-width="1.5"/><rect id="key-light-1" x="38" y="120" width="10" height="5" rx="1.5" fill="#FFD700" opacity="0"/><rect id="key-light-2" x="54" y="120" width="14" height="5" rx="1.5" fill="#00D2FF" opacity="0"/><rect id="key-light-3" x="78" y="120" width="12" height="5" rx="1.5" fill="#FF3366" opacity="0"/><rect id="key-light-4" x="96" y="120" width="10" height="5" rx="1.5" fill="#00FF66" opacity="0"/><path d="M 42 116 L 28 94 L 122 94 L 108 116 Z" fill="url(#screen-glow)" opacity="0.12"/></g>
+  <g id="pet-cyber-keyboard" opacity="0"><rect x="30" y="102" width="60" height="8" rx="2" fill="#344054" stroke="#475467" stroke-width="1.5"/><rect id="key-light-1" x="36" y="104" width="8" height="4" rx="1" fill="#FFD700" opacity="0"/><rect id="key-light-2" x="48" y="104" width="12" height="4" rx="1" fill="#00D2FF" opacity="0"/><rect id="key-light-3" x="66" y="104" width="10" height="4" rx="1" fill="#FF3366" opacity="0"/><rect id="key-light-4" x="80" y="104" width="6" height="4" rx="1" fill="#00FF66" opacity="0"/><path d="M 35 102 L 20 80 L 100 80 L 85 102 Z" fill="url(#screen-glow)" opacity="0.15"/></g>
 </svg>`,
-  eating: `<svg width="120" height="130" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <style>
-    @keyframes chew {
-      0%, 100% { transform: translate(0, 0) scale(1); }
-      50% { transform: translate(0, 1.5px) scale(0.95, 1.05); }
-    }
-    #animated-mouth {
-      animation: chew 0.4s ease-in-out infinite;
-      transform-origin: 75px 85px;
-    }
-  </style>
-  <ellipse cx="75" cy="142" rx="36" ry="5" class="husky-shadow" />
-  <rect x="40" y="136" width="70" height="6" rx="3" fill="#1E293B" opacity="0.1"/>
+  eating: `<svg width="120" height="130" viewBox="0 0 120 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <ellipse cx="60" cy="126" rx="27" ry="4.5" fill="#D0D5DD" opacity="0.5"/>
+  <g id="dog-tail"><animateTransform attributeName="transform" type="rotate" values="-5,87,115; 11,87,115; -5,87,115" dur="0.3s" repeatCount="indefinite"/><path d="M77 117 Q98 115 100 92 Q101 77 87 80 Q78 83 83 98 Q85 87 92 90 Q99 94 94 105 Q90 115 77 117 Z" fill="#EAD9BE"/><path d="M95 89 Q99 97 93 105" stroke="#E5BC8E" stroke-width="3" fill="none" stroke-linecap="round"/></g>
   <g id="dog-body">
-    <rect x="52" y="85" width="46" height="48" rx="14" fill="#333A42"/>
-    <path d="M 58 85 L 92 85 L 86 118 L 75 124 L 64 118 Z" fill="#F8F6F0"/>
-    <path d="M 98 102 Q 111 95 106 85 C 101 78, 94 88, 98 96" stroke="#333A42" stroke-width="6" stroke-linecap="round" fill="none"/>
-    <rect x="58" y="126" width="12" height="9" rx="3" fill="#4B5563"/>
-    <rect x="80" y="126" width="12" height="9" rx="3" fill="#4B5563"/>
-  </g>
+    <path d="M51 80 Q51 91 55 96 L65 96 Q69 91 69 80 Z" fill="#EAD9BE"/>
+    <path d="M53 85 Q45 87 43 99 Q37 106 38 114 Q40 122 52 122 Q60 123 68 122 Q80 122 82 114 Q83 106 77 99 Q75 87 67 85 Q60 83 53 85 Z" fill="#EAD9BE"/>
+    <path d="M60 89 Q72 92 72 106 Q72 116 60 117 Q48 116 48 106 Q48 92 60 89 Z" fill="#FCF9F3"/>
+    <path d="M44 99 Q41 109 45 118" stroke="#DBAF7C" stroke-width="1" fill="none" opacity="0.4"/>
+    <path d="M76 99 Q79 109 75 118" stroke="#DBAF7C" stroke-width="1" fill="none" opacity="0.4"/>
+    <path d="M52 106 Q49 114 51 121 L60 121 Q60 113 60 106 Z" fill="#FCF9F3"/>
+    <path d="M60 106 Q60 113 60 121 L69 121 Q71 114 68 106 Z" fill="#FCF9F3"/>
+    <path d="M60 107 L60 120" stroke="#E3D2B6" stroke-width="1.2" stroke-linecap="round" opacity="0.55"/>
+    <path d="M54 116 L54 121 M57 116 L57 121" stroke="#E3D2B6" stroke-width="0.8" stroke-linecap="round" opacity="0.5"/>
+    <path d="M63 116 L63 121 M66 116 L66 121" stroke="#E3D2B6" stroke-width="0.8" stroke-linecap="round" opacity="0.5"/>
   <g id="dog-head">
-    <animateTransform attributeName="transform" type="translate" values="0,0; 0,0.5; 0,0" dur="2.5s" repeatCount="indefinite"/>
-    <path d="M 32 50 L 26 14 L 64 36 Z" fill="#333A42" stroke="#333A42" stroke-width="2" stroke-linejoin="round"/>
-    <path d="M 36 45 L 32 24 L 56 37 Z" fill="#E11D48" opacity="0.15"/>
-    <path d="M 40 45 L 38 30 L 52 38 Z" fill="#F8F6F0"/>
-    <path d="M 118 50 L 124 14 L 86 36 Z" fill="#333A42" stroke="#333A42" stroke-width="2" stroke-linejoin="round"/>
-    <path d="M 114 45 L 118 24 L 94 37 Z" fill="#E11D48" opacity="0.15"/>
-    <path d="M 110 45 L 112 30 L 98 38 Z" fill="#F8F6F0"/>
-    <rect x="28" y="32" width="94" height="66" rx="18" fill="#434C56"/>
-    <path d="M 28 66 C 28 86, 42 96, 75 96 C 108 96, 122 86, 122 66 C 122 52, 108 48, 98 62 C 90 42, 84 42, 75 60 C 66 42, 60 42, 52 62 C 42 48, 28 52, 28 66 Z" fill="#F8F6F0"/>
-    <circle cx="50" cy="46" r="4.5" fill="#F8F6F0"/><circle cx="100" cy="46" r="4.5" fill="#F8F6F0"/>
-    <circle cx="51" cy="65" r="7.5" fill="#1E3A8A"/><circle cx="51" cy="65" r="5" fill="#3B82F6"/><circle cx="51" cy="65" r="2" fill="#0F172A"/><circle cx="49" cy="63" r="1.5" fill="#FFFFFF"/>
-    <circle cx="99" cy="65" r="7.5" fill="#1E3A8A"/><circle cx="99" cy="65" r="5" fill="#3B82F6"/><circle cx="99" cy="65" r="2" fill="#0F172A"/><circle cx="97" cy="63" r="1.5" fill="#FFFFFF"/>
-    <path d="M 64 74 L 86 74 L 88 84 L 75 92 L 62 84 Z" fill="#F8F6F0"/>
-    <rect x="67" y="75" width="16" height="10" rx="5" fill="#111827"/>
-    <g id="animated-mouth">
-      <path d="M 66 85 Q 71 88 75 85 Q 79 88 84 85" stroke="#111827" stroke-width="2" stroke-linecap="round" fill="none"/>
-      <rect x="71" y="86" width="8" height="7" rx="3" fill="#FB7185"/><line x1="75" y1="86" x2="75" y2="91" stroke="#E11D48" stroke-width="1"/>
-      <rect x="62" y="88" width="2" height="2" fill="#B45309"/><rect x="64" y="91" width="1.5" height="1.5" fill="#B45309"/><rect x="86" y="86" width="2" height="2" fill="#B45309"/>
-    </g>
+    <path id="ear-left" d="M31 47 Q27 20 38 18 Q50 26 51 47 Z" fill="#E5BC8E"/>
+    <path d="M36 44 Q34 26 40 25 Q47 31 47 44 Z" fill="#F2E3CE"/>
+    <path id="ear-right" d="M89 47 Q93 20 82 18 Q70 26 69 47 Z" fill="#E5BC8E"/>
+    <path d="M84 44 Q86 26 80 25 Q73 31 73 44 Z" fill="#F2E3CE"/>
+    <path d="M29 60 Q29 42 47 40 Q60 38.5 73 40 Q91 42 91 60 Q91 78 73 85 Q60 88 47 85 Q29 78 29 60 Z" fill="#E5BC8E"/>
+    <path d="M32 62 Q34 51 45 50 Q52 49 56 48 Q58 40.5 60 40.5 Q62 40.5 64 48 Q68 49 75 50 Q86 51 88 62 Q89 76 78 83 Q60 88 42 83 Q31 76 32 62 Z" fill="#FCF9F3"/>
+    <ellipse cx="46" cy="55" rx="3" ry="1.8" fill="#DBAF7C"/>
+    <ellipse cx="74" cy="55" rx="3" ry="1.8" fill="#DBAF7C"/>
+    <circle cx="35" cy="69" r="5" fill="#F3B0A8" opacity="0.5"/>
+    <circle cx="85" cy="69" r="5" fill="#F3B0A8" opacity="0.5"/>
+    <circle cx="46" cy="63" r="4.8" fill="#4A3F38"/><circle cx="44.2" cy="61.2" r="1.4" fill="#fff"/>
+    <circle cx="74" cy="63" r="4.8" fill="#4A3F38"/><circle cx="72.2" cy="61.2" r="1.4" fill="#fff"/>
+    <ellipse cx="60" cy="66" rx="4.6" ry="3.4" fill="#4A3F38"/>
+    <path d="M60 69 L60 71" stroke="#4A3F38" stroke-width="1.6" stroke-linecap="round"/>
+    <g id="chewing-mouth"><path d="M53 71 Q60 80 67 71 Z" fill="#4A3F38"><animate attributeName="d" values="M53 71 Q60 80 67 71 Z; M53 71 Q60 76 67 71 Z; M53 71 Q60 80 67 71 Z" dur="0.4s" repeatCount="indefinite"/></path></g>
+    <path id="dog-tongue" d="M57 73 Q57 78 60 78 Q63 78 63 73 Z" fill="#FB99A0"/>
   </g>
-  <g id="food-bowl"><path d="M 50 122 Q 75 110 100 122 Z" fill="#92400E"/><circle cx="63" cy="118" r="3" fill="#B45309"/><circle cx="75" cy="116" r="3.5" fill="#78350F"/><circle cx="87" cy="119" r="3" fill="#B45309"/><path d="M 46 122 L 104 122 L 98 138 L 52 138 Z" fill="#EF4444"/><path d="M 52 135 L 98 135 L 96 138 L 54 138 Z" fill="#DC2626"/><g transform="translate(64, 127)"><rect x="5" y="3" width="12" height="4" rx="1" fill="#FFFFFF"/><circle cx="5" cy="3" r="2.2" fill="#FFFFFF"/><circle cx="5" cy="7" r="2.2" fill="#FFFFFF"/><circle cx="17" cy="3" r="2.2" fill="#FFFFFF"/><circle cx="17" cy="7" r="2.2" fill="#FFFFFF"/></g></g>
-  <g id="dog-glasses" opacity="0"><rect x="48" y="55" width="16" height="10" rx="2" stroke="#FF9800" stroke-width="1.5" fill="none" opacity="0.8"/><rect x="86" y="55" width="16" height="10" rx="2" stroke="#FF9800" stroke-width="1.5" fill="none" opacity="0.8"/><line x1="64" y1="60" x2="86" y2="60" stroke="#FF9800" stroke-width="1.5" opacity="0.8"/></g>
-  <g id="zzz-group" opacity="0"><text x="120" y="25" font-size="11" fill="#999" font-weight="bold">z</text><text x="128" y="14" font-size="14" fill="#999" font-weight="bold" opacity="0.6">z</text><text x="135" y="3" font-size="17" fill="#999" font-weight="bold" opacity="0.3">z</text></g>
+  <g id="food-bowl"><path d="M46 106 Q60 100 74 106 Z" fill="#92400E"/><path d="M43 106 L77 106 L73 114 L47 114 Z" fill="#EF4444"/></g>
+  <g id="dog-glasses" opacity="0"><rect x="38" y="52" width="16" height="14" rx="2" stroke="#FF9800" stroke-width="2" fill="none"/><rect x="66" y="52" width="16" height="14" rx="2" stroke="#FF9800" stroke-width="2" fill="none"/><line x1="54" y1="59" x2="66" y2="59" stroke="#FF9800" stroke-width="2"/></g>
+  <g id="zzz-group" opacity="0"><text x="88" y="22" font-size="10" fill="#999" font-weight="bold">z</text><text x="96" y="12" font-size="14" fill="#999" font-weight="bold" opacity="0.6">z</text><text x="104" y="2" font-size="18" fill="#999" font-weight="bold" opacity="0.3">z</text></g>
   <defs><linearGradient id="screen-glow" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#00D2FF" stop-opacity="1"/><stop offset="100%" stop-color="#00D2FF" stop-opacity="0"/></linearGradient></defs>
-  <g id="pet-cyber-keyboard" opacity="0"><rect x="30" y="118" width="90" height="10" rx="3" fill="#344054" stroke="#475467" stroke-width="1.5"/><rect id="key-light-1" x="38" y="120" width="10" height="5" rx="1.5" fill="#FFD700" opacity="0"/><rect id="key-light-2" x="54" y="120" width="14" height="5" rx="1.5" fill="#00D2FF" opacity="0"/><rect id="key-light-3" x="78" y="120" width="12" height="5" rx="1.5" fill="#FF3366" opacity="0"/><rect id="key-light-4" x="96" y="120" width="10" height="5" rx="1.5" fill="#00FF66" opacity="0"/><path d="M 42 116 L 28 94 L 122 94 L 108 116 Z" fill="url(#screen-glow)" opacity="0.12"/></g>
+  <g id="pet-cyber-keyboard" opacity="0"><rect x="30" y="102" width="60" height="8" rx="2" fill="#344054" stroke="#475467" stroke-width="1.5"/><rect id="key-light-1" x="36" y="104" width="8" height="4" rx="1" fill="#FFD700" opacity="0"/><rect id="key-light-2" x="48" y="104" width="12" height="4" rx="1" fill="#00D2FF" opacity="0"/><rect id="key-light-3" x="66" y="104" width="10" height="4" rx="1" fill="#FF3366" opacity="0"/><rect id="key-light-4" x="80" y="104" width="6" height="4" rx="1" fill="#00FF66" opacity="0"/><path d="M 35 102 L 20 80 L 100 80 L 85 102 Z" fill="url(#screen-glow)" opacity="0.15"/></g>
 </svg>`,
-  bathing: `<svg width="120" height="130" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <style>
-    .husky-shadow { fill: #1E293B; opacity: 0.1; }
-    .husky-body { fill: #333A42; }
-    .husky-white { fill: #F8F6F0; }
-    .husky-pink { fill: #E11D48; opacity: 0.15; }
-    .husky-paws { fill: #4B5563; }
-    .husky-head { fill: #434C56; }
-  </style>
-  <ellipse cx="75" cy="142" rx="36" ry="5" class="husky-shadow" />
-  <rect x="35" y="138" width="80" height="6" rx="3" class="husky-shadow"/>
+  bathing: `<svg width="120" height="130" viewBox="0 0 120 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <ellipse cx="60" cy="126" rx="27" ry="4.5" fill="#D0D5DD" opacity="0.5"/>
+  <g id="dog-tail"><path d="M77 117 Q98 115 100 92 Q101 77 87 80 Q78 83 83 98 Q85 87 92 90 Q99 94 94 105 Q90 115 77 117 Z" fill="#EAD9BE"/><path d="M95 89 Q99 97 93 105" stroke="#E5BC8E" stroke-width="3" fill="none" stroke-linecap="round"/></g>
   <g id="dog-body">
-    <rect x="48" y="85" width="54" height="40" rx="14" fill="#333A42"/>
-    <path d="M 54 85 L 96 85 L 90 118 L 75 122 L 60 118 Z" fill="#F8F6F0"/>
+    <path d="M51 80 Q51 91 55 96 L65 96 Q69 91 69 80 Z" fill="#EAD9BE"/>
+    <path d="M53 85 Q45 87 43 99 Q37 106 38 114 Q40 122 52 122 Q60 123 68 122 Q80 122 82 114 Q83 106 77 99 Q75 87 67 85 Q60 83 53 85 Z" fill="#EAD9BE"/>
+    <path d="M60 89 Q72 92 72 106 Q72 116 60 117 Q48 116 48 106 Q48 92 60 89 Z" fill="#FCF9F3"/>
+    <path d="M44 99 Q41 109 45 118" stroke="#DBAF7C" stroke-width="1" fill="none" opacity="0.4"/>
+    <path d="M76 99 Q79 109 75 118" stroke="#DBAF7C" stroke-width="1" fill="none" opacity="0.4"/>
+    <path d="M52 106 Q49 114 51 121 L60 121 Q60 113 60 106 Z" fill="#FCF9F3"/>
+    <path d="M60 106 Q60 113 60 121 L69 121 Q71 114 68 106 Z" fill="#FCF9F3"/>
+    <path d="M60 107 L60 120" stroke="#E3D2B6" stroke-width="1.2" stroke-linecap="round" opacity="0.55"/>
+    <path d="M54 116 L54 121 M57 116 L57 121" stroke="#E3D2B6" stroke-width="0.8" stroke-linecap="round" opacity="0.5"/>
+    <path d="M63 116 L63 121 M66 116 L66 121" stroke="#E3D2B6" stroke-width="0.8" stroke-linecap="round" opacity="0.5"/>
+  <g id="dog-head"><animateTransform attributeName="transform" type="translate" values="0,0; 0,0.6; 0,0" dur="2s" repeatCount="indefinite"/>
+    <path id="ear-left" d="M31 47 Q27 20 38 18 Q50 26 51 47 Z" fill="#E5BC8E"/>
+    <path d="M36 44 Q34 26 40 25 Q47 31 47 44 Z" fill="#F2E3CE"/>
+    <path id="ear-right" d="M89 47 Q93 20 82 18 Q70 26 69 47 Z" fill="#E5BC8E"/>
+    <path d="M84 44 Q86 26 80 25 Q73 31 73 44 Z" fill="#F2E3CE"/>
+    <path d="M29 60 Q29 42 47 40 Q60 38.5 73 40 Q91 42 91 60 Q91 78 73 85 Q60 88 47 85 Q29 78 29 60 Z" fill="#E5BC8E"/>
+    <path d="M32 62 Q34 51 45 50 Q52 49 56 48 Q58 40.5 60 40.5 Q62 40.5 64 48 Q68 49 75 50 Q86 51 88 62 Q89 76 78 83 Q60 88 42 83 Q31 76 32 62 Z" fill="#FCF9F3"/>
+    <ellipse cx="46" cy="55" rx="3" ry="1.8" fill="#DBAF7C"/>
+    <ellipse cx="74" cy="55" rx="3" ry="1.8" fill="#DBAF7C"/>
+    <circle cx="35" cy="69" r="5" fill="#F3B0A8" opacity="0.5"/>
+    <circle cx="85" cy="69" r="5" fill="#F3B0A8" opacity="0.5"/>
+    <path d="M41 63 Q46 68 51 63" stroke="#4A3F38" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+    <path d="M69 63 Q74 68 79 63" stroke="#4A3F38" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+    <ellipse cx="60" cy="66" rx="4.6" ry="3.4" fill="#4A3F38"/>
+    <path d="M60 69 L60 71" stroke="#4A3F38" stroke-width="1.6" stroke-linecap="round"/>
+    <path d="M60 71 Q55 74 51 71 M60 71 Q65 74 69 71" stroke="#4A3F38" stroke-width="1.6" stroke-linecap="round" fill="none"/>
   </g>
-  <g id="dog-head">
-    <animateTransform attributeName="transform" type="translate" values="0,0; 0,0.5; 0,0" dur="2.5s" repeatCount="indefinite"/>
-    <path d="M 32 50 L 26 14 L 64 36 Z" fill="#333A42" stroke="#333A42" stroke-width="2" stroke-linejoin="round"/>
-    <path d="M 40 45 L 38 30 L 52 38 Z" fill="#F8F6F0"/>
-    <path d="M 118 50 L 124 14 L 86 36 Z" fill="#333A42" stroke="#333A42" stroke-width="2" stroke-linejoin="round"/>
-    <path d="M 110 45 L 112 30 L 98 38 Z" fill="#F8F6F0"/>
-    <rect x="60" y="16" width="30" height="10" rx="3" fill="#E2E8F0"/>
-    <rect x="65" y="20" width="20" height="6" rx="1" fill="#FFFFFF"/>
-    <rect x="28" y="32" width="94" height="66" rx="18" fill="#434C56"/>
-    <path d="M 28 66 C 28 86, 42 96, 75 96 C 108 96, 122 86, 122 66 C 122 52, 108 48, 98 62 C 90 42, 84 42, 75 60 C 66 42, 60 42, 52 62 C 42 48, 28 52, 28 66 Z" fill="#F8F6F0"/>
-    <circle cx="50" cy="42" r="4.5" fill="#F8F6F0"/><circle cx="100" cy="42" r="4.5" fill="#F8F6F0"/>
-    <circle cx="51" cy="65" r="7.5" fill="#1E3A8A"/><circle cx="51" cy="65" r="5" fill="#3B82F6"/><circle cx="51" cy="65" r="2" fill="#0F172A"/><circle cx="49" cy="63" r="1.5" fill="#FFFFFF"/>
-    <circle cx="99" cy="65" r="7.5" fill="#1E3A8A"/><circle cx="99" cy="65" r="5" fill="#3B82F6"/><circle cx="99" cy="65" r="2" fill="#0F172A"/><circle cx="97" cy="63" r="1.5" fill="#FFFFFF"/>
-    <path d="M 64 74 L 86 74 L 88 84 L 75 92 L 62 84 Z" fill="#F8F6F0"/>
-    <rect x="67" y="75" width="16" height="10" rx="5" fill="#111827"/>
-    <path d="M 66 86 Q 75 92 84 86" stroke="#111827" stroke-width="2" stroke-linecap="round" fill="none"/>
-  </g>
-  <rect x="30" y="115" width="90" height="22" rx="4" fill="#B45309"/>
-  <rect x="34" y="119" width="82" height="4" fill="#78350F"/>
-  <circle cx="38" cy="108" r="2" fill="#60A5FA" opacity="0.7"/><circle cx="114" cy="110" r="3" fill="#60A5FA" opacity="0.7"/>
-  
-  <!-- Rising bath bubbles -->
+  <rect x="26" y="100" width="68" height="20" rx="4" fill="#B45309"/>
+  <rect x="30" y="104" width="60" height="3" fill="#78350F"/>
   <g id="bath-bubbles">
-    <circle cx="38" cy="105" r="6" fill="#93C5FD" opacity="0.7">
-      <animate attributeName="cy" values="105;90;75" dur="2s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.6;0.3;0" dur="2s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="50" cy="98" r="5" fill="#93C5FD" opacity="0.6">
-      <animate attributeName="cy" values="98;82;66" dur="2.5s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.5;0.2;0" dur="2.5s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="95" cy="100" r="6" fill="#93C5FD" opacity="0.6">
-      <animate attributeName="cy" values="100;85;70" dur="1.8s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.5;0.2;0" dur="1.8s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="110" cy="108" r="7" fill="#93C5FD" opacity="0.5">
-      <animate attributeName="cy" values="108;92;76" dur="2.2s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.4;0.2;0" dur="2.2s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="42" cy="112" r="4" fill="#93C5FD" opacity="0.7">
-      <animate attributeName="cy" values="112;98;84" dur="3s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.6;0.3;0" dur="3s" repeatCount="indefinite"/>
-    </circle>
+    <circle cx="34" cy="94" r="5" fill="#93C5FD" opacity="0.7"><animate attributeName="cy" values="94;80;66" dur="2s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0.3;0" dur="2s" repeatCount="indefinite"/></circle>
+    <circle cx="46" cy="88" r="4" fill="#93C5FD" opacity="0.6"><animate attributeName="cy" values="88;72;58" dur="2.5s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.5;0.2;0" dur="2.5s" repeatCount="indefinite"/></circle>
+    <circle cx="78" cy="90" r="5" fill="#93C5FD" opacity="0.6"><animate attributeName="cy" values="90;76;62" dur="1.8s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.5;0.2;0" dur="1.8s" repeatCount="indefinite"/></circle>
+    <circle cx="88" cy="96" r="6" fill="#93C5FD" opacity="0.5"><animate attributeName="cy" values="96;82;68" dur="2.2s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.4;0.2;0" dur="2.2s" repeatCount="indefinite"/></circle>
   </g>
-  <!-- Steam rising -->
-  <g stroke="#D0D5DD" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.4">
-    <path d="M 32 112 Q 28 102 34 92 Q 30 82 33 72">
-      <animate attributeName="opacity" values="0;0.4;0" dur="2.5s" repeatCount="indefinite"/>
-    </path>
-    <path d="M 118 108 Q 122 98 116 88 Q 120 78 118 68">
-      <animate attributeName="opacity" values="0;0.4;0" dur="3s" repeatCount="indefinite"/>
-    </path>
-  </g><g id="dog-glasses" opacity="0"><rect x="48" y="55" width="16" height="10" rx="2" stroke="#FF9800" stroke-width="1.5" fill="none" opacity="0.8"/><rect x="86" y="55" width="16" height="10" rx="2" stroke="#FF9800" stroke-width="1.5" fill="none" opacity="0.8"/><line x1="64" y1="60" x2="86" y2="60" stroke="#FF9800" stroke-width="1.5" opacity="0.8"/></g>
-  <g id="zzz-group" opacity="0"><text x="120" y="25" font-size="11" fill="#999" font-weight="bold">z</text><text x="128" y="14" font-size="14" fill="#999" font-weight="bold" opacity="0.6">z</text><text x="135" y="3" font-size="17" fill="#999" font-weight="bold" opacity="0.3">z</text></g>
+  <g id="dog-glasses" opacity="0"><rect x="38" y="52" width="16" height="14" rx="2" stroke="#FF9800" stroke-width="2" fill="none"/><rect x="66" y="52" width="16" height="14" rx="2" stroke="#FF9800" stroke-width="2" fill="none"/><line x1="54" y1="59" x2="66" y2="59" stroke="#FF9800" stroke-width="2"/></g>
+  <g id="zzz-group" opacity="0"><text x="88" y="22" font-size="10" fill="#999" font-weight="bold">z</text><text x="96" y="12" font-size="14" fill="#999" font-weight="bold" opacity="0.6">z</text><text x="104" y="2" font-size="18" fill="#999" font-weight="bold" opacity="0.3">z</text></g>
   <defs><linearGradient id="screen-glow" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#00D2FF" stop-opacity="1"/><stop offset="100%" stop-color="#00D2FF" stop-opacity="0"/></linearGradient></defs>
-  <g id="pet-cyber-keyboard" opacity="0"><rect x="30" y="118" width="90" height="10" rx="3" fill="#344054" stroke="#475467" stroke-width="1.5"/><rect id="key-light-1" x="38" y="120" width="10" height="5" rx="1.5" fill="#FFD700" opacity="0"/><rect id="key-light-2" x="54" y="120" width="14" height="5" rx="1.5" fill="#00D2FF" opacity="0"/><rect id="key-light-3" x="78" y="120" width="12" height="5" rx="1.5" fill="#FF3366" opacity="0"/><rect id="key-light-4" x="96" y="120" width="10" height="5" rx="1.5" fill="#00FF66" opacity="0"/><path d="M 42 116 L 28 94 L 122 94 L 108 116 Z" fill="url(#screen-glow)" opacity="0.12"/></g>
+  <g id="pet-cyber-keyboard" opacity="0"><rect x="30" y="102" width="60" height="8" rx="2" fill="#344054" stroke="#475467" stroke-width="1.5"/><rect id="key-light-1" x="36" y="104" width="8" height="4" rx="1" fill="#FFD700" opacity="0"/><rect id="key-light-2" x="48" y="104" width="12" height="4" rx="1" fill="#00D2FF" opacity="0"/><rect id="key-light-3" x="66" y="104" width="10" height="4" rx="1" fill="#FF3366" opacity="0"/><rect id="key-light-4" x="80" y="104" width="6" height="4" rx="1" fill="#00FF66" opacity="0"/><path d="M 35 102 L 20 80 L 100 80 L 85 102 Z" fill="url(#screen-glow)" opacity="0.15"/></g>
 </svg>`,
-  sick: `<!-- DOG SICK --><svg width="120" height="130" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <style>
-    .husky-shadow { fill: #1E293B; opacity: 0.1; }
-    .husky-body { fill: #333A42; }
-    .husky-white { fill: #F8F6F0; }
-    .husky-pink { fill: #E11D48; opacity: 0.15; }
-    .husky-paws { fill: #4B5563; }
-    .husky-head { fill: #434C56; }
-  </style>
-  <ellipse cx="75" cy="142" rx="36" ry="5" class="husky-shadow" />
-  <rect x="42" y="136" width="66" height="6" rx="3" class="husky-shadow"/>
+  sick: `<!-- DOG SICK --><svg width="120" height="130" viewBox="0 0 120 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <ellipse cx="60" cy="126" rx="27" ry="4.5" fill="#D0D5DD" opacity="0.5"/>
+  <g id="dog-tail"><path d="M77 117 Q98 115 100 92 Q101 77 87 80 Q78 83 83 98 Q85 87 92 90 Q99 94 94 105 Q90 115 77 117 Z" fill="#EAD9BE"/><path d="M95 89 Q99 97 93 105" stroke="#E5BC8E" stroke-width="3" fill="none" stroke-linecap="round"/></g>
   <g id="dog-body">
-    <rect x="48" y="85" width="54" height="48" rx="14" fill="#333A42"/>
-    <path d="M 54 85 L 96 85 L 90 118 L 75 124 L 60 118 Z" fill="#F8F6F0"/>
-    <path d="M 102 112 Q 106 122 103 128" stroke="#333A42" stroke-width="6" stroke-linecap="round" fill="none"/>
-    <rect x="54" y="126" width="14" height="9" rx="3" fill="#4B5563"/>
-    <rect x="82" y="126" width="14" height="9" rx="3" fill="#4B5563"/>
-  </g>
+    <path d="M51 80 Q51 91 55 96 L65 96 Q69 91 69 80 Z" fill="#EAD9BE"/>
+    <path d="M53 85 Q45 87 43 99 Q37 106 38 114 Q40 122 52 122 Q60 123 68 122 Q80 122 82 114 Q83 106 77 99 Q75 87 67 85 Q60 83 53 85 Z" fill="#EAD9BE"/>
+    <path d="M60 89 Q72 92 72 106 Q72 116 60 117 Q48 116 48 106 Q48 92 60 89 Z" fill="#FCF9F3"/>
+    <path d="M44 99 Q41 109 45 118" stroke="#DBAF7C" stroke-width="1" fill="none" opacity="0.4"/>
+    <path d="M76 99 Q79 109 75 118" stroke="#DBAF7C" stroke-width="1" fill="none" opacity="0.4"/>
+    <path d="M52 106 Q49 114 51 121 L60 121 Q60 113 60 106 Z" fill="#FCF9F3"/>
+    <path d="M60 106 Q60 113 60 121 L69 121 Q71 114 68 106 Z" fill="#FCF9F3"/>
+    <path d="M60 107 L60 120" stroke="#E3D2B6" stroke-width="1.2" stroke-linecap="round" opacity="0.55"/>
+    <path d="M54 116 L54 121 M57 116 L57 121" stroke="#E3D2B6" stroke-width="0.8" stroke-linecap="round" opacity="0.5"/>
+    <path d="M63 116 L63 121 M66 116 L66 121" stroke="#E3D2B6" stroke-width="0.8" stroke-linecap="round" opacity="0.5"/>
   <g id="dog-head">
-    <path d="M 34 52 L 18 22 L 60 40 Z" fill="#333A42" stroke="#333A42" stroke-width="2" stroke-linejoin="round"/>
-    <path d="M 40 47 L 26 28 L 54 41 Z" fill="#F8F6F0"/>
-    <path d="M 116 52 L 132 22 L 90 40 Z" fill="#333A42" stroke="#333A42" stroke-width="2" stroke-linejoin="round"/>
-    <path d="M 110 47 L 124 28 L 96 41 Z" fill="#F8F6F0"/>
-    <rect x="28" y="32" width="94" height="66" rx="18" fill="#434C56"/>
-    <path d="M 28 66 C 28 86, 42 96, 75 96 C 108 96, 122 86, 122 66 C 122 52, 108 48, 98 62 C 90 42, 84 42, 75 60 C 66 42, 60 42, 52 62 C 42 48, 28 52, 28 66 Z" fill="#F8F6F0"/>
-    <circle cx="52" cy="50" r="4.5" fill="#F8F6F0"/><circle cx="98" cy="50" r="4.5" fill="#F8F6F0"/>
-    <rect x="62" y="36" width="26" height="11" rx="2" fill="#93C5FD" opacity="0.9"/>
-    <rect x="65" y="39" width="20" height="5" rx="1" fill="#60A5FA" opacity="0.4"/>
-    <path d="M 45 60 L 57 70 M 57 60 L 45 70" stroke="#1E3A8A" stroke-width="3.5" stroke-linecap="round"/>
-    <path d="M 93 60 L 105 70 M 105 60 L 93 70" stroke="#1E3A8A" stroke-width="3.5" stroke-linecap="round"/>
-    <path d="M 64 74 L 86 74 L 88 84 L 75 92 L 62 84 Z" fill="#F8F6F0"/>
-    <rect x="67" y="75" width="16" height="10" rx="5" fill="#111827"/>
-    <path d="M 67 89 Q 75 83 83 89" stroke="#111827" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <path id="ear-left" d="M31 47 Q27 20 38 18 Q50 26 51 47 Z" fill="#E5BC8E"/>
+    <path d="M36 44 Q34 26 40 25 Q47 31 47 44 Z" fill="#F2E3CE"/>
+    <path id="ear-right" d="M89 47 Q93 20 82 18 Q70 26 69 47 Z" fill="#E5BC8E"/>
+    <path d="M84 44 Q86 26 80 25 Q73 31 73 44 Z" fill="#F2E3CE"/>
+    <path d="M29 60 Q29 42 47 40 Q60 38.5 73 40 Q91 42 91 60 Q91 78 73 85 Q60 88 47 85 Q29 78 29 60 Z" fill="#E5BC8E"/>
+    <path d="M32 62 Q34 51 45 50 Q52 49 56 48 Q58 40.5 60 40.5 Q62 40.5 64 48 Q68 49 75 50 Q86 51 88 62 Q89 76 78 83 Q60 88 42 83 Q31 76 32 62 Z" fill="#FCF9F3"/>
+    <ellipse cx="46" cy="55" rx="3" ry="1.8" fill="#DBAF7C"/>
+    <ellipse cx="74" cy="55" rx="3" ry="1.8" fill="#DBAF7C"/>
+    <circle cx="35" cy="69" r="5" fill="#F3B0A8" opacity="0.5"/>
+    <circle cx="85" cy="69" r="5" fill="#F3B0A8" opacity="0.5"/>
+    <path d="M42 60 L50 67 M50 60 L42 67" stroke="#4A3F38" stroke-width="2.4" stroke-linecap="round"/>
+    <path d="M70 60 L78 67 M78 60 L70 67" stroke="#4A3F38" stroke-width="2.4" stroke-linecap="round"/>
+    <ellipse cx="60" cy="66" rx="4.6" ry="3.4" fill="#4A3F38"/>
+    <path d="M53 73 Q60 69 67 73" stroke="#4A3F38" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <rect x="48" y="30" width="24" height="9" rx="2" fill="#93C5FD" opacity="0.9"/>
+    <rect x="51" y="32" width="18" height="4" rx="1" fill="#60A5FA" opacity="0.4"/>
   </g>
-  <g id="dog-glasses" opacity="0"><rect x="48" y="55" width="16" height="10" rx="2" stroke="#FF9800" stroke-width="1.5" fill="none" opacity="0.8"/><rect x="86" y="55" width="16" height="10" rx="2" stroke="#FF9800" stroke-width="1.5" fill="none" opacity="0.8"/><line x1="64" y1="60" x2="86" y2="60" stroke="#FF9800" stroke-width="1.5" opacity="0.8"/></g>
-  <g id="zzz-group" opacity="0"><text x="120" y="25" font-size="11" fill="#999" font-weight="bold">z</text><text x="128" y="14" font-size="14" fill="#999" font-weight="bold" opacity="0.6">z</text><text x="135" y="3" font-size="17" fill="#999" font-weight="bold" opacity="0.3">z</text></g>
+  <g id="dog-glasses" opacity="0"><rect x="38" y="52" width="16" height="14" rx="2" stroke="#FF9800" stroke-width="2" fill="none"/><rect x="66" y="52" width="16" height="14" rx="2" stroke="#FF9800" stroke-width="2" fill="none"/><line x1="54" y1="59" x2="66" y2="59" stroke="#FF9800" stroke-width="2"/></g>
+  <g id="zzz-group" opacity="0"><text x="88" y="22" font-size="10" fill="#999" font-weight="bold">z</text><text x="96" y="12" font-size="14" fill="#999" font-weight="bold" opacity="0.6">z</text><text x="104" y="2" font-size="18" fill="#999" font-weight="bold" opacity="0.3">z</text></g>
   <defs><linearGradient id="screen-glow" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#00D2FF" stop-opacity="1"/><stop offset="100%" stop-color="#00D2FF" stop-opacity="0"/></linearGradient></defs>
-  <g id="pet-cyber-keyboard" opacity="0"><rect x="30" y="118" width="90" height="10" rx="3" fill="#344054" stroke="#475467" stroke-width="1.5"/><rect id="key-light-1" x="38" y="120" width="10" height="5" rx="1.5" fill="#FFD700" opacity="0"/><rect id="key-light-2" x="54" y="120" width="14" height="5" rx="1.5" fill="#00D2FF" opacity="0"/><rect id="key-light-3" x="78" y="120" width="12" height="5" rx="1.5" fill="#FF3366" opacity="0"/><rect id="key-light-4" x="96" y="120" width="10" height="5" rx="1.5" fill="#00FF66" opacity="0"/><path d="M 42 116 L 28 94 L 122 94 L 108 116 Z" fill="url(#screen-glow)" opacity="0.12"/></g>
+  <g id="pet-cyber-keyboard" opacity="0"><rect x="30" y="102" width="60" height="8" rx="2" fill="#344054" stroke="#475467" stroke-width="1.5"/><rect id="key-light-1" x="36" y="104" width="8" height="4" rx="1" fill="#FFD700" opacity="0"/><rect id="key-light-2" x="48" y="104" width="12" height="4" rx="1" fill="#00D2FF" opacity="0"/><rect id="key-light-3" x="66" y="104" width="10" height="4" rx="1" fill="#FF3366" opacity="0"/><rect id="key-light-4" x="80" y="104" width="6" height="4" rx="1" fill="#00FF66" opacity="0"/><path d="M 35 102 L 20 80 L 100 80 L 85 102 Z" fill="url(#screen-glow)" opacity="0.15"/></g>
 </svg>`,
-  sleeping: `<svg width="120" height="130" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <style>
-    .husky-shadow { fill: #1E293B; opacity: 0.1; }
-    .husky-body { fill: #333A42; }
-    .husky-white { fill: #F8F6F0; }
-    .husky-pink { fill: #E11D48; opacity: 0.15; }
-    .husky-paws { fill: #4B5563; }
-    .husky-head { fill: #434C56; }
-  </style>
-  <ellipse cx="75" cy="142" rx="36" ry="5" class="husky-shadow" />
-  <rect x="45" y="138" width="60" height="5" rx="2.5" class="husky-shadow"/>
+  sleeping: `<svg width="120" height="130" viewBox="0 0 120 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <ellipse cx="60" cy="126" rx="27" ry="4.5" fill="#D0D5DD" opacity="0.5"/>
+  <g id="dog-tail"><path d="M77 117 Q98 115 100 92 Q101 77 87 80 Q78 83 83 98 Q85 87 92 90 Q99 94 94 105 Q90 115 77 117 Z" fill="#EAD9BE"/><path d="M95 89 Q99 97 93 105" stroke="#E5BC8E" stroke-width="3" fill="none" stroke-linecap="round"/></g>
   <g id="dog-body">
-    <rect x="50" y="90" width="50" height="42" rx="16" fill="#333A42"/>
-    <path d="M 56 90 L 94 90 L 88 116 L 75 122 L 62 116 Z" fill="#F8F6F0"/>
-    <path d="M 100 105 Q 108 112 105 120 C 102 128, 98 126, 100 120" stroke="#333A42" stroke-width="5" stroke-linecap="round" fill="none"/>
-    <rect x="56" y="124" width="12" height="8" rx="3" fill="#4B5563"/>
-    <rect x="82" y="124" width="12" height="8" rx="3" fill="#4B5563"/>
-  </g>
+    <path d="M51 80 Q51 91 55 96 L65 96 Q69 91 69 80 Z" fill="#EAD9BE"/>
+    <path d="M53 85 Q45 87 43 99 Q37 106 38 114 Q40 122 52 122 Q60 123 68 122 Q80 122 82 114 Q83 106 77 99 Q75 87 67 85 Q60 83 53 85 Z" fill="#EAD9BE"/>
+    <path d="M60 89 Q72 92 72 106 Q72 116 60 117 Q48 116 48 106 Q48 92 60 89 Z" fill="#FCF9F3"/>
+    <path d="M44 99 Q41 109 45 118" stroke="#DBAF7C" stroke-width="1" fill="none" opacity="0.4"/>
+    <path d="M76 99 Q79 109 75 118" stroke="#DBAF7C" stroke-width="1" fill="none" opacity="0.4"/>
+    <path d="M52 106 Q49 114 51 121 L60 121 Q60 113 60 106 Z" fill="#FCF9F3"/>
+    <path d="M60 106 Q60 113 60 121 L69 121 Q71 114 68 106 Z" fill="#FCF9F3"/>
+    <path d="M60 107 L60 120" stroke="#E3D2B6" stroke-width="1.2" stroke-linecap="round" opacity="0.55"/>
+    <path d="M54 116 L54 121 M57 116 L57 121" stroke="#E3D2B6" stroke-width="0.8" stroke-linecap="round" opacity="0.5"/>
+    <path d="M63 116 L63 121 M66 116 L66 121" stroke="#E3D2B6" stroke-width="0.8" stroke-linecap="round" opacity="0.5"/>
   <g id="dog-head">
-    <animateTransform attributeName="transform" type="translate" values="0,0; 0,0.5; 0,0" dur="2.5s" repeatCount="indefinite"/>
-    <path d="M 32 50 L 26 14 L 64 36 Z" fill="#333A42" stroke="#333A42" stroke-width="2" stroke-linejoin="round"/>
-    <path d="M 36 45 L 32 24 L 56 37 Z" fill="#E11D48" opacity="0.15"/>
-    <path d="M 40 45 L 38 30 L 52 38 Z" fill="#F8F6F0"/>
-    <path d="M 118 50 L 124 14 L 86 36 Z" fill="#333A42" stroke="#333A42" stroke-width="2" stroke-linejoin="round"/>
-    <path d="M 114 45 L 118 24 L 94 37 Z" fill="#E11D48" opacity="0.15"/>
-    <path d="M 110 45 L 112 30 L 98 38 Z" fill="#F8F6F0"/>
-    <rect x="28" y="32" width="94" height="66" rx="18" fill="#434C56"/>
-    <path d="M 28 66 C 28 86, 42 96, 75 96 C 108 96, 122 86, 122 66 C 122 52, 108 48, 98 62 C 90 42, 84 42, 75 60 C 66 42, 60 42, 52 62 C 42 48, 28 52, 28 66 Z" fill="#F8F6F0"/>
-    <circle cx="50" cy="52" r="4.5" fill="#F8F6F0"/><circle cx="100" cy="52" r="4.5" fill="#F8F6F0"/>
-    <path d="M 44 65 C 48 70, 54 70, 58 65" stroke="#111827" stroke-width="3" stroke-linecap="round" fill="none"/>
-    <path d="M 92 65 C 96 70, 102 70, 106 65" stroke="#111827" stroke-width="3" stroke-linecap="round" fill="none"/>
-    <path d="M 64 74 L 86 74 L 88 84 L 75 92 L 62 84 Z" fill="#F8F6F0"/>
-    <rect x="67" y="75" width="16" height="10" rx="5" fill="#111827"/>
-    <path d="M 67 86 Q 71 89 75 86 Q 79 89 83 86" stroke="#111827" stroke-width="2" stroke-linecap="round" fill="none"/>
-    <circle cx="85" cy="88" r="3.5" fill="#60A5FA" opacity="0.6"/><circle cx="85" cy="88" r="2" fill="#FFFFFF"/>
+    <path id="ear-left" d="M31 47 Q27 20 38 18 Q50 26 51 47 Z" fill="#E5BC8E"/>
+    <path d="M36 44 Q34 26 40 25 Q47 31 47 44 Z" fill="#F2E3CE"/>
+    <path id="ear-right" d="M89 47 Q93 20 82 18 Q70 26 69 47 Z" fill="#E5BC8E"/>
+    <path d="M84 44 Q86 26 80 25 Q73 31 73 44 Z" fill="#F2E3CE"/>
+    <path d="M29 60 Q29 42 47 40 Q60 38.5 73 40 Q91 42 91 60 Q91 78 73 85 Q60 88 47 85 Q29 78 29 60 Z" fill="#E5BC8E"/>
+    <path d="M32 62 Q34 51 45 50 Q52 49 56 48 Q58 40.5 60 40.5 Q62 40.5 64 48 Q68 49 75 50 Q86 51 88 62 Q89 76 78 83 Q60 88 42 83 Q31 76 32 62 Z" fill="#FCF9F3"/>
+    <ellipse cx="46" cy="55" rx="3" ry="1.8" fill="#DBAF7C"/>
+    <ellipse cx="74" cy="55" rx="3" ry="1.8" fill="#DBAF7C"/>
+    <circle cx="35" cy="69" r="5" fill="#F3B0A8" opacity="0.5"/>
+    <circle cx="85" cy="69" r="5" fill="#F3B0A8" opacity="0.5"/>
+    <path d="M41 63 Q46 68 51 63" stroke="#4A3F38" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+    <path d="M69 63 Q74 68 79 63" stroke="#4A3F38" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+    <ellipse cx="60" cy="66" rx="4.6" ry="3.4" fill="#4A3F38"/>
+    <path d="M60 69 L60 71" stroke="#4A3F38" stroke-width="1.6" stroke-linecap="round"/>
+    <path d="M60 71 Q55 74 51 71 M60 71 Q65 74 69 71" stroke="#4A3F38" stroke-width="1.6" stroke-linecap="round" fill="none"/>
   </g>
-  <g id="zzz"><path d="M 110 50 L 118 50 L 110 58 L 118 58" stroke="#FDFBF7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.8"/><path d="M 120 40 L 128 40 L 120 48 L 128 48" stroke="#FDFBF7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.8"/></g>
-  <g id="dog-glasses" opacity="0"><rect x="48" y="55" width="16" height="10" rx="2" stroke="#FF9800" stroke-width="1.5" fill="none" opacity="0.8"/><rect x="86" y="55" width="16" height="10" rx="2" stroke="#FF9800" stroke-width="1.5" fill="none" opacity="0.8"/><line x1="64" y1="60" x2="86" y2="60" stroke="#FF9800" stroke-width="1.5" opacity="0.8"/></g>
-    <!-- Snore bubble -->
-  <g transform="translate(88, 82)">
-    <ellipse cx="6" cy="5" rx="6" ry="5" fill="#DEEFFF" stroke="#93C5FD" stroke-width="1.2" opacity="0.75">
-      <animate attributeName="rx" values="4;8;4" dur="2.5s" repeatCount="indefinite"/>
-      <animate attributeName="ry" values="3;7;3" dur="2.5s" repeatCount="indefinite"/>
-    </ellipse>
-    <ellipse cx="8" cy="4" rx="1.5" ry="2" fill="white" opacity="0.6"/>
-  </g><g id="zzz-group" opacity="1"><text x="120" y="25" font-size="11" fill="#999" font-weight="bold">z</text><text x="128" y="14" font-size="14" fill="#999" font-weight="bold" opacity="0.6">z</text><text x="135" y="3" font-size="17" fill="#999" font-weight="bold" opacity="0.3">z</text></g>
+  <g transform="translate(82, 60)"><ellipse cx="6" cy="5" rx="6" ry="5" fill="#DEEFFF" stroke="#93C5FD" stroke-width="1.2" opacity="0.75"><animate attributeName="rx" values="4;8;4" dur="2.5s" repeatCount="indefinite"/><animate attributeName="ry" values="3;7;3" dur="2.5s" repeatCount="indefinite"/></ellipse><ellipse cx="8" cy="4" rx="1.5" ry="2" fill="white" opacity="0.6"/></g>
+  <g id="dog-glasses" opacity="0"><rect x="38" y="52" width="16" height="14" rx="2" stroke="#FF9800" stroke-width="2" fill="none"/><rect x="66" y="52" width="16" height="14" rx="2" stroke="#FF9800" stroke-width="2" fill="none"/><line x1="54" y1="59" x2="66" y2="59" stroke="#FF9800" stroke-width="2"/></g>
+  <g id="zzz-group" opacity="1"><text x="88" y="22" font-size="10" fill="#999" font-weight="bold">z</text><text x="96" y="12" font-size="14" fill="#999" font-weight="bold" opacity="0.6">z</text><text x="104" y="2" font-size="18" fill="#999" font-weight="bold" opacity="0.3">z</text></g>
   <defs><linearGradient id="screen-glow" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#00D2FF" stop-opacity="1"/><stop offset="100%" stop-color="#00D2FF" stop-opacity="0"/></linearGradient></defs>
-  <g id="pet-cyber-keyboard" opacity="0"><rect x="30" y="118" width="90" height="10" rx="3" fill="#344054" stroke="#475467" stroke-width="1.5"/><rect id="key-light-1" x="38" y="120" width="10" height="5" rx="1.5" fill="#FFD700" opacity="0"/><rect id="key-light-2" x="54" y="120" width="14" height="5" rx="1.5" fill="#00D2FF" opacity="0"/><rect id="key-light-3" x="78" y="120" width="12" height="5" rx="1.5" fill="#FF3366" opacity="0"/><rect id="key-light-4" x="96" y="120" width="10" height="5" rx="1.5" fill="#00FF66" opacity="0"/><path d="M 42 116 L 28 94 L 122 94 L 108 116 Z" fill="url(#screen-glow)" opacity="0.12"/></g>
-</svg>`};
+  <g id="pet-cyber-keyboard" opacity="0"><rect x="30" y="102" width="60" height="8" rx="2" fill="#344054" stroke="#475467" stroke-width="1.5"/><rect id="key-light-1" x="36" y="104" width="8" height="4" rx="1" fill="#FFD700" opacity="0"/><rect id="key-light-2" x="48" y="104" width="12" height="4" rx="1" fill="#00D2FF" opacity="0"/><rect id="key-light-3" x="66" y="104" width="10" height="4" rx="1" fill="#FF3366" opacity="0"/><rect id="key-light-4" x="80" y="104" width="6" height="4" rx="1" fill="#00FF66" opacity="0"/><path d="M 35 102 L 20 80 L 100 80 L 85 102 Z" fill="url(#screen-glow)" opacity="0.15"/></g>
+</svg>`
+};
 SVG.shiba = DOG_SVG.idle;
   const RABBIT_SVG = {
   idle: `<svg width="120" height="130" viewBox="0 0 120 130" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -472,28 +405,53 @@ function setRabbitState(name) {
   // 3. QUOTES
   // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
+  // 🐱 CAT — sarcastic, aloof, judgmental genius who secretly loves you
   const Q = {
-    idle: ["Your code compiles? I'm so proud! 🥹","Just dynamic-purring at my job.","404: Treat not found.","I've been watching you scroll...","Human, your code looks like spaghetti but I still love you."],
-    hungry: ["My stomach is empty! 🥺","Feed me... or I'll delete your node_modules.","I'm so hungry!"],
-    dirty: ["I'm feeling a bit dusty... 🫤","A bath would be nice."],
-    happy: ["Purrr~ 💖","That's the spot! ✨","I love you human! ❤️"],
-    slack: ["Caught you! 😾 Is that more interesting than your PM?","Focus! Or I will poop on your current webpage.","Hey! Are you slacking off?"],
-    wake: ["Zzz... waking up... coffee? ☕","*yawn* Did I miss any bugs?","Stretch! 🐱 Now where's my snack?"]
+    idle: ["Your code compiles? I'm so proud! 🥹","Just dynamic-purring at my job.","404: Treat not found.","I've been watching you scroll... judging silently.","Human, your code looks like spaghetti but I still love you.","I could fix that bug. I won't. But I could."],
+    hungry: ["My stomach is empty! 🥺","Feed me... or I'll delete your node_modules.","I'm so hungry I might knock something off your desk."],
+    dirty: ["I'm feeling a bit dusty... 🫤","A bath? Ugh. But fine.","Do not tell the other cats I said this, but... clean me."],
+    happy: ["Purrr~ 💖","That's the spot! ✨","I tolerate you. That's love, for a cat.","Fine. You may continue existing. 😼"],
+    slack: ["Caught you! 😾 Is that more interesting than your PM?","Focus! Or I will sit on your keyboard.","Hey! Are you slacking off? Pathetic.","asdkfj;alksdf — oops, that was me on your keyboard. Focus."],
+    wake: ["Zzz... waking up... coffee? ☕","*yawn* Did I miss any bugs?","Stretch! 🐱 Now where's my snack?"],
+    feed: ["*delicate nibble* Acceptable. 🍖","Finally. I was about to file a complaint.","Mine. All mine. 😻"],
+    bath: ["*shakes off* The indignity... 🛁","I'll allow it. This once.","Sparkling. Obviously. ✨"],
+    pet: ["Purrr~ ❤️ Don't stop.","Mrrp. You may pet me. 😽","*headbutt* More."],
+    sick: ["I feel terrible... 😵 Fetch the vet. And treats.","Ugh. Even my whiskers hurt.","404: health not found. 🤒"]
   };
 
-const Q_DOG = {
-  idle: ["You're my favorite human! 🐕","Woof! Pet me please!","I love belly rubs! 🥹","Let's go for a walk! 🦮","Best day ever!","*sniff sniff* Whatcha doing?"],
-  hungry: ["I'm starving! Feed me! 🥺","My bowl is empty!","I could eat a horse! 🐴","*whines hungrily*"],
-  dirty: ["I need a bath! 🫤","I smell like... me.","Time for a shower?"],
-  happy: ["Woof woof! 🐕💖","That's the spot!","I love you hooman! ❤️","*tail wagging furiously*"],
-  slack: ["Stop slacking! WOOF! 😤","Get back to work or I'll chew your shoes!","Focus! 🐕"],
-  wake: ["*yawns* Good morning!","Did I miss walk time? 🐾","Stretch! Now pet me!"]
-};
-  
+  // 🐕 DOG — loyal, hyper-enthusiastic, unconditionally adoring
+  const Q_DOG = {
+    idle: ["You're my favorite human! 🐕","Woof! Pet me please!","I love belly rubs! 🥹","Let's go for a walk! 🦮","Best. Day. EVER!","*sniff sniff* Whatcha doing?"],
+    hungry: ["I'm starving! Feed me! 🥺","My bowl is empty and so is my soul!","I could eat a horse! 🐴","*whines hungrily* pleeease?"],
+    dirty: ["I rolled in something... 🫤","I smell AMAZING. You disagree?","Bath time?! I both love and fear it!"],
+    happy: ["Woof woof! 🐕💖","That's the spot!!!","I LOVE YOU HOOMAN! ❤️","*tail wagging so hard I might take off* 🚁"],
+    slack: ["Stop slacking! WOOF! 😤","Get back to work or I'll chew your shoes!","Focus, best friend! I believe in you! 🐕"],
+    wake: ["*yawns* Good morning bestie!","Did I miss walk time? 🐾","Stretch! Now throw the ball!"],
+    feed: ["*GULP* Best meal ever! 🍖","GONE. It's gone. More?","Woof woof! Thank youuu! 🐾"],
+    bath: ["*splash* WHEE! 🛁","I'm a clean good boy now!","Shake it off! 💦 Sorry about your walls."],
+    pet: ["*leans entire body into you* ❤️","Pet me forever! 🐕","Woof! You're the best hooman!"],
+    sick: ["I don't feel so good... 🤒 *sad tail*","Even walks sound bad right now...","*whimper* I need cuddles and medicine."]
+  };
+
+  // 🐰 RABBIT — shy, gentle, soft-spoken, a little anxious, very sweet
+  const Q_RABBIT = {
+    idle: ["*twitches nose quietly* 🐰","Um... hi. I like being near you.","*nibbles a tiny leaf* mmm.","I found a cozy spot... shh.","Is it okay if I stay here? 🥺","*wiggles ears softly*"],
+    hungry: ["I'm a little hungry... if that's okay. 🥕","A carrot would be lovely...","*tummy rumbles softly* oops."],
+    dirty: ["My fur got a bit messy... 🫤","I'd like to be clean and soft again.","*grooms one paw shyly*"],
+    happy: ["*happy little hop* 💕","This makes me so warm inside...","Thank you... you're very kind. 🐰","*binky!* (that's a happy jump)"],
+    slack: ["Um... should we be working? 🥺","I don't want to nag, but... focus?","*nudges you gently* back to work?"],
+    wake: ["*soft yawn* mm... morning...","Did I nap too long? 🌙","*stretches tiny paws* hello again."],
+    feed: ["*tiny nibbles* so yummy... 🥕","Thank you for the snack... 💕","*munches happily and quietly*"],
+    bath: ["*shivers* clean and fluffy now 🛁","So soft... thank you.","*shakes gently* all fresh! ✨"],
+    pet: ["*melts into your hand* 💕","Softly... yes, like that. 🐰","*nuzzles you shyly* ❤️"],
+    sick: ["I feel poorly... 🤒 *tiny sniffle*","My ears feel droopy...","*curls up quietly* please stay near me."]
+  };
+
 // Pet-specific quote picker
 function pickQ(type) {
-  const source = S.currentPet === 'shiba' ? Q_DOG : Q;
-  return source[type][Math.floor(Math.random() * source[type].length)];
+  const source = S.currentPet === 'shiba' ? Q_DOG : S.currentPet === 'rabbit' ? Q_RABBIT : Q;
+  const arr = source[type] || Q[type];
+  return arr[Math.floor(Math.random() * arr.length)];
 }
 const pick = a => a[Math.floor(Math.random() * a.length)];
 
@@ -640,7 +598,7 @@ const pick = a => a[Math.floor(Math.random() * a.length)];
       else if (['working','hungry','surprised'].includes(S.pet)) setState('idle');
       if (bubble.className === 'cp-bubble-hidden') {
         if (S.focusing) return;
-        if (S.health <= 0) showBubble('I feel terrible... 😵', 5000);
+        if (S.health <= 0) showBubble(pickQ('sick'), 5000);
         else if (S.fullness < 20) showBubble(pickQ('hungry'), 5000);
         else if (S.cleanliness < 20) showBubble(pickQ('dirty'), 5000);
         else if (S.mood > 80 && Math.random() < 0.3) showBubble(pickQ('happy'), 3500);
@@ -709,10 +667,10 @@ const pick = a => a[Math.floor(Math.random() * a.length)];
       cTimer = setTimeout(() => {
         cc = 0; const r = pick(REACTIONS);
         switch (r) {
-          case 'meow': if (S.currentPet === 'shiba') { showBubble('*woof* 🐕', 2500); } else { showBubble('*meow* 🐱', 2500); } break;
-          case 'purr': if (S.currentPet === 'shiba') { showBubble('*pants happily* 🐕', 2500); } else { showBubble('Purrr~ ✨', 2500); } break;
+          case 'meow': showBubble(S.currentPet === 'shiba' ? '*woof* 🐕' : S.currentPet === 'rabbit' ? '*squeak* 🐰' : '*meow* 🐱', 2500); break;
+          case 'purr': showBubble(S.currentPet === 'shiba' ? '*pants happily* 🐕' : S.currentPet === 'rabbit' ? '*soft nose wiggle* ✨' : 'Purrr~ ✨', 2500); break;
           case 'tilt': showBubble('*tilts head* 🤔', 2500); doAction('curious', 1200); break;
-          case 'surprised': showBubble('Mrow?! 👀', 2500); doAction('surprised', 1200); break;
+          case 'surprised': showBubble(S.currentPet === 'shiba' ? 'Bark?! 👀' : S.currentPet === 'rabbit' ? 'Eep?! 👀' : 'Mrow?! 👀', 2500); doAction('surprised', 1200); break;
         }
       }, 250);
     } else {
@@ -775,9 +733,9 @@ const pick = a => a[Math.floor(Math.random() * a.length)];
     chrome.runtime.sendMessage({ action: 'interact', type }, (response) => {
       if (chrome.runtime.lastError || !response || !response.success) return;
       switch (type) {
-        case 'feed': setState('idle'); if (S.currentPet === 'shiba') { setDogState('eating'); setTimeout(() => { if (S.currentPet === 'shiba') setDogState('idle'); }, 10000); } else if (S.currentPet === 'cat') { setCatState('eating'); setTimeout(() => { if (S.currentPet === 'cat') setCatState('idle'); }, 10000); } else if (S.currentPet === 'rabbit') { setRabbitState('eating'); setTimeout(() => { if (S.currentPet === 'rabbit') setRabbitState('idle'); }, 10000); } showBubble('*munch munch* 🍖 Yum!', 3500); spawn('food', 6); doAction('surprised', 500); break;
-        case 'bath': setState('idle'); if (S.currentPet === 'shiba') { setDogState('bathing'); setTimeout(() => { if (S.currentPet === 'shiba') setDogState('idle'); }, 10000); } else if (S.currentPet === 'cat') { setCatState('bathing'); setTimeout(() => { if (S.currentPet === 'cat') setCatState('idle'); }, 10000); } else if (S.currentPet === 'rabbit') { setRabbitState('bathing'); setTimeout(() => { if (S.currentPet === 'rabbit') setRabbitState('idle'); }, 10000); } showBubble('*splash splash* 🛁 So clean!', 3500); spawn('sparkle', 8); break;
-        case 'pet':  showBubble('Purrr~ ❤️', 3000); spawn('heart', 8); doAction('surprised', 400); break;
+        case 'feed': setState('idle'); if (S.currentPet === 'shiba') { setDogState('eating'); setTimeout(() => { if (S.currentPet === 'shiba') setDogState('idle'); }, 10000); } else if (S.currentPet === 'cat') { setCatState('eating'); setTimeout(() => { if (S.currentPet === 'cat') setCatState('idle'); }, 10000); } else if (S.currentPet === 'rabbit') { setRabbitState('eating'); setTimeout(() => { if (S.currentPet === 'rabbit') setRabbitState('idle'); }, 10000); } showBubble(pickQ('feed'), 3500); spawn('food', 6); doAction('surprised', 500); break;
+        case 'bath': setState('idle'); if (S.currentPet === 'shiba') { setDogState('bathing'); setTimeout(() => { if (S.currentPet === 'shiba') setDogState('idle'); }, 10000); } else if (S.currentPet === 'cat') { setCatState('bathing'); setTimeout(() => { if (S.currentPet === 'cat') setCatState('idle'); }, 10000); } else if (S.currentPet === 'rabbit') { setRabbitState('bathing'); setTimeout(() => { if (S.currentPet === 'rabbit') setRabbitState('idle'); }, 10000); } showBubble(pickQ('bath'), 3500); spawn('sparkle', 8); break;
+        case 'pet':  showBubble(pickQ('pet'), 3000); spawn('heart', 8); doAction('surprised', 400); break;
       }
     });
   }
@@ -804,9 +762,9 @@ const pick = a => a[Math.floor(Math.random() * a.length)];
           break;
         case 'petReaction':
           switch (msg.type) {
-            case 'feed': setState('idle'); if (S.currentPet === 'shiba') { setDogState('eating'); setTimeout(() => { if (S.currentPet === 'shiba') setDogState('idle'); }, 10000); } else if (S.currentPet === 'cat') { setCatState('eating'); setTimeout(() => { if (S.currentPet === 'cat') setCatState('idle'); }, 10000); } else if (S.currentPet === 'rabbit') { setRabbitState('eating'); setTimeout(() => { if (S.currentPet === 'rabbit') setRabbitState('idle'); }, 10000); } showBubble('*munch munch* 🍖 Yum!', 3500); spawn('food', 6); doAction('surprised', 500); break;
-            case 'bath': setState('idle'); if (S.currentPet === 'shiba') { setDogState('bathing'); setTimeout(() => { if (S.currentPet === 'shiba') setDogState('idle'); }, 10000); } else if (S.currentPet === 'cat') { setCatState('bathing'); setTimeout(() => { if (S.currentPet === 'cat') setCatState('idle'); }, 10000); } else if (S.currentPet === 'rabbit') { setRabbitState('bathing'); setTimeout(() => { if (S.currentPet === 'rabbit') setRabbitState('idle'); }, 10000); } showBubble('*splash splash* 🛁 So clean!', 3500); spawn('sparkle', 8); break;
-            case 'pet': showBubble('Purrr~ ❤️', 3000); spawn('heart', 8); doAction('surprised', 400); break;
+            case 'feed': setState('idle'); if (S.currentPet === 'shiba') { setDogState('eating'); setTimeout(() => { if (S.currentPet === 'shiba') setDogState('idle'); }, 10000); } else if (S.currentPet === 'cat') { setCatState('eating'); setTimeout(() => { if (S.currentPet === 'cat') setCatState('idle'); }, 10000); } else if (S.currentPet === 'rabbit') { setRabbitState('eating'); setTimeout(() => { if (S.currentPet === 'rabbit') setRabbitState('idle'); }, 10000); } showBubble(pickQ('feed'), 3500); spawn('food', 6); doAction('surprised', 500); break;
+            case 'bath': setState('idle'); if (S.currentPet === 'shiba') { setDogState('bathing'); setTimeout(() => { if (S.currentPet === 'shiba') setDogState('idle'); }, 10000); } else if (S.currentPet === 'cat') { setCatState('bathing'); setTimeout(() => { if (S.currentPet === 'cat') setCatState('idle'); }, 10000); } else if (S.currentPet === 'rabbit') { setRabbitState('bathing'); setTimeout(() => { if (S.currentPet === 'rabbit') setRabbitState('idle'); }, 10000); } showBubble(pickQ('bath'), 3500); spawn('sparkle', 8); break;
+            case 'pet': showBubble(pickQ('pet'), 3000); spawn('heart', 8); doAction('surprised', 400); break;
           } break;
       }
     });
