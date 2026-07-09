@@ -146,7 +146,7 @@
    🐰 RABBIT — 淡奶色几何兔（扁平风格）
    ═══════════════════════════════════════════════════════════════════════════ */
 
-.pet-rabbit#cp-canvas { width: 140px; height: 150px; }
+
 
 .pet-rabbit.state-idle #rabbit-ear-l {
   animation: earJiggleL 1.5s infinite ease-in-out;
