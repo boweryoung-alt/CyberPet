@@ -160,12 +160,12 @@
 @keyframes earJiggleR { 0%,100%{transform:rotate(0deg)} 50%{transform:rotate(6deg)} }
 
 .pet-rabbit.state-sleeping #rabbit-ear-l {
-  transform: rotate(-75deg) translate(-5px, 12px);
+  transform: rotate(55deg) translate(3px, 12px);
   transform-origin: bottom right;
   transition: transform 0.5s ease-in-out;
 }
 .pet-rabbit.state-sleeping #rabbit-ear-r {
-  transform: rotate(75deg) translate(5px, 12px);
+  transform: rotate(-55deg) translate(-3px, 12px);
   transform-origin: bottom left;
   transition: transform 0.5s ease-in-out;
 }
