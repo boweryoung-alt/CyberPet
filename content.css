@@ -53,7 +53,7 @@
 .pet-cat.state-idle #pet-head   { animation: headBob 2.4s infinite alternate ease-in-out; }
 .pet-cat.state-idle #pet-body   { animation: bodyBreathe 2.4s infinite alternate ease-in-out; }
 
-.pet-cat.state-sleeping { transform: translateY(10px) rotate(5deg); }
+.pet-cat.state-sleeping { transform: translateY(6px); }
 .pet-cat.state-sleeping #eye-left, .pet-cat.state-sleeping #eye-right { height:2px!important; transform:translateY(4px); }
 .pet-cat.state-sleeping #eye-light-l, .pet-cat.state-sleeping #eye-light-r { opacity:0; }
 .pet-cat.state-sleeping #pet-body, .pet-cat.state-sleeping #pet-head { animation: deepSleep 3.5s infinite alternate ease-in-out; }
