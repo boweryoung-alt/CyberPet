@@ -198,7 +198,7 @@
 /* ═══════════════════════════════════════════════════════════════════════════
    GLOBAL: sick state (health ≤ 0) — all pets become dizzy + collapsed
    ═══════════════════════════════════════════════════════════════════════════ */
-.state-sick { transform: translateY(6px) rotate(-4deg); transform-origin: bottom center; }
+.state-sick { transform: translateY(3px); }
 .state-sick #pet-body, .state-sick #pet-head,
 .pet-cat.state-sick #pet-body, .pet-cat.state-sick #pet-head,
 .pet-shiba.state-sick #pet-body, .pet-shiba.state-sick #dog-head,
